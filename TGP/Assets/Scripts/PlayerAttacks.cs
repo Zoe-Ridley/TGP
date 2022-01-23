@@ -20,7 +20,7 @@ public class PlayerAttacks : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            m_playerAnimator.SetTrigger("Melee");
+            m_playerAnimator.SetTrigger("melee");
         }
     }
 }
