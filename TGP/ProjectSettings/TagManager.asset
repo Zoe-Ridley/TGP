@@ -44,6 +44,9 @@ TagManager:
   - name: Background
     uniqueID: 3204355307
     locked: 0
-  - name: Player
+  - name: WallsDoors
+    uniqueID: 2048928649
+    locked: 0
+  - name: PlayerEnemy
     uniqueID: 335476245
     locked: 0
