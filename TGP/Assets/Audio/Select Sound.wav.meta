@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 305751028cee08346b60197b6df41b0d
+=======
+guid: 5492fc62be8d2c9418bf624e65eeddca
+>>>>>>> NewIssac
 AudioImporter:
   externalObjects: {}
   serializedVersion: 6
