@@ -1434,7 +1434,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 869937007
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: -1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.78, y: 0.78, z: 0}
@@ -2006,3 +2006,60 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &2702342539590720311
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2702342539089462534, guid: 53befe986a6637245afb858ff45e2488, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702342539089462534, guid: 53befe986a6637245afb858ff45e2488, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 71.86602
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702342539089462534, guid: 53befe986a6637245afb858ff45e2488, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -47.460484
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702342539089462534, guid: 53befe986a6637245afb858ff45e2488, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -43.97586
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702342539089462534, guid: 53befe986a6637245afb858ff45e2488, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702342539089462534, guid: 53befe986a6637245afb858ff45e2488, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702342539089462534, guid: 53befe986a6637245afb858ff45e2488, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702342539089462534, guid: 53befe986a6637245afb858ff45e2488, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702342539089462534, guid: 53befe986a6637245afb858ff45e2488, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702342539089462534, guid: 53befe986a6637245afb858ff45e2488, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702342539089462534, guid: 53befe986a6637245afb858ff45e2488, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702342539089462552, guid: 53befe986a6637245afb858ff45e2488, type: 3}
+      propertyPath: m_Name
+      value: Audio Manager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 53befe986a6637245afb858ff45e2488, type: 3}
