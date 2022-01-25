@@ -13,8 +13,14 @@ public class DungeonGenerator : MonoBehaviour
     {
         public bool m_visited = false;
         public bool[] m_generatedRoomStatus = new bool[4];
-        public bool[] m_closedRoomStatus = {false, false, false, false};
+        public bool[] m_closedRoomStatus = { false, false, false, false };
         public Vector2 m_Position;
+    };
+
+    public struct Room
+    {
+        public Cell m_cell;
+        public int m_boardPosition;
     };
 
     public Vector2 m_size;
@@ -59,25 +65,25 @@ public class DungeonGenerator : MonoBehaviour
                     if (m_board[i].m_Position.x + 1 == m_board[i + 1].m_Position.x)
                     {
                         //next cell in the path is to the right
-                        GameObject nextRoom = GameObject.Find("Room(Clone) " + (m_board[i+1].m_Position.x) + "-" + (m_board[i+1].m_Position.y));
+                        GameObject nextRoom = GameObject.Find("Room(Clone) " + (m_board[i + 1].m_Position.x) + "-" + (m_board[i + 1].m_Position.y));
                         nextRoom.GetComponent<RoomBehaviour>().UpdateRoom(new[] { false, false, false, true });
                     }
                     else if (m_board[i].m_Position.x - 1 == m_board[i + 1].m_Position.x)
                     {
                         //next cell in the path is to the left
-                        GameObject nextRoom = GameObject.Find("Room(Clone) " + (m_board[i+1].m_Position.x) + "-" + (m_board[i+1].m_Position.y ));
+                        GameObject nextRoom = GameObject.Find("Room(Clone) " + (m_board[i + 1].m_Position.x) + "-" + (m_board[i + 1].m_Position.y));
                         nextRoom.GetComponent<RoomBehaviour>().UpdateRoom(new[] { false, false, true, false });
                     }
                     else if (m_board[i].m_Position.y + 1 == m_board[i + 1].m_Position.y)
                     {
                         //next cell in the path is above
-                        GameObject nextRoom = GameObject.Find("Room(Clone) " + (m_board[i+1].m_Position.x) + "-" + (m_board[i+1].m_Position.y));
+                        GameObject nextRoom = GameObject.Find("Room(Clone) " + (m_board[i + 1].m_Position.x) + "-" + (m_board[i + 1].m_Position.y));
                         nextRoom.GetComponent<RoomBehaviour>().UpdateRoom(new[] { false, true, false, false });
                     }
                     else if (m_board[i].m_Position.y - 1 == m_board[i - 1].m_Position.y)
                     {
                         //next call is below
-                        GameObject nextRoom = GameObject.Find("Room(Clone) " + (m_board[i+1].m_Position.x) + "-" + (m_board[i+1].m_Position.y));
+                        GameObject nextRoom = GameObject.Find("Room(Clone) " + (m_board[i + 1].m_Position.x) + "-" + (m_board[i + 1].m_Position.y));
                         nextRoom.GetComponent<RoomBehaviour>().UpdateRoom(new[] { true, false, false, false });
                     }
                 }
