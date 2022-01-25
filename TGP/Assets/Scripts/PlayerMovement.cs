@@ -10,18 +10,29 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 m_playerDir;
     private SpriteRenderer m_spriteRenderer;
 
-    //create a bool to check if player is facing right or left, if they're already facing that direction don't flip them.
-    private bool m_facing;
+    private CharacterController m_playerController;
+    public Animator m_playerAnimator;
 
     void Start()
     {
         m_RB = GetComponent<Rigidbody2D>();
 
         m_spriteRenderer = GetComponent<SpriteRenderer>();
+
+        m_playerController = GetComponent<CharacterController>();
+        m_playerAnimator = GetComponentInChildren<Animator>();
     }
 
     void Update()
     {
+        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
+
+        m_playerAnimator.SetFloat("Horizontal", movement.x);
+        m_playerAnimator.SetFloat("Vertical", movement.y);
+        m_playerAnimator.SetFloat("Magnitude", movement.magnitude);
+
+        transform.position = transform.position + movement * Time.deltaTime;
+
         float dirX = Input.GetAxisRaw("Horizontal");
         float dirY = Input.GetAxisRaw("Vertical");
 
@@ -31,5 +42,15 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         m_RB.velocity = new Vector2(m_playerDir.x * playerSpeed, m_playerDir.y * playerSpeed);
+    }
+
+    void WalkUpAnimation()
+    {
+
+    }
+
+    void WalkDownAnimation()
+    {
+
     }
 }
