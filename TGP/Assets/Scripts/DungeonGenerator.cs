@@ -17,6 +17,12 @@ public class DungeonGenerator : MonoBehaviour
         public Vector2 m_Position;
     };
 
+    public struct Room
+    {
+        public Cell m_cell;
+        public int m_boardPosition;
+    };
+
     public Vector2 m_size;
     public int m_startPosition = 0;
     public GameObject m_room;
