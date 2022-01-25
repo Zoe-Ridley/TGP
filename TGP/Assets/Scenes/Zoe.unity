@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f283da6663f74498118a19efff6609, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_size: {x: 1, y: 2}
+  m_size: {x: 5, y: 5}
   m_startPosition: 0
   m_room: {fileID: 8365982970090205779, guid: 67ad6da834d44bf4aaa844c1d8c660f3, type: 3}
   m_offset: {x: 12, y: 12}
@@ -495,7 +495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7296d8b2734abc44e823d923b1d2bdd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 20
+  playerSpeed: 5
 --- !u!50 &1393360347
 Rigidbody2D:
   serializedVersion: 4
