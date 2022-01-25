@@ -16,6 +16,8 @@ public class PlayerAttacks : MonoBehaviour
     private CharacterController m_playerController;
     private Animator m_playerAnimator;
 
+    float timer;
+
     private void Start()
     {
         m_playerController = GetComponent<CharacterController>();
@@ -29,7 +31,8 @@ public class PlayerAttacks : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             m_playerAnimator.SetTrigger("melee");
-            GameObject tempRef = Instantiate<GameObject>(m_weaponPrefab, gameObject.transform.position, gameObject.transform.rotation);
+            GameObject knifeClone = Instantiate<GameObject>(m_weaponPrefab, gameObject.transform.position, gameObject.transform.rotation);
+            Destroy(knifeClone, 0.5f);
         }
     }
 }
