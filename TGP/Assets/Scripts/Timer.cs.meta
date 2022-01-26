@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:TGP/Assets/Scripts/Timer.cs.meta
 guid: de8436b600cc8a446b735c3f6bacfd40
+=======
+<<<<<<< HEAD
+guid: 2afcde9e6796664429733bd52496d54f
+=======
+guid: 20761fe3a1783604db80131135822d7c
+>>>>>>> NewIssac
+>>>>>>> NewIssac:TGP/Assets/Scripts/AudioManager.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
