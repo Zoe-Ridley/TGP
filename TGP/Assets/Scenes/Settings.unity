@@ -1808,6 +1808,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1176054321}
   m_CullTransparentMesh: 1
+--- !u!1 &1199203230 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2702342539089462552, guid: 53befe986a6637245afb858ff45e2488, type: 3}
+  m_PrefabInstance: {fileID: 1379749548}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1199203231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199203230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87454bd3e824b5649b99e86ee394cedc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioClip: []
+  m_MusicMixerGroup: {fileID: 4702852774997484950, guid: 2908673705431384bb53e52493c65a69, type: 2}
+  m_SFXMixerGroup: {fileID: -8618769775117880157, guid: 2908673705431384bb53e52493c65a69, type: 2}
 --- !u!1 &1306083576
 GameObject:
   m_ObjectHideFlags: 0
@@ -2015,7 +2035,8 @@ PrefabInstance:
       propertyPath: MusicText
       value: 
       objectReference: {fileID: 1707508741}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2702342539089462535, guid: 53befe986a6637245afb858ff45e2488, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 53befe986a6637245afb858ff45e2488, type: 3}
 --- !u!1 &1381018234
 GameObject:
@@ -2443,7 +2464,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4258463790149613763, guid: 53befe986a6637245afb858ff45e2488, type: 3}
   m_PrefabInstance: {fileID: 1379749548}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1199203230}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1087c5c69b6deba4baafe8b07db35f86, type: 3}
@@ -2593,7 +2614,7 @@ Animator:
   m_GameObject: {fileID: 1748560647}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e897805915b065b488cffd9f579b1ed2, type: 2}
+  m_Controller: {fileID: 9100000, guid: e2a1031b30a2d584cb2d55e977898229, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

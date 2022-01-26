@@ -10,7 +10,6 @@ public class Sliders : MonoBehaviour
     [SerializeField] private Slider m_musicBar; 
     [SerializeField] private Slider m_soundBar;
 
-
     private void Start()
     {
         m_musicBar.value = m_musicBarValue;
