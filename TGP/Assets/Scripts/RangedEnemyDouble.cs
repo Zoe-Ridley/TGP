@@ -13,13 +13,10 @@ public class RangedEnemyDouble : MonoBehaviour
 
     private float m_tempFirerate;
     private Rigidbody2D m_RB;
-    private SpriteRenderer m_spriteRenderer;
 
     void Start()
     {
         m_RB = GetComponent<Rigidbody2D>();
-
-        m_spriteRenderer = GetComponent<SpriteRenderer>();
 
         m_tempFirerate = m_Firerate;
     }
@@ -36,7 +33,7 @@ public class RangedEnemyDouble : MonoBehaviour
         }
 
         m_tempFirerate -= Time.deltaTime;
-        if ((m_player.gameObject.transform.position.y >= gameObject.transform.position.y - 1) && (m_tempFirerate<=0))
+        if ((m_player.gameObject.transform.position.y >= gameObject.transform.position.y - 1) && (m_tempFirerate <= 0))
         {
             GameObject tempRef = Instantiate<GameObject>(m_bulletPrefab, gameObject.transform.position, gameObject.transform.rotation);
             tempRef.GetComponent<Rigidbody2D>().AddForce(tempRef.transform.right * m_FiringForce, ForceMode2D.Impulse);
@@ -52,11 +49,14 @@ public class RangedEnemyDouble : MonoBehaviour
             tempRef1.GetComponent<Rigidbody2D>().AddForce(tempRef1.transform.right * -m_FiringForce, ForceMode2D.Impulse);
             m_tempFirerate = m_Firerate;
         }
-        
+
     }
 
-    void FixedUpdate()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if(collision.CompareTag("PlayerBullet"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

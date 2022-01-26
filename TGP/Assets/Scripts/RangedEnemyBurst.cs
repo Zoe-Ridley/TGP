@@ -13,24 +13,21 @@ public class RangedEnemyBurst : MonoBehaviour
 
     private float m_tempFirerate;
     private Rigidbody2D m_RB;
-    private SpriteRenderer m_spriteRenderer;
 
     void Start()
     {
         m_RB = GetComponent<Rigidbody2D>();
-
-        m_spriteRenderer = GetComponent<SpriteRenderer>();
 
         m_tempFirerate = m_Firerate;
     }
 
     void Update()
     {
-        if (m_player.gameObject.transform.position.y < gameObject.transform.position.y)
+        if (m_player.transform.position.y < gameObject.transform.position.y)
         {
             m_RB.AddForce(Vector2.down * m_enemySpeed, ForceMode2D.Force);
         }
-        if (m_player.gameObject.transform.position.y > gameObject.transform.position.y)
+        if (m_player.transform.position.y > gameObject.transform.position.y)
         {
             m_RB.AddForce(Vector2.up * m_enemySpeed, ForceMode2D.Force);
         }
@@ -60,6 +57,13 @@ public class RangedEnemyBurst : MonoBehaviour
             tempRef1.GetComponent<Rigidbody2D>().AddForce(tempRef1.transform.right * -m_FiringForce, ForceMode2D.Impulse);
             m_tempFirerate = m_Firerate;
         }
+    }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("PlayerBullet"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

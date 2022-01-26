@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 4611347635897615525}
   - component: {fileID: 4611347635897615526}
   - component: {fileID: 4611347635897615527}
+  - component: {fileID: -1413346169163206343}
   m_Layer: 0
   m_Name: EnemyMedium
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 181c7ff4ddc87764f9c2eea3aec5ab80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_player: {fileID: 0}
+  m_player: {fileID: 2069871475130941809, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
   m_bulletPrefab: {fileID: 2032384438344180425, guid: 8c34e96abb7c4294c87b022f9fb9432e, type: 3}
   m_enemySpeed: 3
   m_FiringForce: 5
@@ -123,3 +124,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
+--- !u!70 &-1413346169163206343
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4611347635897615544}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1, y: 2}
+  m_Direction: 0
