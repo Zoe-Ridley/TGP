@@ -15,6 +15,7 @@ public class UIsystem : MonoBehaviour
 
     int m_playerCurrentHealth = 100;
     int m_enemyCurrentHealth = 100;
+    int m_playerMaxXP;
 
     [SerializeField] private Slider m_playerHealth = null;
     [SerializeField] private Slider m_enemyHealth = null;

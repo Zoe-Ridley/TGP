@@ -24,9 +24,9 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -51,7 +51,7 @@ LightmapSettings:
     m_IndirectOutputScale: 1
     m_AlbedoBoost: 1
     m_EnvironmentLightingMode: 0
-    m_EnableBakedLightmaps: 1
+    m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
     serializedVersion: 12
@@ -123,7 +123,10 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &1363141834
+<<<<<<< HEAD
+--- !u!1 &1667153498
+=======
+--- !u!1 &54511645
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,43 +134,69 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1363141835}
-  - component: {fileID: 1363141836}
+  - component: {fileID: 54511646}
+  - component: {fileID: 54511647}
   m_Layer: 0
-  m_Name: Audio Testing
+  m_Name: Audio Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1363141835
+--- !u!4 &54511646
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1363141834}
+  m_GameObject: {fileID: 54511645}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.45223856, y: 0.6136384, z: 0.06793213}
+  m_LocalPosition: {x: 71.86602, y: -47.460484, z: -43.97586}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1363141836
+--- !u!114 &54511647
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1363141834}
+  m_GameObject: {fileID: 54511645}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d962385633282fb48a61396bbf8cce77, type: 3}
+  m_Script: {fileID: 11500000, guid: 2afcde9e6796664429733bd52496d54f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AudioManager: {fileID: 2106789030}
---- !u!1 &1667153498
+  AudioClip:
+  - m_Name: Title Theme
+    Sound: {fileID: 8300000, guid: ccee9c845062ecb499ec4d55001c3c30, type: 3}
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  - m_Name: Dungeon Theme
+    Sound: {fileID: 8300000, guid: 328623798c99c744aa685a3acb5b1584, type: 3}
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  - m_Name: Victory Theme
+    Sound: {fileID: 8300000, guid: 12aa064d8a1a7aa4b84623650541e4bf, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - m_Name: Game Over Theme
+    Sound: {fileID: 8300000, guid: 28de71183d7b68b488543936d59c0d00, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - m_Name: Slashing Sound
+    Sound: {fileID: 8300000, guid: 185ca1db53fa2684fbe38f64af034dbe, type: 3}
+    volume: 0.8
+    loop: 0
+    source: {fileID: 0}
+--- !u!1 &1734641851
+>>>>>>> NewIssac
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,64 +204,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1667153500}
-  - component: {fileID: 1667153499}
+  - component: {fileID: 1734641855}
+  - component: {fileID: 1734641854}
+  - component: {fileID: 1734641853}
+  - component: {fileID: 1734641852}
   m_Layer: 0
-  m_Name: Directional Light
-  m_TagString: Untagged
+  m_Name: Main Camera
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!108 &1667153499
-Light:
+--- !u!114 &1734641852
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1667153498}
+  m_GameObject: {fileID: 1734641851}
   m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 1
-  m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 2
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
     serializedVersion: 2
+<<<<<<< HEAD
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
@@ -271,8 +274,6 @@ GameObject:
   - component: {fileID: 1938149958}
   - component: {fileID: 1938149957}
   - component: {fileID: 1938149956}
-  - component: {fileID: 1938149959}
-  - component: {fileID: 1938149960}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -281,20 +282,35 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!81 &1938149956
+=======
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+--- !u!81 &1734641853
+>>>>>>> NewIssac
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1938149955}
+  m_GameObject: {fileID: 1734641851}
   m_Enabled: 1
---- !u!20 &1938149957
+--- !u!20 &1734641854
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1938149955}
+  m_GameObject: {fileID: 1734641851}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -331,131 +347,21 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!4 &1938149958
+--- !u!4 &1734641855
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1938149955}
+  m_GameObject: {fileID: 1734641851}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1938149959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1938149955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
---- !u!114 &1938149960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1938149955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60dbb9e3178a19b41bfb538d5d01111b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: 4e31fba631a98ce4f8d77368229488ef, type: 2}
---- !u!1 &2106789029
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2106789031}
-  - component: {fileID: 2106789030}
-  m_Layer: 0
-  m_Name: Audio Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2106789030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2106789029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20761fe3a1783604db80131135822d7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AudioClip:
-  - m_Name: Title Theme
-    Sound: {fileID: 8300000, guid: 3b802eeff5d27594e8b5c6706ba7d94e, type: 3}
-    volume: 1
-    loop: 1
-    source: {fileID: 0}
-  - m_Name: Dungeon Theme
-    Sound: {fileID: 8300000, guid: 1b7e7d2c399ad9c4da2dd34588b014f5, type: 3}
-    volume: 1
-    loop: 1
-    source: {fileID: 0}
-  - m_Name: Victory Theme
-    Sound: {fileID: 8300000, guid: b0217ddbfed53f74182282d23bb27cbd, type: 3}
-    volume: 1
-    loop: 0
-    source: {fileID: 0}
-  - m_Name: Game Over Theme
-    Sound: {fileID: 8300000, guid: 2961d732aca9c8243901015d8e37dd5e, type: 3}
-    volume: 1
-    loop: 0
-    source: {fileID: 0}
-  - m_Name: Slashing sound
-    Sound: {fileID: 8300000, guid: 5bb809691deab794181091392e978ae5, type: 3}
-    volume: 0.8
-    loop: 0
-    source: {fileID: 0}
---- !u!4 &2106789031
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2106789029}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+=======
+  m_RootOrder: 1
+>>>>>>> NewIssac
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

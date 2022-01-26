@@ -5,11 +5,10 @@ using UnityEngine.UI;
 
 public class Sliders : MonoBehaviour
 {
-    static float m_musicBarValue = 25f;
-    static float m_soundBarValue = 25f;
+    static float m_musicBarValue = 0.5f;
+    static float m_soundBarValue = 0.5f;
     [SerializeField] private Slider m_musicBar; 
-    [SerializeField] private Slider m_soundBar; 
-
+    [SerializeField] private Slider m_soundBar;
 
     private void Start()
     {
