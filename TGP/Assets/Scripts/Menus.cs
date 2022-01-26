@@ -25,6 +25,5 @@ public class Menus : MonoBehaviour
     {
         Debug.Log("Start"); //Remove me when load scene is added
         //INSERT LOAD GAME SCENE HERE
-        SceneManager.LoadScene("James");
     }
 }
