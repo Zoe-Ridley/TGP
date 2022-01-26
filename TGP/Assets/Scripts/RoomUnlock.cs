@@ -12,9 +12,9 @@ public class RoomUnlock : MonoBehaviour
 
     public void Update()
     {
-/*        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             m_dungeonGenerator.OpenRoom(new Vector2(m_player.transform.position.x, m_player.transform.position.y));
-        }*/
+        }
     }
 }

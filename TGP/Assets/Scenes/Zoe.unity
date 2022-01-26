@@ -152,10 +152,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 936cbff6e586f2c4dbe8b439c5c30447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_size: {x: 46, y: 87}
+  m_size: {x: 5, y: 3}
   m_startPosition: 0
   m_room: {fileID: 8365982970090205779, guid: 67ad6da834d44bf4aaa844c1d8c660f3, type: 3}
   m_offset: {x: 12, y: 12}
+  m_board: []
 --- !u!4 &386135134
 Transform:
   m_ObjectHideFlags: 0
