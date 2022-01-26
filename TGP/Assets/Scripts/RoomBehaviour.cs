@@ -14,7 +14,12 @@ public class RoomBehaviour : MonoBehaviour
         {
             /*this currently just removes the door entirely, alter so it has a closed
              door and replaces with an open door perhaps?*/
-            m_doors[i].SetActive(!status[i]);
+            //m_doors[i].SetActive(!status[i]);
+
+            if (status[i])
+            {
+                m_doors[i].SetActive(false);
+            }
         }
     }
 }
