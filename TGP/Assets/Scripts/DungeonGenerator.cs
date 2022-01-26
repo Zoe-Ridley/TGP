@@ -17,12 +17,7 @@ public class DungeonGenerator : MonoBehaviour
         public bool[] m_generatedRoomStatus = new bool[4];
         public bool[] m_closedRoomStatus = { false, false, false, false };
         public Vector2 m_Position;
-    };
-
-    public struct Room
-    {
-        public Cell m_cell;
-        public int m_boardPosition;
+        public bool m_opened;
     };
 
     public Vector2 m_size;
@@ -43,74 +38,51 @@ public class DungeonGenerator : MonoBehaviour
     {
         //search room is the room prefab instance that the player is currently stood inside
         //find its int position and compare it to all tiles in the board
-        //Vector2 desiredLocation = new Vector2(Mathf.FloorToInt(searchRoom.transform.position.x), Mathf.FloorToInt(searchRoom.transform.position.y));
 
         tempPlayerPosition.x = Mathf.RoundToInt(tempPlayerPosition.x / m_offset.x);
         tempPlayerPosition.y = Mathf.RoundToInt(tempPlayerPosition.y / m_offset.y);
 
-        if (tempPlayerPosition.y < 0)
+        for (int i = 0; i < (m_GeneratedRooms.Count - 1); i++)
         {
-            tempPlayerPosition.y *= -1;
-        }
-
-        for (int i = 0; i < m_board.Count; i++)
-        {
-            while (!m_board[i].m_visited)
-            {
-                i++;
-            }
-
-            if (tempPlayerPosition == m_board[i].m_Position)
+            if (tempPlayerPosition == m_GeneratedRooms[i].m_Position)
             {
                 //open the door for the room currently stood inside
-                GameObject playerStoodRoom =
-                    GameObject.Find("Room(Clone) " + (tempPlayerPosition.x) + "-" + (tempPlayerPosition.y));
-                playerStoodRoom.GetComponent<RoomBehaviour>().UpdateRoom(m_board[i].m_generatedRoomStatus);
+                GameObject playerStoodRoom = GameObject.Find("Room(Clone) " + (m_GeneratedRooms[i].m_Position.x) + "-" + (m_GeneratedRooms[i].m_Position.y));
+                playerStoodRoom.GetComponent<RoomBehaviour>().UpdateRoom(m_GeneratedRooms[i].m_generatedRoomStatus);
 
-                /*finding the next cell to open the corresponding door. without this only the one door
-                 inside the current room is opened, and the player cannot go into the next room*/
+                m_GeneratedRooms[i].m_opened = true;
+
                 for (int j = 0; j < 4; j++)
                 {
-                    if (m_board[i].m_Position.y + 1 == m_board[i + 1].m_Position.y) // ABOVE
+                    GameObject nextRoom = GameObject.Find("Room(Clone) " + (m_GeneratedRooms[i + 1].m_Position.x) + "-" + (m_GeneratedRooms[i + 1].m_Position.y));
+
+                    //if the next room has two exits, open up the room completely for now.
+                    var status = new[] { false, false, false, false };
+                    if (m_GeneratedRooms[i].m_Position.y + 1 == m_GeneratedRooms[i + 1].m_Position.y) // ABOVE
                     {
-                        //next cell in the path is to the left
-                        GameObject nextRoom = GameObject.Find("Room(Clone) " + (m_board[i + 1].m_Position.x) + "-" +
-                                                              (m_board[i + 1].m_Position.y));
-                        nextRoom.GetComponent<RoomBehaviour>().UpdateRoom(new[] { false, true, false, false });
+                        status[1] = true;
                     }
-                    else if (m_board[i].m_Position.y - 1 == m_board[i + 1].m_Position.y) //BELOW
+                    if (m_GeneratedRooms[i].m_Position.y - 1 == m_GeneratedRooms[i + 1].m_Position.y) //BELOW
                     {
-                        //next cell in the path is to the right
-                        GameObject nextRoom = GameObject.Find("Room(Clone) " + (m_board[i + 1].m_Position.x) + "-" +
-                                                              (m_board[i + 1].m_Position.y));
-                        nextRoom.GetComponent<RoomBehaviour>().UpdateRoom(new[] { true, false, false, false });
+                        status[0] = true;
                     }
-                    else if (m_board[i].m_Position.x - 1 == m_board[i + 1].m_Position.x) //LEFT
+                    if (m_GeneratedRooms[i].m_Position.x - 1 == m_GeneratedRooms[i + 1].m_Position.x) //LEFT
                     {
-                        //next cell in the path is above
-                        GameObject nextRoom = GameObject.Find("Room(Clone) " + (m_board[i + 1].m_Position.x) + "-" +
-                                                              (m_board[i + 1].m_Position.y));
-                        nextRoom.GetComponent<RoomBehaviour>().UpdateRoom(new[] { false, false, true, false });
+                        status[2] = true;
                     }
-                    else if (m_board[i].m_Position.x + 1 == m_board[i + 1].m_Position.x) //RIGHT
+                    if (m_GeneratedRooms[i].m_Position.x + 1 == m_GeneratedRooms[i + 1].m_Position.x) //RIGHT
                     {
-                        //next call is below
-                        GameObject nextRoom = GameObject.Find("Room(Clone) " + (m_board[i + 1].m_Position.x) + "-" +
-                                                              (m_board[i + 1].m_Position.y));
-                        nextRoom.GetComponent<RoomBehaviour>().UpdateRoom(new[] { false, false, false, true });
+                        status[3] = true;
                     }
+
+                    nextRoom.GetComponent<RoomBehaviour>().UpdateRoom(status);
                 }
-
-                break;
-
-                //0 Up, 1 Down, 2 Right, 3 Left
             }
         }
-
     }
+
     void GenerateDungeon()
     {
-
         for (int i = 0; i < m_size.x; i++)
         {
             for (int j = 0; j < m_size.y; j++)
@@ -120,27 +92,24 @@ public class DungeonGenerator : MonoBehaviour
                 {
                     var newRoom = Instantiate(m_room, new Vector3(i * m_offset.x, -j * m_offset.y, 0f), Quaternion.identity,
                             transform).GetComponent<RoomBehaviour>();
-                    newRoom.UpdateRoom(currentCell.m_generatedRoomStatus);
-                    //newRoom.UpdateRoom(currentCell.m_closedRoomStatus);
-                    newRoom.name += " " + i + "-" + j;
-                    m_GeneratedRooms.Add(currentCell);
-                    //m_GeneratedRooms[-1].m_Position = new Vector2(i, -j);
+                    //newRoom.UpdateRoom(currentCell.m_generatedRoomStatus);
+                    newRoom.UpdateRoom(currentCell.m_closedRoomStatus);
+                    newRoom.name += " " + currentCell.m_Position.x + "-" + currentCell.m_Position.y;
                 }
             }
         }
     }
 
-
     public void MazeGenerator()
     {
         m_board = new List<Cell>();
 
-        for (int i = 0; i < m_size.x; i++)
+        for (int j = 0; j < m_size.y; j++)
         {
-            for (int j = 0; j < m_size.y; j++)
+            for (int i = 0; i < m_size.x; i++)
             {
                 Cell tempCell = new Cell();
-                tempCell.m_Position = new Vector2(i, j);
+                tempCell.m_Position = new Vector2(i, -j);
                 m_board.Add(tempCell);
             }
         }
@@ -155,6 +124,7 @@ public class DungeonGenerator : MonoBehaviour
         {
             k++;
             m_board[m_currentCell].m_visited = true;
+            m_GeneratedRooms.Add(m_board[m_currentCell]);
 
             if (m_currentCell == m_board.Count - 1)
             {
@@ -229,25 +199,25 @@ public class DungeonGenerator : MonoBehaviour
     {
         List<int> m_neighbours = new List<int>();
 
-        //up neighbour
+        //up
         if (cell - m_size.x >= 0 && !m_board[Mathf.FloorToInt(cell - m_size.x)].m_visited)
         {
             m_neighbours.Add(Mathf.FloorToInt(cell - m_size.x));
         }
 
-        //down neighbour
+        //down
         if (cell + m_size.x < m_board.Count && !m_board[Mathf.FloorToInt(cell + m_size.x)].m_visited)
         {
             m_neighbours.Add(Mathf.FloorToInt(cell + m_size.x));
         }
 
-        //right neighbour
+        //right
         if ((cell + 1) % m_size.x != 0 && !m_board[Mathf.FloorToInt(cell + 1)].m_visited)
         {
             m_neighbours.Add(Mathf.FloorToInt(cell + 1));
         }
 
-        //left neighbour
+        //left
         if (cell % m_size.x != 0 && !m_board[Mathf.FloorToInt(cell - 1)].m_visited)
         {
             m_neighbours.Add(Mathf.FloorToInt(cell - 1));
