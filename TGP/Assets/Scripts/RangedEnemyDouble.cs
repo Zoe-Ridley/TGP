@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RangedEnemy : MonoBehaviour
+public class RangedEnemyDouble : MonoBehaviour
 {
     [SerializeField] private GameObject m_player;
     [SerializeField] private GameObject m_bulletPrefab;
@@ -38,16 +38,18 @@ public class RangedEnemy : MonoBehaviour
         m_tempFirerate -= Time.deltaTime;
         if ((m_player.gameObject.transform.position.y >= gameObject.transform.position.y - 1) && (m_tempFirerate<=0))
         {
-            Debug.Log("Message or some shit");
             GameObject tempRef = Instantiate<GameObject>(m_bulletPrefab, gameObject.transform.position, gameObject.transform.rotation);
             tempRef.GetComponent<Rigidbody2D>().AddForce(tempRef.transform.right * m_FiringForce, ForceMode2D.Impulse);
+            GameObject tempRef1 = Instantiate<GameObject>(m_bulletPrefab, gameObject.transform.position, gameObject.transform.rotation);
+            tempRef1.GetComponent<Rigidbody2D>().AddForce(tempRef1.transform.right * -m_FiringForce, ForceMode2D.Impulse);
             m_tempFirerate = m_Firerate;
         }
         if ((m_player.gameObject.transform.position.y <= gameObject.transform.position.y + 1) && (m_tempFirerate <= 0))
         {
-            Debug.Log("Message or some shit");
             GameObject tempRef = Instantiate<GameObject>(m_bulletPrefab, gameObject.transform.position, gameObject.transform.rotation);
             tempRef.GetComponent<Rigidbody2D>().AddForce(tempRef.transform.right * m_FiringForce, ForceMode2D.Impulse);
+            GameObject tempRef1 = Instantiate<GameObject>(m_bulletPrefab, gameObject.transform.position, gameObject.transform.rotation);
+            tempRef1.GetComponent<Rigidbody2D>().AddForce(tempRef1.transform.right * -m_FiringForce, ForceMode2D.Impulse);
             m_tempFirerate = m_Firerate;
         }
         
