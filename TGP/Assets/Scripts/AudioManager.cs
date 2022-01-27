@@ -61,6 +61,17 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void StopAudio(string name)
+    {
+        foreach (Audio a in AudioClip)
+        {
+            if (a.m_Name == name)
+            {
+                a.source.Stop();
+            }
+        }
+    }
+
     public void UpdateMixerVolume()
     {
         m_MusicMixerGroup.audioMixer.SetFloat("Music Volume", Mathf.Log10(VolumeSlider.musicVolume) * 20);
