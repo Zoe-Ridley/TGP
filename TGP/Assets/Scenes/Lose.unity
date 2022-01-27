@@ -374,7 +374,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 140761988}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
-        m_MethodName: BackButton
+        m_MethodName: ResetButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -15,6 +15,8 @@ public class PlayerWinLose : MonoBehaviour
         if (m_playerHitpoints <= 0)
         {
             SceneManager.LoadScene("Lose");
+            FindObjectOfType<AudioManager>().playAudio("Loss");
+            FindObjectOfType<AudioManager>().StopAudio("MainMusic");
         }
     }
 
@@ -22,6 +24,7 @@ public class PlayerWinLose : MonoBehaviour
     {
         if(collision.gameObject.tag == "Bullet")
         {
+            FindObjectOfType<AudioManager>().playAudio("PlayerHit");
             m_playerHitpoints -= 1;
         }
     }
