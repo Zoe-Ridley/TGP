@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2702342539089462534}
-  - component: {fileID: 2702342539089462535}
   - component: {fileID: 4258463790149613763}
+  - component: {fileID: 206761008}
   m_Layer: 0
   m_Name: Audio Manager
   m_TagString: Untagged
@@ -32,56 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2702342539089462535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2702342539089462552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2afcde9e6796664429733bd52496d54f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AudioClip:
-  - m_Name: Title Theme
-    Sound: {fileID: 8300000, guid: ccee9c845062ecb499ec4d55001c3c30, type: 3}
-    audioType: 0
-    volume: 1
-    loop: 1
-    Mixer: {fileID: 4702852774997484950, guid: 2908673705431384bb53e52493c65a69, type: 2}
-    source: {fileID: 0}
-  - m_Name: Dungeon Theme
-    Sound: {fileID: 8300000, guid: 328623798c99c744aa685a3acb5b1584, type: 3}
-    audioType: 0
-    volume: 1
-    loop: 1
-    Mixer: {fileID: 4702852774997484950, guid: 2908673705431384bb53e52493c65a69, type: 2}
-    source: {fileID: 0}
-  - m_Name: Victory Theme
-    Sound: {fileID: 8300000, guid: 12aa064d8a1a7aa4b84623650541e4bf, type: 3}
-    audioType: 0
-    volume: 1
-    loop: 0
-    Mixer: {fileID: 4702852774997484950, guid: 2908673705431384bb53e52493c65a69, type: 2}
-    source: {fileID: 0}
-  - m_Name: Game Over Theme
-    Sound: {fileID: 8300000, guid: 28de71183d7b68b488543936d59c0d00, type: 3}
-    audioType: 0
-    volume: 1
-    loop: 0
-    Mixer: {fileID: 4702852774997484950, guid: 2908673705431384bb53e52493c65a69, type: 2}
-    source: {fileID: 0}
-  - m_Name: Slashing Sound
-    Sound: {fileID: 8300000, guid: 185ca1db53fa2684fbe38f64af034dbe, type: 3}
-    audioType: 0
-    volume: 0.8
-    loop: 0
-    Mixer: {fileID: -8618769775117880157, guid: 2908673705431384bb53e52493c65a69, type: 2}
-    source: {fileID: 0}
-  m_MusicMixerGroup: {fileID: 4702852774997484950, guid: 2908673705431384bb53e52493c65a69, type: 2}
-  m_SFXMixerGroup: {fileID: -8618769775117880157, guid: 2908673705431384bb53e52493c65a69, type: 2}
 --- !u!114 &4258463790149613763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,4 +44,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1087c5c69b6deba4baafe8b07db35f86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AudioMixer: {fileID: 0}
+  MusicText: {fileID: 0}
+  SFXText: {fileID: 0}
+--- !u!114 &206761008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2702342539089462552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87454bd3e824b5649b99e86ee394cedc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioClip:
+  - m_Name: Title Theme
+    Sound: {fileID: 8300000, guid: 71ece1c1f56fc55419cf60fcccb34181, type: 3}
+    audioType: 0
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  m_MusicMixerGroup: {fileID: 4702852774997484950, guid: 2908673705431384bb53e52493c65a69, type: 2}
+  m_SFXMixerGroup: {fileID: -8618769775117880157, guid: 2908673705431384bb53e52493c65a69, type: 2}
