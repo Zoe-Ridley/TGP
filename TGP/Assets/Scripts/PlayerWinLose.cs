@@ -24,8 +24,8 @@ public class PlayerWinLose : MonoBehaviour
     {
         if(collision.gameObject.tag == "Bullet")
         {
-            FindObjectOfType<AudioManager>().playAudio("PlayerHit");
             m_playerHitpoints -= 1;
+            FindObjectOfType<AudioManager>().playAudio("PlayerHit");
         }
     }
 }
