@@ -56,8 +56,8 @@ public class RangedEnemyDouble : MonoBehaviour
     {
         if(collision.CompareTag("PlayerBullet"))
         {
-            FindObjectOfType<AudioManager>().playAudio("EnemyDeath");
             Destroy(gameObject);
+            FindObjectOfType<AudioManager>().playAudio("EnemyDeath");
         }
     }
 }
