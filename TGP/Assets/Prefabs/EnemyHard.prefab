@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8900856788084800934}
   - component: {fileID: 3738980547458413464}
   - component: {fileID: -1857464882717981306}
+  - component: {fileID: 4560784659028531263}
   m_Layer: 0
   m_Name: EnemyHard
   m_TagString: Enemy
@@ -121,7 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_player: {fileID: 2069871475130941809, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
   m_bulletPrefab: {fileID: 2032384438344180425, guid: 8c34e96abb7c4294c87b022f9fb9432e, type: 3}
-  m_enemySpeed: 3
+  m_enemySpeed: 0
   m_FiringForce: 4
   m_Firerate: 3
 --- !u!70 &-1857464882717981306
@@ -140,3 +141,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
+--- !u!114 &4560784659028531263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6018071760415690220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71db16be62f8a5e49839f44163430ff8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_speed: 3
+  m_targetRange: 2
+  m_roamRange: {x: 2, y: 2}
