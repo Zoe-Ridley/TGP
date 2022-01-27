@@ -9,18 +9,15 @@ public class ButtonManager : MonoBehaviour
     {
         SceneManager.LoadScene("Main");
     }
-
     public void SettingsButton()
     {
         SceneManager.LoadScene("Settings");
     }
-
     public void ExitButton()
     {
         Debug.Log("Exit");
         Application.Quit();
     }
-
     public void BackButton()
     {
         SceneManager.LoadScene("MainMenu");

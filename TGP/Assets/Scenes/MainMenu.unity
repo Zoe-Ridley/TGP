@@ -281,26 +281,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 159962338}
   m_CullTransparentMesh: 1
---- !u!1 &206761007 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2702342539089462552, guid: 53befe986a6637245afb858ff45e2488, type: 3}
-  m_PrefabInstance: {fileID: 2702342539590720311}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &206761008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 206761007}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87454bd3e824b5649b99e86ee394cedc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AudioClip: []
-  m_MusicMixerGroup: {fileID: 4702852774997484950, guid: 2908673705431384bb53e52493c65a69, type: 2}
-  m_SFXMixerGroup: {fileID: -8618769775117880157, guid: 2908673705431384bb53e52493c65a69, type: 2}
 --- !u!1 &221150610
 GameObject:
   m_ObjectHideFlags: 0
@@ -2101,6 +2081,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audio Manager
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2702342539089462535, guid: 53befe986a6637245afb858ff45e2488, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53befe986a6637245afb858ff45e2488, type: 3}
