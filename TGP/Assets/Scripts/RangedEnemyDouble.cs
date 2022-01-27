@@ -17,23 +17,23 @@ public class RangedEnemyDouble : MonoBehaviour
     void Start()
     {
         m_RB = GetComponent<Rigidbody2D>();
-
+        m_player = GameObject.Find("Player");
         m_tempFirerate = m_Firerate;
     }
 
     void Update()
     {
-        if (m_player.gameObject.transform.position.y < gameObject.transform.position.y)
+        if (m_player.transform.position.y < gameObject.transform.position.y)
         {
             m_RB.AddForce(Vector2.down * m_enemySpeed, ForceMode2D.Force);
         }
-        if (m_player.gameObject.transform.position.y > gameObject.transform.position.y)
+        if (m_player.transform.position.y > gameObject.transform.position.y)
         {
             m_RB.AddForce(Vector2.up * m_enemySpeed, ForceMode2D.Force);
         }
 
         m_tempFirerate -= Time.deltaTime;
-        if ((m_player.gameObject.transform.position.y >= gameObject.transform.position.y - 1) && (m_tempFirerate <= 0))
+        if ((m_player.transform.position.y >= gameObject.transform.position.y - 1) && (m_tempFirerate <= 0))
         {
             GameObject tempRef = Instantiate<GameObject>(m_bulletPrefab, gameObject.transform.position, gameObject.transform.rotation);
             tempRef.GetComponent<Rigidbody2D>().AddForce(tempRef.transform.right * m_FiringForce, ForceMode2D.Impulse);
@@ -41,7 +41,7 @@ public class RangedEnemyDouble : MonoBehaviour
             tempRef1.GetComponent<Rigidbody2D>().AddForce(tempRef1.transform.right * -m_FiringForce, ForceMode2D.Impulse);
             m_tempFirerate = m_Firerate;
         }
-        if ((m_player.gameObject.transform.position.y <= gameObject.transform.position.y + 1) && (m_tempFirerate <= 0))
+        if ((m_player.transform.position.y <= gameObject.transform.position.y + 1) && (m_tempFirerate <= 0))
         {
             GameObject tempRef = Instantiate<GameObject>(m_bulletPrefab, gameObject.transform.position, gameObject.transform.rotation);
             tempRef.GetComponent<Rigidbody2D>().AddForce(tempRef.transform.right * m_FiringForce, ForceMode2D.Impulse);

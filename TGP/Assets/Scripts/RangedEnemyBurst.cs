@@ -17,7 +17,7 @@ public class RangedEnemyBurst : MonoBehaviour
     void Start()
     {
         m_RB = GetComponent<Rigidbody2D>();
-
+        m_player = GameObject.Find("Player");
         m_tempFirerate = m_Firerate;
     }
 
@@ -33,25 +33,25 @@ public class RangedEnemyBurst : MonoBehaviour
         }
 
         m_tempFirerate -= Time.deltaTime;
-        if ((m_player.gameObject.transform.position.y >= gameObject.transform.position.y - 1) && (m_tempFirerate <= 0) && (m_player.gameObject.transform.position.x >= gameObject.transform.position.x))
+        if ((m_player.transform.position.y >= gameObject.transform.position.y - 1) && (m_tempFirerate <= 0) && (m_player.transform.position.x >= gameObject.transform.position.x))
         {
             GameObject tempRef = Instantiate<GameObject>(m_bulletPrefab, gameObject.transform.position, gameObject.transform.rotation);
             tempRef.GetComponent<Rigidbody2D>().AddForce(tempRef.transform.right * m_FiringForce, ForceMode2D.Impulse);
             m_tempFirerate = m_Firerate;
         }
-        if ((m_player.gameObject.transform.position.y <= gameObject.transform.position.y + 1) && (m_tempFirerate <= 0) && (m_player.gameObject.transform.position.x >= gameObject.transform.position.x))
+        if ((m_player.transform.position.y <= gameObject.transform.position.y + 1) && (m_tempFirerate <= 0) && (m_player.transform.position.x >= gameObject.transform.position.x))
         {
             GameObject tempRef = Instantiate<GameObject>(m_bulletPrefab, gameObject.transform.position, gameObject.transform.rotation);
             tempRef.GetComponent<Rigidbody2D>().AddForce(tempRef.transform.right * m_FiringForce, ForceMode2D.Impulse);
             m_tempFirerate = m_Firerate;
         }
-        if ((m_player.gameObject.transform.position.y >= gameObject.transform.position.y - 1) && (m_tempFirerate <= 0) && (m_player.gameObject.transform.position.x <= gameObject.transform.position.x))
+        if ((m_player.transform.position.y >= gameObject.transform.position.y - 1) && (m_tempFirerate <= 0) && (m_player.transform.position.x <= gameObject.transform.position.x))
         {
             GameObject tempRef1 = Instantiate<GameObject>(m_bulletPrefab, gameObject.transform.position, gameObject.transform.rotation);
             tempRef1.GetComponent<Rigidbody2D>().AddForce(tempRef1.transform.right * -m_FiringForce, ForceMode2D.Impulse);
             m_tempFirerate = m_Firerate;
         }
-        if ((m_player.gameObject.transform.position.y <= gameObject.transform.position.y + 1) && (m_tempFirerate <= 0) && (m_player.gameObject.transform.position.x <= gameObject.transform.position.x))
+        if ((m_player.transform.position.y <= gameObject.transform.position.y + 1) && (m_tempFirerate <= 0) && (m_player.transform.position.x <= gameObject.transform.position.x))
         {
             GameObject tempRef1 = Instantiate<GameObject>(m_bulletPrefab, gameObject.transform.position, gameObject.transform.rotation);
             tempRef1.GetComponent<Rigidbody2D>().AddForce(tempRef1.transform.right * -m_FiringForce, ForceMode2D.Impulse);
