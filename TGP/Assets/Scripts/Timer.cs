@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class Timer : MonoBehaviour
         if(m_currentTime <= 0)
         {
             m_currentTime = 0;
+            SceneManager.LoadScene("Lose");
             //end game.
         }
     }
