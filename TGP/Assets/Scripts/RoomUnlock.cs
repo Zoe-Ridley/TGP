@@ -9,7 +9,6 @@ public class RoomUnlock : MonoBehaviour
     [SerializeField] private DungeonGenerator m_dungeonGenerator;
     [SerializeField] private GameObject m_player;
 
-
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))

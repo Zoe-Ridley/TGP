@@ -1975,34 +1975,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2702342539089462535, guid: 53befe986a6637245afb858ff45e2488, type: 3}
-      propertyPath: m_MusicMixerGroup
-      value: 
-      objectReference: {fileID: 4702852774997484950, guid: 2908673705431384bb53e52493c65a69, type: 2}
-    - target: {fileID: 2702342539089462535, guid: 53befe986a6637245afb858ff45e2488, type: 3}
-      propertyPath: AudioClip.Array.data[0].Mixer
-      value: 
-      objectReference: {fileID: 4702852774997484950, guid: 2908673705431384bb53e52493c65a69, type: 2}
-    - target: {fileID: 2702342539089462535, guid: 53befe986a6637245afb858ff45e2488, type: 3}
-      propertyPath: AudioClip.Array.data[1].Mixer
-      value: 
-      objectReference: {fileID: 4702852774997484950, guid: 2908673705431384bb53e52493c65a69, type: 2}
-    - target: {fileID: 2702342539089462535, guid: 53befe986a6637245afb858ff45e2488, type: 3}
-      propertyPath: AudioClip.Array.data[2].Mixer
-      value: 
-      objectReference: {fileID: 4702852774997484950, guid: 2908673705431384bb53e52493c65a69, type: 2}
-    - target: {fileID: 2702342539089462535, guid: 53befe986a6637245afb858ff45e2488, type: 3}
-      propertyPath: AudioClip.Array.data[3].Mixer
-      value: 
-      objectReference: {fileID: 4702852774997484950, guid: 2908673705431384bb53e52493c65a69, type: 2}
-    - target: {fileID: 2702342539089462535, guid: 53befe986a6637245afb858ff45e2488, type: 3}
-      propertyPath: AudioClip.Array.data[4].Mixer
-      value: 
-      objectReference: {fileID: -8618769775117880157, guid: 2908673705431384bb53e52493c65a69, type: 2}
-    - target: {fileID: 2702342539089462535, guid: 53befe986a6637245afb858ff45e2488, type: 3}
-      propertyPath: AudioClip.Array.data[4].audioType
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2702342539089462552, guid: 53befe986a6637245afb858ff45e2488, type: 3}
       propertyPath: m_Name
       value: Audio Manager
@@ -2015,8 +1987,7 @@ PrefabInstance:
       propertyPath: MusicText
       value: 
       objectReference: {fileID: 1707508741}
-    m_RemovedComponents:
-    - {fileID: 2702342539089462535, guid: 53befe986a6637245afb858ff45e2488, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53befe986a6637245afb858ff45e2488, type: 3}
 --- !u!1 &1381018234
 GameObject:
