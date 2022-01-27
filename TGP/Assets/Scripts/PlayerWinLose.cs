@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerWinLose : MonoBehaviour
 {
     [SerializeField] private int m_playerHitpoints;
+    [SerializeField] private Text m_textHitCounter;
 
     void Update()
     {
+        m_textHitCounter.text = "HP: " + m_playerHitpoints;
         if (m_playerHitpoints <= 0)
         {
             SceneManager.LoadScene("Lose");
