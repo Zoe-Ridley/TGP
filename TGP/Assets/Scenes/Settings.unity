@@ -1942,6 +1942,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 206761008, guid: 53befe986a6637245afb858ff45e2488, type: 3}
+      propertyPath: AudioClip.Array.data[4].volume
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 2702342539089462534, guid: 53befe986a6637245afb858ff45e2488, type: 3}
       propertyPath: m_RootOrder
       value: 5
