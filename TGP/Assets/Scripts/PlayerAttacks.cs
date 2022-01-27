@@ -31,6 +31,7 @@ public class PlayerAttacks : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             m_playerAnimator.SetTrigger("melee");
+            FindObjectOfType<AudioManager>().playAudio("PlayerMelee");
             GameObject knifeClone = Instantiate<GameObject>(m_weaponPrefab, gameObject.transform.position, gameObject.transform.rotation);
             Destroy(knifeClone, 0.5f);
         }
