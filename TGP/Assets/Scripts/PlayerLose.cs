@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PlayerLose : MonoBehaviour
+public class PlayerWinLose : MonoBehaviour
 {
     [SerializeField] private int m_playerHitpoints;
     [SerializeField] private Text m_textHitCounter;
