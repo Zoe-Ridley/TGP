@@ -15,6 +15,8 @@ public class RoomPathfindingSetup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Vector3 vec3 = new Vector3(transform.position.x, transform.position.y);
+
         m_grid = new Grid<PathNode>(GridWidth, GridHeight, TileSize, OriginPosition, (Grid<PathNode> g, int x, int y) 
             => new PathNode(g, x, y));
 

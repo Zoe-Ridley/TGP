@@ -8,6 +8,7 @@ public class RoamState : EnemyState
     public RoamState(EnemyAI enemyAI)
     {
         m_enemyAI = enemyAI;
+        enemyAI.m_isMoving = false;
         path = null;
     }
 
@@ -19,7 +20,7 @@ public class RoamState : EnemyState
         // if the enemy AI does not have a path generate a random path
         if (!m_enemyAI.m_isMoving)
         {
-            path = m_enemyAI.m_pathFinder.FindPath(m_enemyAI.GetPosition(), player.transform.position);
+            path = m_enemyAI.m_pathFinder.FindPath(m_enemyAI.GetPosition(), m_enemyAI.GetRandomDestination());
             m_enemyAI.m_isMoving = true;
         }
         else
@@ -31,7 +32,6 @@ public class RoamState : EnemyState
         // if the enemy is withing range switch to chasing
         if (distanceToPlayer < m_enemyAI.GetTargetRange())
         {
-            m_enemyAI.m_isMoving = false;
             m_enemyAI.m_state = new ChaseState(m_enemyAI);
         }
     }

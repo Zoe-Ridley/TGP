@@ -8,11 +8,14 @@ public class ChaseState : EnemyState
     public ChaseState(EnemyAI enemyAI)
     {
         m_enemyAI = enemyAI;
+        m_enemyAI.m_isMoving = false;
         path = null;
     }
 
     public override void Update()
     {
+        Debug.Log("ChaseState");
+
         GameObject player = GameObject.Find("Player");
         float playerDistance = Vector3.Distance(player.transform.position, m_enemyAI.GetPosition());
 
@@ -24,20 +27,19 @@ public class ChaseState : EnemyState
         }
         else
         {
+            Debug.Log(playerDistance);
             m_enemyAI.HandleMovement(path);
         }
 
         // start roaming if the enemy is out of range
         if (playerDistance >= m_enemyAI.GetTargetRange())
         {
-            m_enemyAI.m_isMoving = false;
             m_enemyAI.m_state = new RoamState(m_enemyAI);
         }
 
         // If the player is in range switch to attack
         if (playerDistance <= m_enemyAI.GetAttackRange())
         {
-            m_enemyAI.m_isMoving = false;
             m_enemyAI.m_state = new MeleeAttackState(m_enemyAI);
         }
     }

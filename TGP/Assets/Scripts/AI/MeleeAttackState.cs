@@ -9,6 +9,7 @@ public class MeleeAttackState : EnemyState
     public MeleeAttackState(EnemyAI enemyAI)
     {
         m_enemyAI = enemyAI;
+        m_enemyAI.m_isMoving = false;
         m_timeSinceLastAttack = 0.0f;
     }
 
@@ -20,7 +21,7 @@ public class MeleeAttackState : EnemyState
         if (Time.fixedUnscaledTime > m_timeSinceLastAttack + m_enemyAI.GetAttackRate())
         {
             m_timeSinceLastAttack = Time.fixedUnscaledTime;
-            Debug.Log("attack mode");
+            Debug.Log("Attacking");
 
             if (playerDistance > m_enemyAI.GetAttackRange())
             {

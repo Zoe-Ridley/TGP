@@ -28,15 +28,12 @@ public class EnemyAI : MonoBehaviour
     {
         m_startPosition = transform.position;
         m_pathFinder = transform.parent.gameObject.GetComponent<RoomPathfindingSetup>().GetPathFinder();
-        m_state = new ChaseState(this);
+        m_state = new RoamState(this);
     }
 
     // Update is called once per frame
     void Update()
     {
-        GameObject player = GameObject.Find("Player");
-        m_playerPosition = player.transform.position;
-
         m_state.Update();
     }
 
@@ -57,11 +54,11 @@ public class EnemyAI : MonoBehaviour
             if (Vector3.Distance(transform.position, path[0]) >= 0.1f)
             {
                 Walk(path[0]);
+                Debug.Log(path[0].ToString());
             }
             else
             {
                 path.RemoveAt(0);
-                StopMoving();
             }
         }
 
@@ -73,6 +70,7 @@ public class EnemyAI : MonoBehaviour
                 if (Vector3.Distance(transform.position, path[0]) >= 0.1f)
                 {
                     Walk(path[0]);
+                    Debug.Log(path[0].ToString());
                 }
                 else
                 {
