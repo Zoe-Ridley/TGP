@@ -2,14 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pathfinding : MonoBehaviour
+public class Pathfinding 
 {
-
     private const int MOVE_STRAIGHT_COST = 10;
     private const int MOVE_DIAGONAL_COST = 14;
-
-    // Turn the class into a singleton so no other class can create another instance
-    public static Pathfinding m_instance { get; private set; }
 
     private Grid<PathNode> m_grid;
     private List<PathNode> m_openList;
@@ -17,13 +13,11 @@ public class Pathfinding : MonoBehaviour
 
     public Pathfinding(int width, int height)
     {
-        m_instance = this;
         m_grid = new Grid<PathNode>(width, height, 1f, Vector3.zero, (Grid<PathNode> g, int x, int y) => new PathNode(g, x, y));
     }
 
     public Pathfinding(Grid<PathNode> grid)
     {
-        m_instance = this;
         m_grid = grid;
     }
 
