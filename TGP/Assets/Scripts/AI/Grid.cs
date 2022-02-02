@@ -51,6 +51,11 @@ public class Grid<TGridObject> {
         }
     }
 
+    public Vector3 GetOriginPos()
+    {
+        return m_originPos;
+    }
+
     /// <summary>
     /// returns the width of the grid
     /// </summary>

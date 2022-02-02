@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Bloom Profile
   m_EditorClassIdentifier: 
   components:
-  - {fileID: 7496990267533024580}
---- !u!114 &7496990267533024580
+  - {fileID: 3645276063209338304}
+--- !u!114 &3645276063209338304
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -33,8 +33,8 @@ MonoBehaviour:
     m_Value: 0.9
     min: 0
   intensity:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 0.5
     min: 0
   scatter:
     m_OverrideState: 0

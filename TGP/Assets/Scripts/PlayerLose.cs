@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PlayerWinLose : MonoBehaviour
+public class PlayerLose : MonoBehaviour
 {
     [SerializeField] private int m_playerHitpoints;
     [SerializeField] private Text m_textHitCounter;
@@ -22,7 +22,7 @@ public class PlayerWinLose : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Bullet")
+        if (collision.gameObject.tag == "Bullet")
         {
             m_playerHitpoints -= 1;
             FindObjectOfType<AudioManager>().playAudio("PlayerHit");

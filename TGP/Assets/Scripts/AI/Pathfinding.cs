@@ -50,8 +50,10 @@ public class Pathfinding
         {
             List<Vector3> vectorPath = new List<Vector3>();
 
-            foreach (PathNode pathNode in path) {
-                vectorPath.Add(new Vector3(pathNode.x, pathNode.y) * m_grid.GetCellSize() + Vector3.one * m_grid.GetCellSize() * .5f);
+            foreach (PathNode pathNode in path) 
+            {
+                vectorPath.Add(new Vector3(pathNode.x, pathNode.y) * m_grid.GetCellSize() + m_grid.GetOriginPos() + 
+                    Vector3.one * m_grid.GetCellSize() * .5f);
             }
 
             return vectorPath;

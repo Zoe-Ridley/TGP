@@ -27,7 +27,7 @@ public class EnemyAI : MonoBehaviour
     void Start()
     {
         m_startPosition = transform.position;
-        m_pathFinder = transform.parent.gameObject.GetComponent<RoomPathfindingSetup>().GetPathFinder();
+        m_pathFinder = GameObject.Find("GlobalGrid").GetComponent<RoomPathfindingSetup>().GetPathFinder();
         m_state = new RoamState(this);
     }
 
@@ -51,14 +51,14 @@ public class EnemyAI : MonoBehaviour
         // Last node
         if (path.Count == 1)
         {
-            if (Vector3.Distance(transform.position, path[0]) >= 0.1f)
+            if (Vector3.Distance(transform.position, path[0]) >= 0.5f)
             {
                 Walk(path[0]);
-                Debug.Log(path[0].ToString());
             }
             else
             {
                 path.RemoveAt(0);
+                StopMoving();
             }
         }
 
@@ -67,10 +67,9 @@ public class EnemyAI : MonoBehaviour
             // not the last node
             if (path.Count > 1)
             {
-                if (Vector3.Distance(transform.position, path[0]) >= 0.1f)
+                if (Vector3.Distance(transform.position, path[0]) >= 0.5f)
                 {
                     Walk(path[0]);
-                    Debug.Log(path[0].ToString());
                 }
                 else
                 {
@@ -80,6 +79,40 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    public void HandleMovement(List<Vector3> path, ref int index)
+    {
+        if (path == null || path.Count <= 0)
+        {
+            return;
+        }
+
+        // Ensure that we do not travel back to further node and the index is not more than the path count
+        if (index + 1 < path.Count)
+        {
+            if (Vector3.Distance(transform.position, path[0]) > Vector3.Distance(transform.position, path[1]))
+            {
+                path.RemoveAt(0);
+            }
+        }
+
+        // Keep looping as long as the index is not more than the path count
+        if (index < path.Count)
+        {
+            if (Vector3.Distance(transform.position, path[index]) >= 0.5f)
+            {
+                Walk(path[index]);
+            }
+            else
+            {
+                index++;
+            }
+        }
+        else
+        {
+            index = 0;
+            path = null;
+        }
+    }
 
     /// <summary>
     /// <para> Move the enemy AI to a destination vector </para>

@@ -12,8 +12,9 @@ public class RoomPathfindingSetup : MonoBehaviour
     Pathfinding m_PathFinder;
     Grid<PathNode> m_grid;
 
-    // Start is called before the first frame update
-    void Start()
+    // Must be set to awake to ensure it is called before Enemy script
+    // Note: Awake functions are guranteed to be called before start functions
+    void Awake()
     {
         Vector3 vec3 = new Vector3(transform.position.x, transform.position.y);
 
