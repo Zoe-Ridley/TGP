@@ -43,14 +43,4 @@ public class PlayerMovement : MonoBehaviour
     {
         m_RB.velocity = new Vector2(m_playerDir.x * playerSpeed, m_playerDir.y * playerSpeed);
     }
-
-    void WalkUpAnimation()
-    {
-
-    }
-
-    void WalkDownAnimation()
-    {
-
-    }
 }
