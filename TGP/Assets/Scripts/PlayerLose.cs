@@ -34,6 +34,7 @@ public class PlayerLose : MonoBehaviour
         }
     }
 
+    // for trigger collision
     private void OnTriggerEnter2D(Collider2D collision)
     {
         string enemyType = collision.gameObject.tag;
@@ -43,12 +44,25 @@ public class PlayerLose : MonoBehaviour
             switch (enemyType)
             {
                 case "Bullet":
-                    m_playerHitpoints -= 1;
+                    m_playerHitpoints--;
                     FindObjectOfType<AudioManager>().playAudio("PlayerHit");
                     m_invulnerable = true;
                     break;
+            }
+        }
+    }
+
+    // For kinematic or dynamic collision
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        string enemyType = collision.gameObject.tag;
+
+        if (!m_invulnerable)
+        {
+            switch (enemyType)
+            {
                 case "MeleeEnemy":
-                    m_playerHitpoints -= 1;
+                    m_playerHitpoints--;
                     FindObjectOfType<AudioManager>().playAudio("PlayerHit");
                     m_invulnerable = true;
                     break;

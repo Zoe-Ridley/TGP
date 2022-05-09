@@ -37,6 +37,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (m_health <= 0)
         {
+            FindObjectOfType<AudioManager>().playAudio("EnemyDeath");
             Destroy(gameObject);
         }
 
