@@ -70,12 +70,4 @@ public class PlayerMovement : MonoBehaviour
     {
         m_rigidBody.velocity = new Vector2(m_playerDir.x * playerSpeed, m_playerDir.y * playerSpeed);
     }
-
-    private void Melee()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            m_playerAnimator.SetTrigger("melee");
-        }
-    }
 }
