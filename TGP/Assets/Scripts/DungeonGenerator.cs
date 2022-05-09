@@ -23,6 +23,7 @@ public class DungeonGenerator : MonoBehaviour
         public bool m_opened;
     };
 
+    public Cell FinalRoom;
     public Vector2 m_size;
     public int m_startPosition = 0;
     public GameObject m_room;
@@ -35,6 +36,7 @@ public class DungeonGenerator : MonoBehaviour
     void Start()
     {
         MazeGenerator();
+
     }
 
     public void OpenRoom(Vector2 tempPlayerPosition)
@@ -101,6 +103,7 @@ public class DungeonGenerator : MonoBehaviour
                 }
             }
         }
+        FinalRoom = m_GeneratedRooms[m_GeneratedRooms.Count - 1];
     }
 
     public void MazeGenerator()
