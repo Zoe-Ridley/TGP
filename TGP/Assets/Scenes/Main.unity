@@ -228,7 +228,7 @@ PrefabInstance:
       objectReference: {fileID: 1555772619}
     - target: {fileID: 8303425887882683621, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
       propertyPath: m_playerHitpoints
-      value: 2341234
+      value: 1234
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6908907554547644070, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
