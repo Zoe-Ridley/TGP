@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - PlayerBullet
   - World
+  - MeleeEnemy
   layers:
   - Default
   - TransparentFX

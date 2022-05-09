@@ -24,6 +24,12 @@ public class RoomPathfindingSetup : MonoBehaviour
         m_PathFinder = new Pathfinding(m_grid);
     }
 
+    public void ChangeGrid(Grid<PathNode> grid)
+    {
+        m_grid = grid;
+        m_PathFinder = new Pathfinding(m_grid);
+    }
+
     public Grid<PathNode> GetGrid()
     {
         return m_grid;    

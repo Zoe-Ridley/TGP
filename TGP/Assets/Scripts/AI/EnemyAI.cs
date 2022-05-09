@@ -27,7 +27,7 @@ public class EnemyAI : MonoBehaviour
     void Start()
     {
         m_startPosition = transform.position;
-        m_pathFinder = GameObject.Find("GlobalGrid").GetComponent<RoomPathfindingSetup>().GetPathFinder();
+        m_pathFinder = this.transform.parent.GetComponent<RoomPathfindingSetup>().GetPathFinder();
         m_state = new RoamState(this);
     }
 
