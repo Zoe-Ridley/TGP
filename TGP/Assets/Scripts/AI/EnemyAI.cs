@@ -11,6 +11,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float m_attackRange = 1.0f;
     [SerializeField] private float m_attackRate = 1.0f;
     [SerializeField] private Vector2 m_roamRange;
+    [SerializeField] private int m_health = 2;
 
     public bool m_isMoving { get; set; } = false;
 
@@ -27,15 +28,29 @@ public class EnemyAI : MonoBehaviour
     void Start()
     {
         m_startPosition = transform.position;
-        m_pathFinder = GameObject.Find("GlobalGrid").GetComponent<RoomPathfindingSetup>().GetPathFinder();
+        m_pathFinder = this.transform.parent.GetComponent<RoomPathfindingSetup>().GetPathFinder();
         m_state = new RoamState(this);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (m_health <= 0)
+        {
+            FindObjectOfType<AudioManager>().playAudio("EnemyDeath");
+            Destroy(gameObject);
+        }
+
         m_state.Update();
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "PlayerBullet")
+        {
+            m_health--;
+        }
+    }   
 
     /// <summary>
     /// <para>Using the pathfinder class the AI calculates a vector list to get to the destination </para>

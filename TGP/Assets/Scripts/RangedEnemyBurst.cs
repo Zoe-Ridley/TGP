@@ -63,6 +63,7 @@ public class RangedEnemyBurst : MonoBehaviour
     {
         if (collision.CompareTag("PlayerBullet"))
         {
+            Debug.Log("test");
             Destroy(gameObject);
             FindObjectOfType<AudioManager>().playAudio("EnemyDeath");
         }
