@@ -15,10 +15,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Minimap
+  - Environment
+  - Player
+  - Enemy
   - 
   - 
   - 
@@ -44,13 +44,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Background
-    uniqueID: 53176087
-    locked: 0
-  - name: Walls
-    uniqueID: 871653429
-    locked: 0
-  - name: Player
-    uniqueID: 1956705135
     locked: 0

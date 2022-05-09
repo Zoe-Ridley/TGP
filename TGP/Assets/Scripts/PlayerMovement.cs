@@ -6,26 +6,53 @@ public class PlayerMovement : MonoBehaviour
 {
     public float playerSpeed;
 
-    private Rigidbody2D m_RB;
     private Vector2 m_playerDir;
     private SpriteRenderer m_spriteRenderer;
 
-    private CharacterController m_playerController;
+    private Rigidbody2D m_rigidBody;
     public Animator m_playerAnimator;
+
+    private bool facingRight;
+    private bool facingFront;
 
     void Start()
     {
-        m_RB = GetComponent<Rigidbody2D>();
+        m_rigidBody = GetComponent<Rigidbody2D>();
 
         m_spriteRenderer = GetComponent<SpriteRenderer>();
 
-        m_playerController = GetComponent<CharacterController>();
         m_playerAnimator = GetComponentInChildren<Animator>();
     }
 
     void Update()
     {
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
+
+        // controls which way the player is facing.
+        m_spriteRenderer.flipX = !facingRight;
+
+        if (movement.x > 0)
+        {
+            facingRight = true;
+        }
+        else if (movement.x < 0)
+        {
+            facingRight = false;
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (movement.y > 0)
+            {
+                facingFront = false;
+                m_playerAnimator.SetTrigger("meleeBack");
+            }
+            else if (movement.y < 0)
+            {
+                facingFront = true;
+                m_playerAnimator.SetTrigger("melee");
+            }
+        }
 
         m_playerAnimator.SetFloat("Horizontal", movement.x);
         m_playerAnimator.SetFloat("Vertical", movement.y);
@@ -41,6 +68,6 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        m_RB.velocity = new Vector2(m_playerDir.x * playerSpeed, m_playerDir.y * playerSpeed);
+        m_rigidBody.velocity = new Vector2(m_playerDir.x * playerSpeed, m_playerDir.y * playerSpeed);
     }
 }
