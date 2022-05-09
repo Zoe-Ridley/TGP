@@ -7,6 +7,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+//TODO: Make a variable for width and height of the rooms generated
+
+
 [Serializable]
 public class DungeonGenerator : MonoBehaviour
 {
