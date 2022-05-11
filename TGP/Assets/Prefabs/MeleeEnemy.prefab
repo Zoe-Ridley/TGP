@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7854293099060511571}
   - component: {fileID: 7854293099060511570}
   - component: {fileID: -6072330024728601167}
+  - component: {fileID: -3523786450198181449}
   m_Layer: 0
   m_Name: MeleeEnemy
   m_TagString: MeleeEnemy
@@ -151,3 +152,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
+--- !u!95 &-3523786450198181449
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3366049877109418349}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b67e35df8346f5e4a92f828e8ae1608c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
