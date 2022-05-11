@@ -27,7 +27,7 @@ public class RangedEnemyDouble : MonoBehaviour
         m_player = GameObject.Find("Player");
         m_tempFirerate = m_Firerate;
         m_enemyKillCount = 0;
-        Debug.Log(m_enemyCount);
+        //Debug.Log(m_enemyCount);
     }
 
     void Update()
@@ -62,7 +62,7 @@ public class RangedEnemyDouble : MonoBehaviour
     {
         if (collision.CompareTag("PlayerBullet") && m_enemyHP != 2)
         {
-            Debug.Log("enenmy hit" + m_enemyHP);
+            //Debug.Log("enenmy hit" + m_enemyHP);
             FindObjectOfType<AudioManager>().playAudio("EnemyDeath");
             m_enemyHP += 1;
         }
@@ -70,7 +70,7 @@ public class RangedEnemyDouble : MonoBehaviour
         {
             m_enemyKillCount += 1;
             m_enemyHP = 0;
-            Debug.Log(m_enemyKillCount);
+            //Debug.Log(m_enemyKillCount);
             Destroy(gameObject);
             FindObjectOfType<AudioManager>().playAudio("EnemyDeath");
             //m_enemyKillCounter.text = "Orange kills: " + m_enemyKillCount;

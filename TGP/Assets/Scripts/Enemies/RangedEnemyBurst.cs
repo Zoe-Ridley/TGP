@@ -39,31 +39,11 @@ public class RangedEnemyBurst : MonoBehaviour
         float angle = Mathf.Atan2(shootDirection.y, shootDirection.x) * Mathf.Rad2Deg;
         if (m_tempFirerate <= 0)
         {
-            Debug.Log("shoot");
+            //Debug.Log("shoot");
             GameObject tempRef = Instantiate(m_bulletPrefab, transform.position, Quaternion.AngleAxis(angle, Vector3.forward));
             tempRef.GetComponent<Rigidbody2D>().AddForce(shootDirection * m_FiringForce, ForceMode2D.Impulse);
             m_tempFirerate = m_Firerate;
         }
-
-
-        //if ((m_player.transform.position.y >= gameObject.transform.position.y - 1) && (m_tempFirerate <= 0) && (m_player.transform.position.x >= gameObject.transform.position.x))
-        //{
-        //    //RIGHT AND UP
-
-        //    GameObject tempRef = Instantiate(m_bulletPrefab, gameObject.transform.position, gameObject.transform.rotation);
-        //    tempRef.GetComponent<Rigidbody2D>().AddForce(tempRef.transform.right * m_FiringForce, ForceMode2D.Impulse);
-        //    m_tempFirerate = m_Firerate;
-        //}
-
-        //else if ((m_player.transform.position.y <= gameObject.transform.position.y + 1) && (m_tempFirerate <= 0) && (m_player.transform.position.x <= gameObject.transform.position.x))
-        //{
-        //    //LEFT AND DOWN
-
-        //    GameObject tempRef1 = Instantiate(m_bulletPrefab, gameObject.transform.position, gameObject.transform.rotation);
-        //    tempRef1.GetComponent<Rigidbody2D>().AddForce(tempRef1.transform.right * -m_FiringForce, ForceMode2D.Impulse);
-        //    m_tempFirerate = m_Firerate;
-        //}
-
 
     }
 
