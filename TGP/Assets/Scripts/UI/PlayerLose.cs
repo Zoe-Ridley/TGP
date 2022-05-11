@@ -10,12 +10,21 @@ public class PlayerLose : MonoBehaviour
     [SerializeField] private Text m_textHitCounter;
     [SerializeField] private float m_invulnerableTime;
 
+    [SerializeField] private Image m_playerHealthBar;
+
     bool m_invulnerable;
     float m_invTimer;
 
+    void Start()
+    {
+        m_playerHealthBar = GetComponent<Image>();
+    }
+
     void Update()
     {
+        m_playerHealthBar.fillAmount = m_playerHitpoints;
         m_textHitCounter.text = "HP: " + m_playerHitpoints;
+
         if (m_playerHitpoints <= 0)
         {
             SceneManager.LoadScene("Lose");
