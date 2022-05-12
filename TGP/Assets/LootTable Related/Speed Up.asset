@@ -10,6 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 181da07f6b30ed14c9666edc72a54abf, type: 3}
-  m_Name: Item 5
+  m_Name: Speed Up
   m_EditorClassIdentifier: 
-  Name: Running shoes
+  m_Type: 4
+  Name: Speed Up
+  m_ItemGameObject: {fileID: 0}
+  m_ChangeNum: 0.1
