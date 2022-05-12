@@ -7,6 +7,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+//TODO: Make a variable for width and height of the rooms generated
+
+
 [Serializable]
 public class DungeonGenerator : MonoBehaviour
 {
@@ -95,6 +98,12 @@ public class DungeonGenerator : MonoBehaviour
                     //newRoom.UpdateRoom(currentCell.m_generatedRoomStatus);
                     newRoom.UpdateRoom(currentCell.m_closedRoomStatus);
                     newRoom.name += " " + currentCell.m_Position.x + "-" + currentCell.m_Position.y;
+
+                    // Setup the Pathfinding
+                    Vector3 pos = new Vector3((i * m_offset.x) - 5.5f, (-j * m_offset.y) - 5.5f, 0f);
+                    newRoom.AddComponent<RoomPathfindingSetup>();
+                    newRoom.GetComponent<RoomPathfindingSetup>().ChangeGrid(new Grid<PathNode>(11, 11, 1, pos, 
+                        (Grid<PathNode> g, int x, int y) => new PathNode(g, x, y)));
                 }
             }
         }

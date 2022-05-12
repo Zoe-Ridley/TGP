@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Shoot : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class Shoot : MonoBehaviour
     private float m_tempReloadTime;
     private int m_currentKnivesThrownLeft;
 
+    [Header("GUI")] 
+    [SerializeField] private TextMeshProUGUI m_reloadText;
+
     private void Start()
     {
         m_tempReloadTime = m_reloadTime;
@@ -27,6 +31,11 @@ public class Shoot : MonoBehaviour
 
         m_coolDown -= Time.deltaTime;
         //Debug.Log(m_coolDown);
+
+
+        // sets reload text from the start.
+        m_reloadText.SetText(m_currentKnivesThrownLeft + " / " + m_maxKnivesThrown);
+
         if ((Input.GetMouseButtonDown(0)) && (m_coolDown < 0f) && (m_currentKnivesThrownLeft != 0)) //Shooting, UI should update with knives left
         {
             //Mouse variables to shoot
