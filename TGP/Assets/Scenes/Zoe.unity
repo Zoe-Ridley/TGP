@@ -152,12 +152,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 936cbff6e586f2c4dbe8b439c5c30447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_size: {x: 3, y: 4}
   m_startPosition: 0
+  FinalRoom:
+    m_visited: 0
+    m_generatedRoomStatus: 00000000
+    m_closedRoomStatus: 00000000
+    m_Position: {x: 0, y: 0}
+    m_opened: 0
+  m_size: {x: 3, y: 4}
   m_room: {fileID: 8365982970090205779, guid: 67ad6da834d44bf4aaa844c1d8c660f3, type: 3}
   m_offset: {x: 20, y: 20}
   m_board: []
   m_GeneratedRooms: []
+  FinalRoomPrefab: {fileID: 8365982970090205779, guid: 9507e16abd116eb45874801379bb845f, type: 3}
 --- !u!4 &386135134
 Transform:
   m_ObjectHideFlags: 0

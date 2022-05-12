@@ -16,27 +16,27 @@ public class DungeonGenerator : MonoBehaviour
     [Serializable]
     public class Cell
     {
-        public bool m_visited = false;
+        public bool m_visited;
         public bool[] m_generatedRoomStatus = new bool[4];
         public bool[] m_closedRoomStatus = { false, false, false, false };
         public Vector2 m_Position;
         public bool m_opened;
     };
 
+    public int m_startPosition = 0;
     public Cell FinalRoom;
     public Vector2 m_size;
-    public int m_startPosition = 0;
     public GameObject m_room;
     public Vector2 m_offset;
-
     public List<Cell> m_board;
     public List<Cell> m_GeneratedRooms;
+
+    [SerializeField] private GameObject FinalRoomPrefab;
 
     // Start is called before the first frame update
     void Start()
     {
         MazeGenerator();
-
     }
 
     public void OpenRoom(Vector2 tempPlayerPosition)
@@ -88,6 +88,7 @@ public class DungeonGenerator : MonoBehaviour
 
     void GenerateDungeon()
     {
+        RoomBehaviour newRoom;
         for (int i = 0; i < m_size.x; i++)
         {
             for (int j = 0; j < m_size.y; j++)
@@ -95,8 +96,16 @@ public class DungeonGenerator : MonoBehaviour
                 Cell currentCell = m_board[Mathf.FloorToInt(i + j * m_size.x)];
                 if (currentCell.m_visited)
                 {
-                    var newRoom = Instantiate(m_room, new Vector3(i * m_offset.x, -j * m_offset.y, 0f), Quaternion.identity,
+                    if (currentCell == m_board[m_board.Count - 1])
+                    {
+                            newRoom = Instantiate(FinalRoomPrefab, new Vector3(i * m_offset.x, -j * m_offset.y, 0f), Quaternion.identity,
                             transform).GetComponent<RoomBehaviour>();
+                    }
+                    else
+                    {
+                            newRoom = Instantiate(m_room, new Vector3(i * m_offset.x, -j * m_offset.y, 0f), Quaternion.identity,
+                            transform).GetComponent<RoomBehaviour>();
+                    }
                     //newRoom.UpdateRoom(currentCell.m_generatedRoomStatus);
                     newRoom.UpdateRoom(currentCell.m_closedRoomStatus);
                     newRoom.name += " " + currentCell.m_Position.x + "-" + currentCell.m_Position.y;
@@ -104,7 +113,7 @@ public class DungeonGenerator : MonoBehaviour
                     // Setup the Pathfinding
                     Vector3 pos = new Vector3((i * m_offset.x) - 5.5f, (-j * m_offset.y) - 5.5f, 0f);
                     newRoom.AddComponent<RoomPathfindingSetup>();
-                    newRoom.GetComponent<RoomPathfindingSetup>().ChangeGrid(new Grid<PathNode>(11, 11, 1, pos, 
+                    newRoom.GetComponent<RoomPathfindingSetup>().ChangeGrid(new Grid<PathNode>(11, 11, 1, pos,
                         (Grid<PathNode> g, int x, int y) => new PathNode(g, x, y)));
                 }
             }

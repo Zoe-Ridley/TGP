@@ -244,6 +244,10 @@ PrefabInstance:
       propertyPath: near clip plane
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 2069871473769534634, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
+      propertyPath: orthographic size
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2069871475130941809, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
       propertyPath: m_Name
       value: Player
@@ -552,6 +556,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 936cbff6e586f2c4dbe8b439c5c30447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FinalRoom:
+    m_visited: 0
+    m_generatedRoomStatus: 00000000
+    m_closedRoomStatus: 00000000
+    m_Position: {x: 0, y: 0}
+    m_opened: 0
   m_size: {x: 4, y: 3}
   m_startPosition: 0
   m_room: {fileID: 8365982970090205779, guid: 67ad6da834d44bf4aaa844c1d8c660f3, type: 3}
