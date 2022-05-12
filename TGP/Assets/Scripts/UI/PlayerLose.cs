@@ -3,27 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerLose : MonoBehaviour
 {
+    public int m_playerMaxHP = 100;
     [SerializeField] private int m_playerHitpoints;
-    [SerializeField] private Text m_textHitCounter;
+    [SerializeField] private TextMeshProUGUI m_textHitCounter;
     [SerializeField] private float m_invulnerableTime;
 
-    [SerializeField] private Image m_playerHealthBar;
+    [Header("Slider")]
+    public Slider slider;
+    public Image fill;
 
     bool m_invulnerable;
     float m_invTimer;
 
     void Start()
     {
-        m_playerHealthBar = GetComponent<Image>();
+        slider = slider.GetComponent<Slider>();
+        fill = slider.GetComponent<Image>();
+        m_playerHitpoints = 100;
+        slider.value = m_playerHitpoints;
     }
 
     void Update()
     {
-        m_playerHealthBar.fillAmount = m_playerHitpoints;
-        m_textHitCounter.text = "HP: " + m_playerHitpoints;
+        slider.value = m_playerHitpoints;
+        m_textHitCounter.SetText(" " + m_playerHitpoints);
 
         if (m_playerHitpoints <= 0)
         {
