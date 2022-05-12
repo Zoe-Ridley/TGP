@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1731618953485584374}
   - component: {fileID: 1731618953485584373}
   - component: {fileID: 1731618953485584372}
-  - component: {fileID: 1694664648576833574}
   - component: {fileID: 1731618953485584379}
+  - component: {fileID: 988733847194039337}
   m_Layer: 0
   m_Name: RangedEnemy
   m_TagString: Enemy
@@ -114,7 +114,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1731618953485584378}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -127,23 +127,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1694664648576833574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1731618953485584378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 181c7ff4ddc87764f9c2eea3aec5ab80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_player: {fileID: 2069871475130941809, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
-  m_bulletPrefab: {fileID: 2032384438344180425, guid: 8c34e96abb7c4294c87b022f9fb9432e, type: 3}
-  m_enemySpeed: 3
-  m_FiringForce: 2
-  m_Firerate: 1
 --- !u!70 &1731618953485584379
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -160,3 +143,23 @@ CapsuleCollider2D:
   m_Offset: {x: 0.01213491, y: -0.07766318}
   m_Size: {x: 1.4096122, y: 1.6959958}
   m_Direction: 0
+--- !u!114 &988733847194039337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731618953485584378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc43533b3276944584107ddf1668d4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_deathMaterial: {fileID: 2100000, guid: d541ee5822a4c4149a01992d30d2c559, type: 2}
+  m_targetRange: 0
+  m_attackRange: 0
+  m_attackRate: 0
+  m_roamRange: {x: 3, y: 3}
+  m_speed: 3
+  m_health: 2
+  m_scoutRange: {x: 3, y: 3}

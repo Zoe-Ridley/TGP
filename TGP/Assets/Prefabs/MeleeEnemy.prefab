@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8529499662827076245}
   - component: {fileID: 7854293099060511566}
   - component: {fileID: 7854293099060511571}
-  - component: {fileID: 7854293099060511570}
   - component: {fileID: -6072330024728601167}
   - component: {fileID: -3523786450198181449}
+  - component: {fileID: -3624751714203562231}
   m_Layer: 0
   m_Name: MeleeEnemy
   m_TagString: MeleeEnemy
@@ -108,24 +108,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7854293099060511570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3366049877109418349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31455c0c8c06ca049b92faa90c0cb41e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_speed: 4
-  m_targetRange: 5
-  m_attackRange: 1
-  m_attackRate: 0.4
-  m_roamRange: {x: 3, y: 5}
-  m_health: 2
 --- !u!61 &-6072330024728601167
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -171,3 +153,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-3624751714203562231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3366049877109418349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2854480a500d274982b6d4b88c8d874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_deathMaterial: {fileID: 2100000, guid: d541ee5822a4c4149a01992d30d2c559, type: 2}
+  m_targetRange: 5
+  m_attackRange: 1
+  m_attackRate: 1
+  m_speed: 3
+  m_health: 3
+  m_roamRange: {x: 2, y: 2}

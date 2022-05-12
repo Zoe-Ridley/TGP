@@ -4122,11 +4122,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1731618953485584375, guid: 8fa98c187fae6954dadd90c4144869ec, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.5220125
+      value: -5.06
       objectReference: {fileID: 0}
     - target: {fileID: 1731618953485584375, guid: 8fa98c187fae6954dadd90c4144869ec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.2370012
+      value: -4.85
       objectReference: {fileID: 0}
     - target: {fileID: 1731618953485584375, guid: 8fa98c187fae6954dadd90c4144869ec, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4164,6 +4164,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RangedEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6514128721953786563, guid: 8fa98c187fae6954dadd90c4144869ec, type: 3}
+      propertyPath: m_deathMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: d541ee5822a4c4149a01992d30d2c559, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fa98c187fae6954dadd90c4144869ec, type: 3}
 --- !u!4 &6104050330631696848 stripped

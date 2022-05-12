@@ -2,49 +2,67 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class EnemyAI : MonoBehaviour
 {
     // Enemy info Variables
-    [SerializeField] private float m_speed;
-    [SerializeField] private float m_targetRange;
-    [SerializeField] private float m_attackRange = 1.0f;
-    [SerializeField] private float m_attackRate = 1.0f;
-    [SerializeField] private Vector2 m_roamRange;
-    [SerializeField] private int m_health = 2;
+    [SerializeField] protected Material m_deathMaterial;
+    [SerializeField] protected float m_targetRange;
+    [SerializeField] protected float m_attackRange;
+    [SerializeField] protected float m_attackRate;
+    [SerializeField] protected float m_speed;
+    [SerializeField] protected int m_health;
 
+    // variables for dissolve
+    protected float fade = 1.3f;
+    protected bool fading = false;
+    
     public bool m_isMoving { get; set; } = false;
 
     // position variables
-    private Vector3 m_playerPosition;
-    private Vector3 m_startPosition;
+    protected Vector3 m_startPosition;
 
-    public Pathfinding m_pathFinder { get; private set; }
+    public Pathfinding m_pathFinder { get; protected set; }
 
     // enemy states
     public EnemyState m_state { get; set; }
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         m_startPosition = transform.position;
-        m_pathFinder = this.transform.parent.GetComponent<RoomPathfindingSetup>().GetPathFinder();
-        m_state = new RoamState(this);
+        m_pathFinder = transform.parent.GetComponent<RoomPathfindingSetup>().GetPathFinder();
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         if (m_health <= 0)
         {
-            FindObjectOfType<AudioManager>().playAudio("EnemyDeath");
-            Destroy(gameObject);
+            if (!fading)
+            {
+                // Play the death animation and queue the object to be destroyed
+                FindObjectOfType<AudioManager>().playAudio("EnemyDeath");
+                Destroy(this.gameObject, fade);
+
+                GetComponent<SpriteRenderer>().material = m_deathMaterial;
+                gameObject.tag = "DeadEnemy";
+
+                m_state = null;
+                fading = true;
+            }
+            else
+            { 
+                GetComponent<SpriteRenderer>().material.SetFloat("_Fade", fade);
+                fade -= Time.deltaTime;
+            }
+
         }
 
-        m_state.Update();
+        if (m_state != null)
+            m_state.Update();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    protected void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "PlayerBullet")
         {
@@ -133,44 +151,23 @@ public class EnemyAI : MonoBehaviour
     /// <para> Move the enemy AI to a destination vector </para>
     /// <para> The function generates a direction vector and uses deltaTime and speed variable</para>
     /// </summary>
-    private void Walk(Vector3 destination)
+    protected void Walk(Vector3 destination)
     {
         Vector3 dir = (destination - transform.position).normalized;
 
         transform.position += m_speed * dir * Time.deltaTime;
     }
 
-    /// <summary>
-    /// Generate a random destinatino for the AI between the min and max range
-    /// </summary>
-    public Vector3 GetRandomDestination()
-    {
-        return m_startPosition + GetRandomDir() * Random.Range(m_roamRange.x, m_roamRange.y);
-    }
-
 
     /// <summary>
     /// Generates a three dimensional ( z=0 ) normalized vector pointing in a random direction.
     /// </summary>
-    private static Vector3 GetRandomDir()
+    protected static Vector3 GetRandomDir()
     {
         return new Vector3(UnityEngine.Random.Range(-1.0f, 1.0f), UnityEngine.Random.Range(-1.0f, 1.0f)).normalized;
     }
 
-    /// <summary>
-    /// Check if the enemy player is within range and if they switch the current state to CHASE
-    /// </summary>
-    /// <returns></returns>
-    public void CheckForTarget()
-    { 
-        if (Vector3.Distance(transform.position, m_playerPosition) <= m_targetRange)
-        {
-            // Player is within range
-            m_isMoving = false;
-        }
-    }
-
-    private void StopMoving()
+    protected void StopMoving()
     {
         m_isMoving = false;
     }
@@ -194,8 +191,18 @@ public class EnemyAI : MonoBehaviour
         return m_attackRate;
     }
 
-    public Vector3 GetPosition()
+    public Vector3 GetCurrentPosition()
     {
         return transform.position;
+    }
+
+    public Vector3 GetStartPosition()
+    {
+        return m_startPosition;
+    }
+
+    public void Death()
+    {
+        GetComponent<SpriteRenderer>().material = m_deathMaterial;
     }
 }
