@@ -6,6 +6,8 @@ public class RoomBehaviour : MonoBehaviour
     public GameObject[] m_walls; //0 Up, 1 Down, 2 Right, 3 Left
     public GameObject[] m_doors;
 
+    public Vector2 RoomSize;
+
     //true = door closed
     //false = door open
     public void UpdateRoom(bool[] status)
