@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -152,12 +152,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 936cbff6e586f2c4dbe8b439c5c30447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_size: {x: 3, y: 4}
-  m_startPosition: 0
+  RoomSize: {x: 20, y: 20}
+  SizeOfDungeon: {x: 3, y: 3}
+  FinalRoomPrefab: {fileID: 8365982970090205779, guid: 9507e16abd116eb45874801379bb845f, type: 3}
   m_room: {fileID: 8365982970090205779, guid: 67ad6da834d44bf4aaa844c1d8c660f3, type: 3}
-  m_offset: {x: 20, y: 20}
-  m_board: []
-  m_GeneratedRooms: []
+  MeleeEnemy: {fileID: 3366049877109418349, guid: d102a3c8b54f10048ba1a500033224bd, type: 3}
+  MaxMeleeEnemiesPerRoom: 3
+  RangedEnemy: {fileID: 1731618953485584378, guid: 8fa98c187fae6954dadd90c4144869ec, type: 3}
+  MaxRangedEnemiesPerRoom: 4
+  FinalRoom:
+    m_visited: 0
+    m_generatedRoomStatus: 00000000
+    m_closedRoomStatus: 00000000
+    m_Position: {x: 0, y: 0}
+    m_opened: 0
+    RoomObject: {fileID: 0}
+  AllPositionsOnBoard: []
+  GeneratedRooms: []
 --- !u!4 &386135134
 Transform:
   m_ObjectHideFlags: 0
