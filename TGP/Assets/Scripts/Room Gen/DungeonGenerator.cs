@@ -18,6 +18,9 @@ public class Cell
     public Vector2 m_Position;
     public bool m_opened;
     public GameObject RoomObject;
+    public int NumberOfEnemies;
+    public List<GameObject> RangedEnemyList;
+    public List<GameObject> MeleeEnemyList;
 };
 
 [Serializable]
@@ -51,6 +54,21 @@ public class DungeonGenerator : MonoBehaviour
         MazeGenerator();
     }
 
+    public Cell FindRoom(Vector2 objectPosition)
+    {
+        objectPosition.x = Mathf.RoundToInt(objectPosition.x / RoomSize.x);
+        objectPosition.y = Mathf.RoundToInt(objectPosition.y / RoomSize.y);
+
+        for (int i = 0; i < (GeneratedRooms.Count); i++)
+        {
+            //checking which room the player is inside by comparing positions
+            if (objectPosition == GeneratedRooms[i].m_Position)
+            {
+                return GeneratedRooms[i];
+            }
+        }
+        return null;
+    }    
     public void OpenRoom(Vector2 tempPlayerPosition)
     {
         tempPlayerPosition.x = Mathf.RoundToInt(tempPlayerPosition.x / RoomSize.x);
@@ -281,6 +299,7 @@ public class DungeonGenerator : MonoBehaviour
         for (int i = 0; i < rangedEnemyCount; i++)
         {
             GameObject newRangedEnemy = Instantiate(RangedEnemy, GenerateRandomPosition(minPosition, maxPosition), Quaternion.identity);
+            currentCell.NumberOfEnemies++;
         }
 
         for (int i = 0; i < meleeEnemyCount; i++)
@@ -288,6 +307,7 @@ public class DungeonGenerator : MonoBehaviour
             //Melee enemies rely on having the Room object as their parent in order to configure pathfinding.
             GameObject newMeleeEnemy = Instantiate(MeleeEnemy, currentCell.RoomObject.transform);
             newMeleeEnemy.transform.position = GenerateRandomPosition(minPosition, maxPosition);
+            currentCell.NumberOfEnemies++;
         }
     }
 

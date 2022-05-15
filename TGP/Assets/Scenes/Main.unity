@@ -139,8 +139,8 @@ PrefabInstance:
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2069871473769534634, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 4294967231
+      propertyPath: orthographic size
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2069871475130941809, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
       propertyPath: m_Name
@@ -733,12 +733,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 936cbff6e586f2c4dbe8b439c5c30447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_size: {x: 4, y: 3}
-  m_startPosition: 0
+  RoomSize: {x: 20, y: 20}
+  SizeOfDungeon: {x: 3, y: 3}
+  FinalRoomPrefab: {fileID: 8365982970090205779, guid: 9507e16abd116eb45874801379bb845f, type: 3}
   m_room: {fileID: 8365982970090205779, guid: 67ad6da834d44bf4aaa844c1d8c660f3, type: 3}
-  m_offset: {x: 20, y: 20}
-  m_board: []
-  m_GeneratedRooms: []
+  MeleeEnemy: {fileID: 3366049877109418349, guid: d102a3c8b54f10048ba1a500033224bd, type: 3}
+  MaxMeleeEnemiesPerRoom: 1
+  RangedEnemy: {fileID: 1731618953485584378, guid: 8fa98c187fae6954dadd90c4144869ec, type: 3}
+  MaxRangedEnemiesPerRoom: 1
+  FinalRoom:
+    m_visited: 0
+    m_generatedRoomStatus: 00000000
+    m_closedRoomStatus: 00000000
+    m_Position: {x: 0, y: 0}
+    m_opened: 0
+    RoomObject: {fileID: 0}
+    NumberOfEnemies: 0
+    RangedEnemyList: []
+    MeleeEnemyList: []
+  AllPositionsOnBoard: []
+  GeneratedRooms: []
 --- !u!4 &800891051
 Transform:
   m_ObjectHideFlags: 0
