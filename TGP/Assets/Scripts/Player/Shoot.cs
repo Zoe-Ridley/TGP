@@ -47,7 +47,7 @@ public class Shoot : MonoBehaviour
             //reload and cooldown application
             m_currentKnivesThrownLeft--;
             m_coolDown = m_coolDownTime;
-            Debug.Log(m_currentKnivesThrownLeft);
+            Debug.Log("Knives left:  " +m_currentKnivesThrownLeft);
         }
         else if (m_currentKnivesThrownLeft == 0) ////reloading, UI should say reloading
         {
