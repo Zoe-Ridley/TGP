@@ -5,11 +5,15 @@ using UnityEngine;
 public class ItemManager : MonoBehaviour
 {
     public Item m_data;
+    private GameObject PowerUp;
 
     // Start is called before the first frame update
     void Start()
     {
-       
+        if (m_data != null)
+        {
+            LoadItem(m_data);
+        }
     }
 
     // Update is called once per frame
