@@ -3327,7 +3327,7 @@ Transform:
   - {fileID: 8365982969312733439}
   - {fileID: 2266523412340036095}
   - {fileID: 6104050330631696848}
-  - {fileID: 5646856894957877834}
+  - {fileID: 6592252435078870488}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4035,7 +4035,7 @@ Transform:
   m_Father: {fileID: 8365982970090205776}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &4036197981525033183
+--- !u!1001 &3252369040543010637
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -4046,21 +4046,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeleeEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 7854293099060511571, guid: d102a3c8b54f10048ba1a500033224bd, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7854293099060511571, guid: d102a3c8b54f10048ba1a500033224bd, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8529499662827076245, guid: d102a3c8b54f10048ba1a500033224bd, type: 3}
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8529499662827076245, guid: d102a3c8b54f10048ba1a500033224bd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.59
+      value: 3.699397
       objectReference: {fileID: 0}
     - target: {fileID: 8529499662827076245, guid: d102a3c8b54f10048ba1a500033224bd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.19
+      value: -3.1867185
       objectReference: {fileID: 0}
     - target: {fileID: 8529499662827076245, guid: d102a3c8b54f10048ba1a500033224bd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8529499662827076245, guid: d102a3c8b54f10048ba1a500033224bd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4092,10 +4100,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d102a3c8b54f10048ba1a500033224bd, type: 3}
---- !u!4 &5646856894957877834 stripped
+--- !u!4 &6592252435078870488 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8529499662827076245, guid: d102a3c8b54f10048ba1a500033224bd, type: 3}
-  m_PrefabInstance: {fileID: 4036197981525033183}
+  m_PrefabInstance: {fileID: 3252369040543010637}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5526483184021141031
 PrefabInstance:
@@ -4104,6 +4112,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8365982970090205776}
     m_Modifications:
+    - target: {fileID: 988733847194039337, guid: 8fa98c187fae6954dadd90c4144869ec, type: 3}
+      propertyPath: m_speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 988733847194039337, guid: 8fa98c187fae6954dadd90c4144869ec, type: 3}
+      propertyPath: m_attackRange
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 988733847194039337, guid: 8fa98c187fae6954dadd90c4144869ec, type: 3}
+      propertyPath: m_targetRange
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 988733847194039337, guid: 8fa98c187fae6954dadd90c4144869ec, type: 3}
+      propertyPath: m_dangerDistance
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1731618953485584372, guid: 8fa98c187fae6954dadd90c4144869ec, type: 3}
+      propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1731618953485584372, guid: 8fa98c187fae6954dadd90c4144869ec, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1731618953485584372, guid: 8fa98c187fae6954dadd90c4144869ec, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1731618953485584374, guid: 8fa98c187fae6954dadd90c4144869ec, type: 3}
       propertyPath: m_SortingLayer
       value: 3

@@ -18,6 +18,10 @@ public class EnemyAI : MonoBehaviour
 
     [SerializeField] protected int m_health;
 
+
+    // The rigid body
+    protected Rigidbody2D m_rb;
+
     // variables for dissolve
     protected float fade = 1.3f;
     protected bool fading = false;
@@ -37,6 +41,7 @@ public class EnemyAI : MonoBehaviour
     {
         m_startPosition = transform.position;
         m_pathFinder = transform.parent.GetComponent<RoomPathfindingSetup>().GetPathFinder();
+        m_rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -139,8 +144,7 @@ public class EnemyAI : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, path[index]) >= 0.5f)
             {
-                Vector3 dir = (path[index] - transform.position).normalized;
-                MoveByDir(dir);
+                Walk(path[index]);
             }
             else
             {
@@ -160,9 +164,8 @@ public class EnemyAI : MonoBehaviour
     /// </summary>
     protected void Walk(Vector3 destination)
     {
-        Vector2 dir = (destination - transform.position).normalized;
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        GetComponent<Rigidbody2D>().MovePosition(rb.position + (m_speed * dir * Time.deltaTime));
+        Vector3 dir = (destination - transform.position).normalized;
+        transform.position += (dir * m_speed * Time.deltaTime);
     }
 
 
@@ -208,8 +211,8 @@ public class EnemyAI : MonoBehaviour
         return m_startPosition;
     }
 
-    public void MoveByDir(Vector3 dir)
+    public void MoveByDir(Vector2 dir)
     {
-        transform.position += m_speed * dir * Time.deltaTime;
+        m_rb.AddForce(m_speed * dir);
     }
 }
