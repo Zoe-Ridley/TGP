@@ -10,6 +10,12 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] protected float m_attackRange;
     [SerializeField] protected float m_attackRate;
     [SerializeField] protected float m_speed;
+    public float Speed
+    {
+        get { return m_speed; }
+        set { m_speed = value; }
+    }
+
     [SerializeField] protected int m_health;
 
     // variables for dissolve
@@ -133,7 +139,8 @@ public class EnemyAI : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, path[index]) >= 0.5f)
             {
-                Walk(path[index]);
+                Vector3 dir = (path[index] - transform.position).normalized;
+                MoveByDir(dir);
             }
             else
             {
@@ -153,9 +160,9 @@ public class EnemyAI : MonoBehaviour
     /// </summary>
     protected void Walk(Vector3 destination)
     {
-        Vector3 dir = (destination - transform.position).normalized;
-
-        transform.position += m_speed * dir * Time.deltaTime;
+        Vector2 dir = (destination - transform.position).normalized;
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        GetComponent<Rigidbody2D>().MovePosition(rb.position + (m_speed * dir * Time.deltaTime));
     }
 
 
@@ -201,8 +208,8 @@ public class EnemyAI : MonoBehaviour
         return m_startPosition;
     }
 
-    public void Death()
+    public void MoveByDir(Vector3 dir)
     {
-        GetComponent<SpriteRenderer>().material = m_deathMaterial;
+        transform.position += m_speed * dir * Time.deltaTime;
     }
 }
