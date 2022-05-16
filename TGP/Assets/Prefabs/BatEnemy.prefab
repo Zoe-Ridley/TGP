@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 9086434347659126794}
   - component: {fileID: 497619792004323443}
   - component: {fileID: -2359443006178777421}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BatEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1956705135
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 7013631516640934163, guid: b438465a32eb63243a7889eb1f400d29, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -139,11 +139,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31455c0c8c06ca049b92faa90c0cb41e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: 4
+  m_deathMaterial: {fileID: 0}
   m_targetRange: 5
   m_attackRange: 1
   m_attackRate: 0.4
-  m_roamRange: {x: 3, y: 5}
+  m_speed: 4
   m_health: 2
 --- !u!61 &-2359443006178777421
 BoxCollider2D:
