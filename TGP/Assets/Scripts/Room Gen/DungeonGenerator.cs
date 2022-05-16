@@ -135,7 +135,6 @@ public class DungeonGenerator : MonoBehaviour
                     {
                         newRoom = Instantiate(m_room, new Vector3(i * RoomSize.x, -j * RoomSize.y, 0f), Quaternion.identity,
                         transform).GetComponent<RoomBehaviour>();
-
                     }
 
                     //Assigning the newly instantiated room object to the cell data (avoiding using Find)
@@ -145,7 +144,7 @@ public class DungeonGenerator : MonoBehaviour
                     GenerateRoomFeatures(currentCell);
 
                     /*Closes all the doors inside of the room. m_closedRoomStatus can be replaced with
-                    /// m_GeneratedRoomStatus in order to generate a dungeon with doors open.*/
+                    m_GeneratedRoomStatus in order to generate a dungeon with doors open.*/
                     newRoom.UpdateRoom(currentCell.m_closedRoomStatus);
                     newRoom.name += " " + currentCell.m_Position.x + "-" + currentCell.m_Position.y;
 

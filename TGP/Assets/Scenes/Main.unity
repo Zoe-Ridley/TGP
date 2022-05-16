@@ -146,6 +146,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2069871475130941809, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2069871475130941810, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
       propertyPath: m_dungeonGenerator
       value: 
@@ -273,6 +277,10 @@ PrefabInstance:
     - target: {fileID: 8303425887882683621, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
       propertyPath: m_playerHitpoints
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8422255402198489359, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6908907554547644070, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
@@ -738,9 +746,9 @@ MonoBehaviour:
   FinalRoomPrefab: {fileID: 8365982970090205779, guid: 9507e16abd116eb45874801379bb845f, type: 3}
   m_room: {fileID: 8365982970090205779, guid: 67ad6da834d44bf4aaa844c1d8c660f3, type: 3}
   MeleeEnemy: {fileID: 3366049877109418349, guid: d102a3c8b54f10048ba1a500033224bd, type: 3}
-  MaxMeleeEnemiesPerRoom: 1
+  MaxMeleeEnemiesPerRoom: 2
   RangedEnemy: {fileID: 1731618953485584378, guid: 8fa98c187fae6954dadd90c4144869ec, type: 3}
-  MaxRangedEnemiesPerRoom: 1
+  MaxRangedEnemiesPerRoom: 2
   FinalRoom:
     m_visited: 0
     m_generatedRoomStatus: 00000000
@@ -815,10 +823,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -995,7 +1003,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1215334569}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10692}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 836513360}
