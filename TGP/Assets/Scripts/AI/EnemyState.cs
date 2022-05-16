@@ -7,7 +7,11 @@ public class EnemyState
     public virtual void HandleMovement() { }
 
     public virtual void Update() { }
-
-    protected EnemyAI m_enemyAI;
-    protected Vector3 m_playerPosition;
+    
+    private EnemyAI m_enemyAI;
+    protected EnemyAI EnemyAI
+    {
+        get { return m_enemyAI; }
+        set { m_enemyAI = value; }
+    }
 }

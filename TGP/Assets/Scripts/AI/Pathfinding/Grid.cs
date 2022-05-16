@@ -3,6 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum GridSide
+{
+    TopRight,
+    TopLeft,
+    BottomRight,
+    BottomLeft
+}
+
 public class Grid<TGridObject> {
 
     public event EventHandler<OnGridObjectChangedEventArgs> OnGridObjectChanged;
@@ -54,6 +62,28 @@ public class Grid<TGridObject> {
     public Vector3 GetOriginPos()
     {
         return m_originPos;
+    }
+
+    // Calculates which area of the grid the position is in and returns a corresponding enum
+    public GridSide GetGridSide(Vector3 pos)
+    {
+        int x, y;
+        GetXY(pos, out x, out y);
+
+        if (y > m_height / 2)
+        {
+            if (x > m_width/2)
+                return GridSide.TopRight;
+            else
+                return GridSide.TopLeft;
+        }
+        else
+        {
+            if (x > m_width / 2)
+                return GridSide.BottomRight;
+            else
+                return GridSide.BottomLeft;
+        }
     }
 
     /// <summary>
