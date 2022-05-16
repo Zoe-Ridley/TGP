@@ -5,8 +5,15 @@ public class RoomBehaviour : MonoBehaviour
 {
     public GameObject[] m_walls; //0 Up, 1 Down, 2 Right, 3 Left
     public GameObject[] m_doors;
+    [SerializeField] private GameObject m_LightManager;
 
     public Vector2 RoomSize;
+
+    public void Start()
+    {
+        if (m_LightManager)
+            m_LightManager.SetActive(false);
+    }
 
     //true = door closed
     //false = door open
@@ -23,5 +30,8 @@ public class RoomBehaviour : MonoBehaviour
                 m_doors[i].SetActive(false);
             }
         }
+
+        if (m_LightManager)
+            m_LightManager.SetActive(true);
     }
 }

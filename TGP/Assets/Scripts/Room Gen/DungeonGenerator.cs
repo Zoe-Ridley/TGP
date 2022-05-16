@@ -297,7 +297,8 @@ public class DungeonGenerator : MonoBehaviour
 
         for (int i = 0; i < rangedEnemyCount; i++)
         {
-            GameObject newRangedEnemy = Instantiate(RangedEnemy, GenerateRandomPosition(minPosition, maxPosition), Quaternion.identity);
+            GameObject newRangedEnemy = Instantiate(RangedEnemy, currentCell.RoomObject.transform);
+            newRangedEnemy.transform.position = GenerateRandomPosition(minPosition, maxPosition);
             currentCell.NumberOfEnemies++;
         }
 
