@@ -154,7 +154,7 @@ public class EnemyAI : MonoBehaviour
     }
 
     /// <summary>
-    /// Generate a random destinatino for the AI between the min and max range
+    /// Generate a random destination for the AI between the min and max range
     /// </summary>
     public Vector3 GetRandomDestination()
     {
