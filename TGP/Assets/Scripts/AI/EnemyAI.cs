@@ -53,7 +53,7 @@ public class EnemyAI : MonoBehaviour
             {
                 // Play the death animation and queue the object to be destroyed
                 FindObjectOfType<AudioManager>().playAudio("EnemyDeath");
-                Destroy(this.gameObject, fade);
+                Destroy(gameObject, fade);
 
                 GetComponent<SpriteRenderer>().material = m_deathMaterial;
                 gameObject.tag = "DeadEnemy";
