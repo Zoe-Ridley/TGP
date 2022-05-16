@@ -150,15 +150,9 @@ public class DungeonGenerator : MonoBehaviour
                     newRoom.name += " " + currentCell.m_Position.x + "-" + currentCell.m_Position.y;
 
                     // Setup the Pathfinding
-<<<<<<< HEAD
                     Vector3 pos = new Vector3((i * RoomSize.x) - RoomSize.x / 2, (-j * RoomSize.y) - RoomSize.y / 2, 0f);
                     newRoom.AddComponent<RoomPathfindingSetup>();
                     newRoom.GetComponent<RoomPathfindingSetup>().ChangeGrid(new Grid<PathNode>(Mathf.FloorToInt(RoomSize.x), Mathf.FloorToInt(RoomSize.y), 1, pos,
-=======
-                    Vector3 pos = new Vector3((i * m_offset.x) - 9.5f, (-j * m_offset.y) - 9.5f, 0f);
-                    newRoom.AddComponent<RoomPathfindingSetup>();
-                    newRoom.GetComponent<RoomPathfindingSetup>().ChangeGrid(new Grid<PathNode>(19, 19, 1, pos, 
->>>>>>> Jaba
                         (Grid<PathNode> g, int x, int y) => new PathNode(g, x, y)));
                 }
             }
