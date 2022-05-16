@@ -24,12 +24,16 @@ public class EnemyAI : MonoBehaviour
     // enemy states
     public EnemyState m_state { get; set; }
 
+    // dungeon for room finding
+    private DungeonGenerator m_generator;
+
     // Start is called before the first frame update
     void Start()
     {
         m_startPosition = transform.position;
         m_pathFinder = this.transform.parent.GetComponent<RoomPathfindingSetup>().GetPathFinder();
         m_state = new RoamState(this);
+        m_generator = FindObjectOfType<DungeonGenerator>();
     }
 
     // Update is called once per frame
@@ -39,6 +43,15 @@ public class EnemyAI : MonoBehaviour
         {
             FindObjectOfType<AudioManager>().playAudio("EnemyDeath");
             Destroy(gameObject);
+
+            //Opening room
+            Cell tempCell = m_generator.FindRoom(transform.position);
+            tempCell.NumberOfEnemies--;
+
+            if (tempCell.NumberOfEnemies == 0)
+            {
+                m_generator.OpenRoom(transform.position);
+            }
         }
 
         m_state.Update();

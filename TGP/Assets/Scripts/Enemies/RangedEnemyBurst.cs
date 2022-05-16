@@ -10,8 +10,8 @@ public class RangedEnemyBurst : MonoBehaviour
     [SerializeField] private float m_FiringForce;
     [SerializeField] private float m_Firerate;
 
-
     private float m_tempFirerate;
+    private DungeonGenerator m_generator;
     private Rigidbody2D m_RB;
 
     void Start()
@@ -19,6 +19,7 @@ public class RangedEnemyBurst : MonoBehaviour
         m_RB = GetComponent<Rigidbody2D>();
         m_player = GameObject.Find("Player");
         m_tempFirerate = m_Firerate;
+        m_generator = FindObjectOfType<DungeonGenerator>();
     }
 
     void Update()
@@ -53,6 +54,15 @@ public class RangedEnemyBurst : MonoBehaviour
         {
             Destroy(gameObject);
             FindObjectOfType<AudioManager>().playAudio("EnemyDeath");
+
+            //Alter number of enemies
+            Cell tempCell = m_generator.FindRoom(transform.position);
+            tempCell.NumberOfEnemies--;
+
+            if (tempCell.NumberOfEnemies == 0)
+            {
+                m_generator.OpenRoom(transform.position);
+            }
         }
     }
 }
