@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Type: 1
   Name: Healing Potion
-  m_ItemGameObject: {fileID: 7273187106207894811, guid: 8e450d8a32bd62543a07920fde1edacc, type: 3}
-  m_ChangeNum: 0.1
+  m_Sprite: {fileID: 21300000, guid: dc5d5f494a372ee479151773845f4884, type: 3}
+  m_ChangeNum: 25

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Type: 4
   Name: Speed Up
-  m_ItemGameObject: {fileID: 0}
+  m_Sprite: {fileID: 0}
   m_ChangeNum: 0.1

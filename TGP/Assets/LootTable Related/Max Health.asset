@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Type: 3
   Name: Defense Up
-  m_ItemGameObject: {fileID: 0}
-  m_ChangeNum: 0
+  m_Sprite: {fileID: 21300000, guid: 55c62b1198503c74ba0dbb0b9c94d086, type: 3}
+  m_ChangeNum: 0.1

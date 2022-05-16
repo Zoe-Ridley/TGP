@@ -7,7 +7,7 @@ public class Item : ScriptableObject
 {
     public ItemType m_Type;
     public string Name;
-    public GameObject m_ItemGameObject;
+    public Sprite m_Sprite;
     public float m_ChangeNum;
 }
 
