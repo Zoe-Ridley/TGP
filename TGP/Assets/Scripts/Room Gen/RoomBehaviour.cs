@@ -11,7 +11,8 @@ public class RoomBehaviour : MonoBehaviour
 
     public void Start()
     {
-        m_LightManager.SetActive(false);
+        if (m_LightManager)
+            m_LightManager.SetActive(false);
     }
 
     //true = door closed
@@ -29,11 +30,8 @@ public class RoomBehaviour : MonoBehaviour
                 m_doors[i].SetActive(false);
             }
         }
-        m_LightManager.SetActive(true);
-    }
 
-    public void SetLight(bool enable)
-    {
-        m_LightManager.SetActive(enable);
+        if (m_LightManager)
+            m_LightManager.SetActive(true);
     }
 }
