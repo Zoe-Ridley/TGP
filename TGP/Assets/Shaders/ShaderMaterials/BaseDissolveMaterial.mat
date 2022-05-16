@@ -40,5 +40,5 @@ Material:
     - Vector1_abff1200c84d4c3db03c30a79d4938c6: 50
     - _Fade: 0.898
     m_Colors:
-    - _FadeColor: {r: 0, g: 8.47419, b: 7.143165, a: 0}
+    - _FadeColor: {r: 0, g: 23.968628, b: 20.203922, a: 0}
   m_BuildTextureStacks: []
