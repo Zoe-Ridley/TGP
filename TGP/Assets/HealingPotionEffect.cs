@@ -14,7 +14,6 @@ public class HealingPotionEffect : MonoBehaviour
             Destroy(gameObject);
             Debug.Log("Hit");
             collision.gameObject.GetComponent<PlayerLose>().m_playerHitpoints += Mathf.FloorToInt(HealingPotion.m_ChangeNum);
-            Debug.Log("Health regained");
         }
     }
 }
