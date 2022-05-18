@@ -17,7 +17,11 @@ public class EnemyAI : MonoBehaviour
     }
 
     [SerializeField] protected int m_health;
-
+    public int Health
+    {
+        get { return m_health; }
+        set { m_health = value; }
+    }
 
     // The rigid body
     protected Rigidbody2D m_rb;

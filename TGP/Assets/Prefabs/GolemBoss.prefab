@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4922809613881912811}
   - component: {fileID: 8389758431162026991}
   - component: {fileID: 889434968895493973}
-  - component: {fileID: 5194275687949874438}
   - component: {fileID: 4472406814153813543}
+  - component: {fileID: -3506481573531338920}
   m_Layer: 0
   m_Name: GolemBoss
   m_TagString: Untagged
@@ -132,24 +132,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.27171534, y: 0.24961829}
   m_EdgeRadius: 0
---- !u!114 &5194275687949874438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1175821564031364709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31455c0c8c06ca049b92faa90c0cb41e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_speed: 4
-  m_targetRange: 5
-  m_attackRange: 1
-  m_attackRate: 0.4
-  m_roamRange: {x: 3, y: 5}
-  m_health: 2
 --- !u!50 &4472406814153813543
 Rigidbody2D:
   serializedVersion: 4
@@ -171,3 +153,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-3506481573531338920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175821564031364709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2595c5f42ce6f8b47b37401bae727e3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
