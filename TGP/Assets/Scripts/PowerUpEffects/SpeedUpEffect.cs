@@ -5,7 +5,6 @@ using UnityEngine;
 public class SpeedUpEffect : MonoBehaviour
 {
     public Item SpeedUp;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
