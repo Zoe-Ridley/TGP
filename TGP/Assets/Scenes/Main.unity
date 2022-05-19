@@ -286,6 +286,14 @@ PrefabInstance:
       propertyPath: m_playerHitpoints
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 8422255402198489359, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
+      propertyPath: m_Name
+      value: MinimapIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 8422255402198489359, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 1571687355794190517, guid: 40412cabfc8bc5d4b8b1066859bbfe32, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.5
@@ -1246,6 +1254,7 @@ GameObject:
   - component: {fileID: 1705918543}
   - component: {fileID: 1705918542}
   - component: {fileID: 1705918541}
+  - component: {fileID: 1705918544}
   m_Layer: 5
   m_Name: Minimap
   m_TagString: Untagged
@@ -1325,6 +1334,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1705918539}
   m_CullTransparentMesh: 1
+--- !u!114 &1705918544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705918539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 3, y: -3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1783957883
 GameObject:
   m_ObjectHideFlags: 0

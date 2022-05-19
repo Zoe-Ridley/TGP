@@ -32,7 +32,8 @@ public class PlayerLose : MonoBehaviour
     void Update()
     {
         slider.value = m_playerHitpoints;
-        m_textHitCounter.SetText(" " + m_playerHitpoints);
+        slider.maxValue = m_playerMaxHP;
+        m_textHitCounter.SetText(" " + m_playerHitpoints + "/" + m_playerMaxHP);
 
         if (m_playerHitpoints <= 0)
         {
