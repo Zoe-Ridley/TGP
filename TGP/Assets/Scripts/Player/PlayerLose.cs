@@ -8,7 +8,7 @@ using TMPro;
 public class PlayerLose : MonoBehaviour
 {
     public int m_playerMaxHP = 100;
-    [SerializeField] private int m_playerHitpoints;
+    [SerializeField] public int m_playerHitpoints;
     [SerializeField] private TextMeshProUGUI m_textHitCounter;
     [SerializeField] private float m_invulnerableTime;
 
