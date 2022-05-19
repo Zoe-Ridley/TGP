@@ -855,7 +855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 45
-  minimapOverlay: {fileID: 0}
+  minimapOverlay: {fileID: 895699569}
 --- !u!1 &771552342
 GameObject:
   m_ObjectHideFlags: 0
