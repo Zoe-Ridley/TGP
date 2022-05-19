@@ -50,6 +50,7 @@ public class DungeonGenerator : MonoBehaviour
     void Start()
     {
         MazeGenerator();
+
     }
 
     public Cell FindRoom(Vector2 objectPosition)
@@ -155,6 +156,7 @@ public class DungeonGenerator : MonoBehaviour
                 }
             }
         }
+        GeneratedRooms[0].RoomObject.GetComponent<RoomBehaviour>().EnableLighting();
     }
 
     public void MazeGenerator()

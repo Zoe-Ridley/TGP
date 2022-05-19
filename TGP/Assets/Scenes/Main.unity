@@ -1020,7 +1020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RoomSize: {x: 40, y: 20}
-  SizeOfDungeon: {x: 5, y: 3}
+  SizeOfDungeon: {x: 3, y: 3}
   FinalRoomPrefab: {fileID: 8365982970090205779, guid: 9507e16abd116eb45874801379bb845f, type: 3}
   m_room: {fileID: 8365982970090205779, guid: 2c42082af0371074eb487604656042d6, type: 3}
   MeleeEnemy: {fileID: 3366049877109418349, guid: d102a3c8b54f10048ba1a500033224bd, type: 3}
@@ -1035,8 +1035,6 @@ MonoBehaviour:
     m_opened: 0
     RoomObject: {fileID: 0}
     NumberOfEnemies: 0
-    RangedEnemyList: []
-    MeleeEnemyList: []
   AllPositionsOnBoard: []
   GeneratedRooms: []
 --- !u!4 &800891051
