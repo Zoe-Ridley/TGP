@@ -15,4 +15,4 @@ MonoBehaviour:
   m_Type: 2
   Name: Attack Speed Up
   m_Sprite: {fileID: 0}
-  m_ChangeNum: 0.9
+  m_ChangeNum: 1.1

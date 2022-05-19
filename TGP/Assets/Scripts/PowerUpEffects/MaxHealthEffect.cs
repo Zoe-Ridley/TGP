@@ -13,6 +13,7 @@ public class MaxHealthEffect : MonoBehaviour
         {
             Destroy(gameObject);
             Debug.Log("Hit");
+            FindObjectOfType<AudioManager>().playAudio("Power Up");
             float tempMaxHP = collision.gameObject.GetComponent<PlayerLose>().m_playerMaxHP;
             tempMaxHP *= MaxHealth.m_ChangeNum;
             collision.gameObject.GetComponent<PlayerLose>().m_playerMaxHP = Mathf.FloorToInt(tempMaxHP);
