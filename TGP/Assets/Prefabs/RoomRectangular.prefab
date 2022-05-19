@@ -4041,7 +4041,7 @@ MonoBehaviour:
   - {fileID: 8365982969697992019}
   - {fileID: 8365982969313398683}
   m_LightManager: {fileID: 2965337741833628985}
-  RoomSize: {x: 20, y: 20}
+  RoomSize: {x: 40, y: 20}
 --- !u!1 &8365982970118063188
 GameObject:
   m_ObjectHideFlags: 0
