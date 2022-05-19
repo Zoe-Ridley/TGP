@@ -19,8 +19,6 @@ public class Cell
     public bool m_opened;
     public GameObject RoomObject;
     public int NumberOfEnemies;
-    public List<GameObject> RangedEnemyList;
-    public List<GameObject> MeleeEnemyList;
 };
 
 [Serializable]
@@ -109,6 +107,7 @@ public class DungeonGenerator : MonoBehaviour
                     }
 
                     nextRoom.RoomObject.GetComponent<RoomBehaviour>().UpdateRoom(status);
+                    nextRoom.RoomObject.GetComponent<RoomBehaviour>().EnableLighting();
                 }
             }
         }
