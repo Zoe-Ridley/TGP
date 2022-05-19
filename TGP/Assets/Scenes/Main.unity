@@ -1024,9 +1024,9 @@ MonoBehaviour:
   FinalRoomPrefab: {fileID: 8365982970090205779, guid: 9507e16abd116eb45874801379bb845f, type: 3}
   m_room: {fileID: 8365982970090205779, guid: 2c42082af0371074eb487604656042d6, type: 3}
   MeleeEnemy: {fileID: 3366049877109418349, guid: d102a3c8b54f10048ba1a500033224bd, type: 3}
-  MaxMeleeEnemiesPerRoom: 1
+  MaxMeleeEnemiesPerRoom: 4
   RangedEnemy: {fileID: 1731618953485584378, guid: 8fa98c187fae6954dadd90c4144869ec, type: 3}
-  MaxRangedEnemiesPerRoom: 1
+  MaxRangedEnemiesPerRoom: 4
   FinalRoom:
     m_visited: 0
     m_generatedRoomStatus: 00000000
