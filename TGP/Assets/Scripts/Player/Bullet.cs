@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private float m_bulletLiftime;
+    [SerializeField] private ParticleSystem m_wallCollision;
 
     private void Update()
     {
@@ -24,6 +25,7 @@ public class Bullet : MonoBehaviour
 
         if(collision.CompareTag("World"))
         {
+            m_wallCollision.Play();
             Destroy(gameObject);
         }
     }
