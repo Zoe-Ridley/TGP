@@ -15,4 +15,4 @@ MonoBehaviour:
   m_Type: 4
   Name: Speed Up
   m_Sprite: {fileID: 0}
-  m_ChangeNum: 1.1
+  m_ChangeNum: 0.1
