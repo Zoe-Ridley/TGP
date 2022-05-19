@@ -135,7 +135,6 @@ public class DungeonGenerator : MonoBehaviour
                     {
                         newRoom = Instantiate(m_room, new Vector3(i * RoomSize.x, -j * RoomSize.y, 0f), Quaternion.identity,
                         transform).GetComponent<RoomBehaviour>();
-
                     }
 
                     //Assigning the newly instantiated room object to the cell data (avoiding using Find)
@@ -298,7 +297,8 @@ public class DungeonGenerator : MonoBehaviour
 
         for (int i = 0; i < rangedEnemyCount; i++)
         {
-            GameObject newRangedEnemy = Instantiate(RangedEnemy, GenerateRandomPosition(minPosition, maxPosition), Quaternion.identity);
+            GameObject newRangedEnemy = Instantiate(RangedEnemy, currentCell.RoomObject.transform);
+            newRangedEnemy.transform.position = GenerateRandomPosition(minPosition, maxPosition);
             currentCell.NumberOfEnemies++;
         }
 
