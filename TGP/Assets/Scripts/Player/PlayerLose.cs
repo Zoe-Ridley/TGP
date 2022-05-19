@@ -27,6 +27,7 @@ public class PlayerLose : MonoBehaviour
         fill = slider.GetComponent<Image>();
         m_playerHitpoints = 100;
         slider.value = m_playerHitpoints;
+        m_animator = GetComponent<Animator>();
     }
 
     void Update()
