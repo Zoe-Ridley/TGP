@@ -166,9 +166,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_deathMaterial: {fileID: 2100000, guid: d541ee5822a4c4149a01992d30d2c559, type: 2}
-  m_targetRange: 5
+  m_targetRange: 10
   m_attackRange: 1
-  m_attackRate: 1
-  m_speed: 3
-  m_health: 3
+  m_attackRate: 0.5
+  m_speed: 4
+  m_health: 2
   m_roamRange: {x: 2, y: 2}

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1731618953485584379}
   - component: {fileID: 988733847194039337}
   m_Layer: 0
-  m_Name: RangedEnemy
+  m_Name: FastRangedEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1731618953485584378}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -95,7 +95,7 @@ SpriteRenderer:
   m_SortingLayerID: 1956705135
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2689309165091057752, guid: b44660d8d61a1df4e9b122186cf39d8b, type: 3}
+  m_Sprite: {fileID: 1394917994252055886, guid: 49f9cfba514d554418bd41fa043df9ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -140,8 +140,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.01213491, y: -0.07766318}
-  m_Size: {x: 1.4096122, y: 1.6959958}
+  m_Offset: {x: -0.005268669, y: -0.015684236}
+  m_Size: {x: 0.16271448, y: 0.16271451}
   m_Direction: 0
 --- !u!114 &988733847194039337
 MonoBehaviour:
@@ -156,12 +156,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_deathMaterial: {fileID: 2100000, guid: d541ee5822a4c4149a01992d30d2c559, type: 2}
-  m_targetRange: 8
-  m_attackRange: 8
-  m_attackRate: 1.5
-  m_speed: 2
-  m_health: 3
-  m_firingForce: 2
+  m_targetRange: 5
+  m_attackRange: 5
+  m_attackRate: 0.5
+  m_speed: 4
+  m_health: 2
+  m_firingForce: 4
   m_bulletPrefab: {fileID: 2032384438344180425, guid: 8c34e96abb7c4294c87b022f9fb9432e, type: 3}
-  m_dangerDistance: 5
-  m_scoutRange: {x: 2, y: 0}
+  m_dangerDistance: 2
+  m_scoutRange: {x: 5, y: 5}

@@ -19,6 +19,8 @@ public class PlayerLose : MonoBehaviour
     bool m_invulnerable;
     float m_invTimer;
 
+    private Animator m_animator;
+
     void Start()
     {
         slider = slider.GetComponent<Slider>();
@@ -79,6 +81,7 @@ public class PlayerLose : MonoBehaviour
             {
                 case "MeleeEnemy":
                     m_playerHitpoints--;
+                    m_animator.SetTrigger("isAttacking");
                     FindObjectOfType<AudioManager>().playAudio("PlayerHit");
                     m_invulnerable = true;
                     break;
