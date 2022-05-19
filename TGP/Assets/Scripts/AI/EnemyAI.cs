@@ -10,6 +10,12 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] protected float m_attackRange;
     [SerializeField] protected float m_attackRate;
     [SerializeField] protected float m_speed;
+
+    //LootTable Data
+    [SerializeField] ItemTable lootTable;
+    [SerializeField] private GameObject[] PowerUp;
+    public Transform m_SpawnPoint;
+
     public float Speed
     {
         get { return m_speed; }
@@ -54,6 +60,18 @@ public class EnemyAI : MonoBehaviour
                 // Play the death animation and queue the object to be destroyed
                 FindObjectOfType<AudioManager>().playAudio("EnemyDeath");
                 Destroy(gameObject, fade);
+
+                Item item = lootTable.GetLoot();
+                Debug.Log(item.name);
+                for (int i = 0; i < PowerUp.Length; i++)
+                {
+                    if (PowerUp[i].name == item.name)
+                    {
+                        Instantiate(PowerUp[i], m_SpawnPoint.position, Quaternion.identity);
+                        Debug.Log(PowerUp[i].name);
+                        break;
+                    }
+                }
 
                 GetComponent<SpriteRenderer>().material = m_deathMaterial;
                 gameObject.tag = "DeadEnemy";
