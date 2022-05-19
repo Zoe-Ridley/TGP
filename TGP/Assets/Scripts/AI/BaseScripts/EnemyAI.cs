@@ -9,6 +9,12 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] protected float m_targetRange;
     [SerializeField] protected float m_attackRange;
     [SerializeField] protected float m_attackRate;
+    public float AttackRate
+    {
+        get { return m_attackRate; }
+        set { m_attackRate = value; }
+    }
+
     [SerializeField] protected float m_speed;
     public float Speed
     {

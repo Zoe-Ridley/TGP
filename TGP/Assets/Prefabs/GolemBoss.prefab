@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1956705135
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 6180148953911850715, guid: 5a72bf6a4f4357a4cb5405aaf6cdf3df, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -165,3 +165,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2595c5f42ce6f8b47b37401bae727e3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_deathMaterial: {fileID: 2100000, guid: d541ee5822a4c4149a01992d30d2c559, type: 2}
+  m_targetRange: 10
+  m_attackRange: 10
+  m_attackRate: 0.7
+  m_speed: 3
+  m_health: 30
+  m_minnion: {fileID: 3366049877109418349, guid: d102a3c8b54f10048ba1a500033224bd, type: 3}
+  m_boulder: {fileID: 2032384438344180425, guid: 8c34e96abb7c4294c87b022f9fb9432e, type: 3}
+  m_throwSpeed: 12
+  m_respawnRate: 3
+  m_SecondPhaseHealth: 20
+  m_ThirdPhaseHealth: 10

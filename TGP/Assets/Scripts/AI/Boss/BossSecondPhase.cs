@@ -13,7 +13,7 @@ public class BossSecondPhase : BossState
     {
         if (BossAI.Health <= BossAI.ThirdPhaseHealth)
         {
-            BossAI.State = new BossThirdPhase(BossAI);
+            BossAI.m_state = new BossThirdPhase(BossAI);
         }
     }
 }

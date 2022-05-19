@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class SleepingState : BossState
 {
-    bool playerDetected;
+    private GameObject m_Player;
     public SleepingState(BossAI bossAI)
     {
         BossAI = bossAI;
-        playerDetected = false;
+        m_Player = GameObject.Find("Player");
     }
 
     public override void Update()
     {
-        if (playerDetected)
+        Debug.Log("Sleeping");
+        if (Vector3.Distance(m_Player.transform.position, BossAI.transform.position) <= BossAI.GetTargetRange())
         {
-
+            BossAI.m_state = new BossFirstPhase(BossAI);
         }
     }
 }
