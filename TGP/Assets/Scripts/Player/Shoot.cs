@@ -13,7 +13,7 @@ public class Shoot : MonoBehaviour
 
     [Header("Reload Variables")]
     [SerializeField] private int m_maxKnivesThrown;
-    [SerializeField] private float m_reloadTime;
+    [SerializeField] public float m_reloadTime;
     private float m_tempReloadTime;
     private int m_currentKnivesThrownLeft;
 

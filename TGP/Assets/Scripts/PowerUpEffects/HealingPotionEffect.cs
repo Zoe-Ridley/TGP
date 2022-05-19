@@ -13,6 +13,7 @@ public class HealingPotionEffect : MonoBehaviour
         {
             Destroy(gameObject);
             Debug.Log("Hit");
+            FindObjectOfType<AudioManager>().playAudio("Healing");
             int m_TempHP = collision.gameObject.GetComponent<PlayerLose>().m_playerHitpoints + Mathf.FloorToInt(HealingPotion.m_ChangeNum);
             int m_TempMaxHp = collision.gameObject.GetComponent<PlayerLose>().m_playerMaxHP;
             if (m_TempHP > m_TempMaxHp)

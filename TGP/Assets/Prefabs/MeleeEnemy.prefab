@@ -254,6 +254,13 @@ MonoBehaviour:
   m_attackRange: 1
   m_attackRate: 0.5
   m_speed: 4
+  lootTable: {fileID: 11400000, guid: 8957bfea3df69c24580b87c1f163042a, type: 2}
+  PowerUp:
+  - {fileID: 1029141005002993237, guid: 4d0b4f127893c794395cd3492e74a637, type: 3}
+  - {fileID: 1029141005002993237, guid: 6e9695a3ef93af946b6035ce2afb59b0, type: 3}
+  - {fileID: 7873700024920522900, guid: bd5ce34f2f6823a4c9e595e8c9b8af64, type: 3}
+  - {fileID: 1029141005002993237, guid: 5f57f720579aede408f1453953b93794, type: 3}
+  m_SpawnPoint: {fileID: 8529499662827076245}
   m_health: 2
   m_roamRange: {x: 2, y: 2}
 --- !u!1 &8344523296584979183
