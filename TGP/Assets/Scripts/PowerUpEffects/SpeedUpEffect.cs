@@ -12,7 +12,7 @@ public class SpeedUpEffect : MonoBehaviour
             Destroy(gameObject);
             Debug.Log("Hit");
             FindObjectOfType<AudioManager>().playAudio("Power Up");
-            collision.gameObject.GetComponent<PlayerMovement>().playerSpeed *= SpeedUp.m_ChangeNum;
+            collision.gameObject.GetComponent<PlayerMovement>().PlayerSpeed *= SpeedUp.m_ChangeNum;
         }
     }
 }
