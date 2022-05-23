@@ -10,18 +10,20 @@ public class Minimap : MonoBehaviour
     private Transform player;
     private GameObject[] enemies;
 
+    [SerializeField] private DungeonGenerator dungeonGenerator;
+    //[SerializeField] private GameObject minimapCamera;
+
     void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        //minimapCamera.transform.position = new Vector3(dungeonGenerator.CentreOfDungeon.x, dungeonGenerator.CentreOfDungeon.y);
     }
 
     void Update()
     {
-        transform.position = player.position + Vector3.up * 5f;
-
         HandleEnemyVisible();
-        RotateOverlay();
     }
 
     private void HandleEnemyVisible()
@@ -33,9 +35,5 @@ public class Minimap : MonoBehaviour
         }
     }
 
-    private void RotateOverlay()
-    {
-        //Rotate the minimap overlay based on player's rotation.
-       // minimapOverlay.localRotation = Quaternion.Euler(0, 0, -player.eulerAngles.y - angle);
-    }
+
 }

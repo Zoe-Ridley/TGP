@@ -10,18 +10,15 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer m_spriteRenderer;
 
     private Rigidbody2D m_rigidBody;
-    public Animator PlayerAnimator;
+    public Animator m_playerAnimator;
 
     private bool facingRight;
-    private bool facingFront;
 
     void Start()
     {
         m_rigidBody = GetComponent<Rigidbody2D>();
-
         m_spriteRenderer = GetComponent<SpriteRenderer>();
-
-        PlayerAnimator = GetComponentInChildren<Animator>();
+        m_playerAnimator = GetComponentInChildren<Animator>();
     }
 
     public void Update()
@@ -45,19 +42,17 @@ public class PlayerMovement : MonoBehaviour
         {
             if (movement.y > 0)
             {
-                facingFront = false;
-                PlayerAnimator.SetTrigger("meleeBack");
+                m_playerAnimator.SetTrigger("meleeBack");
             }
             else if (movement.y < 0)
             {
-                facingFront = true;
-                PlayerAnimator.SetTrigger("melee");
+                m_playerAnimator.SetTrigger("melee");
             }
         }
 
-        PlayerAnimator.SetFloat("Horizontal", movement.x);
-        PlayerAnimator.SetFloat("Vertical", movement.y);
-        PlayerAnimator.SetFloat("Magnitude", movement.magnitude);
+        m_playerAnimator.SetFloat("Horizontal", movement.x);
+        m_playerAnimator.SetFloat("Vertical", movement.y);
+        m_playerAnimator.SetFloat("Magnitude", movement.magnitude);
 
         transform.position = transform.position + movement * Time.deltaTime;
 

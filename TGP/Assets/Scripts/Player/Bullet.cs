@@ -7,6 +7,8 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float m_bulletLiftime;
     [SerializeField] private ParticleSystem m_wallCollision;
     [SerializeField] private AnimationCurve speedOverLife;
+    [SerializeField] private GameObject m_wallCollision;
+    [SerializeField] private GameObject m_EnenyCollision;
 
     private void Update()
     {
@@ -25,12 +27,19 @@ public class Bullet : MonoBehaviour
     {
         if(collision.CompareTag("Enemy"))
         {
+            Instantiate(m_EnenyCollision, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
 
         if(collision.CompareTag("World"))
         {
-            m_wallCollision.Play();
+            Instantiate(m_wallCollision, transform.position, this.transform.rotation);
+            Destroy(gameObject);
+        }
+
+        if (collision.CompareTag("MeleeEnemy"))
+        {
+            Instantiate(m_EnenyCollision, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

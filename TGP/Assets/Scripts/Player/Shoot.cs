@@ -32,7 +32,6 @@ public class Shoot : MonoBehaviour
         m_coolDown -= Time.deltaTime;
         //Debug.Log(m_coolDown);
 
-
         // sets reload text from the start.
         m_reloadText.SetText(m_currentKnivesThrownLeft + " / " + m_maxKnivesThrown);
 

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3501960755083749487}
   - component: {fileID: 1720503883823995569}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: MinimapIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4759680063550862050}
   - component: {fileID: 15758883350154195}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: MinimapIcon (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -312,6 +312,9 @@ MonoBehaviour:
   m_attackRange: 1
   m_attackRate: 0.4
   m_speed: 4
+  lootTable: {fileID: 0}
+  PowerUp: []
+  m_SpawnPoint: {fileID: 0}
   m_health: 2
 --- !u!61 &-5519109559347430948
 BoxCollider2D:
