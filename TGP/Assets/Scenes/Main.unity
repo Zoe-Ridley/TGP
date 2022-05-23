@@ -386,13 +386,17 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -907515645
       objectReference: {fileID: 0}
+    - target: {fileID: 3415543332876132455, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3530420113158020138, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4313709204159574502, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5236275504513182880, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
       propertyPath: m_RootOrder
@@ -400,7 +404,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5897015344403137504, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762036587902153467, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6908907554547644071, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1171,7 +1179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RoomSize: {x: 40, y: 20}
-  SizeOfDungeon: {x: 3, y: 5}
+  SizeOfDungeon: {x: 2, y: 3}
   m_finalRoomPrefab: {fileID: 8365982970090205779, guid: 9507e16abd116eb45874801379bb845f, type: 3}
   m_room: {fileID: 8365982970090205779, guid: 2c42082af0371074eb487604656042d6, type: 3}
   m_meleeEnemy: {fileID: 3366049877109418349, guid: d102a3c8b54f10048ba1a500033224bd, type: 3}
@@ -1950,8 +1958,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 776.1, y: -360.4}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 782, y: -372}
+  m_SizeDelta: {x: 116.4043, y: 113.8805}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1705918541
 MonoBehaviour:
@@ -1973,7 +1981,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1705918539}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 

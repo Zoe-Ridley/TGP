@@ -143,7 +143,7 @@ public class DungeonGenerator : MonoBehaviour
                     //Checking if currentCell is the last room of the dungeon
                     if (currentCell == AllPositionsOnBoard[AllPositionsOnBoard.Count - 1])
                     {
-                        newRoom = Instantiate(m_finalRoomPrefab, new Vector3(i * RoomSize.x, -j * RoomSize.y, 0f), Quaternion.identity,
+                        newRoom = Instantiate(m_finalRoomPrefab, new Vector3(i * RoomSize.x, -j * RoomSize.y, .9f), Quaternion.identity,
                         transform).GetComponent<RoomBehaviour>();
 
                         FinalRoom = currentCell;
