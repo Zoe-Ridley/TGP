@@ -51,7 +51,7 @@ public class DungeonGenerator : MonoBehaviour
     public List<Cell> AllPositionsOnBoard;
     public List<Cell> GeneratedRooms;
 
-    [Header("Generated Rooms", order = 6)] 
+    [Header("Additional Objects", order = 6)] 
     public GameObject MinimapCamera;
 
 
@@ -353,14 +353,17 @@ public class DungeonGenerator : MonoBehaviour
         //Create obstacles
         for (int i = 0; i < obstacleCount; i++)
         {
-            
+            GameObject newObstacle = Instantiate(ObstaclePrefab, currentCell.RoomObject.transform);
+            newObstacle.transform.position = GenerateRandomPosition(minPosition, maxPosition);
+            //if(newObstacle.GetComponent<BoxCollider2D>().IsTouching())
+            currentCell.RoomObstacles.Add(newObstacle);
         }
     }
 
     private Vector2 GenerateRandomPosition(Vector2 min, Vector2 max)
     {
-        var x = Random.Range(min.x, max.x);
-        var y = Random.Range(min.y, max.y);
+        var x = Mathf.FloorToInt(Random.Range(min.x, max.x));
+        var y = Mathf.FloorToInt(Random.Range(min.y, max.y));
         return new Vector2(x, y);
     }
 }
