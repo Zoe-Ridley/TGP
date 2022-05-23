@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BaseOutlineMaterial
-  m_Shader: {fileID: 4800000, guid: 560be15a7e16d3546b134a4d49cc2e1a, type: 3}
+  m_Name: HitboxMaterial
+  m_Shader: {fileID: -6465566751694194690, guid: 6ec91820726059e45b87505775a7021a, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -23,8 +23,21 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _Radius: 5
     m_Colors:
-    - _Color: {r: 14.694356, g: 0.11708651, b: 0.11708651, a: 1}
+    - _CenterPosition: {r: 31, g: 6, b: 0, a: 0}
   m_BuildTextureStacks: []

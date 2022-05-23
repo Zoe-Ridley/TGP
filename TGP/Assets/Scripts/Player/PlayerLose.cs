@@ -9,6 +9,12 @@ public class PlayerLose : MonoBehaviour
 {
     public int m_playerMaxHP = 100;
     [SerializeField] private int m_playerHitpoints;
+    public int PlayerHitPoints
+    {
+        get { return m_playerHitpoints; }
+        set { m_playerHitpoints = value; }
+    }
+
     [SerializeField] private TextMeshProUGUI m_textHitCounter;
     [SerializeField] private float m_invulnerableTime;
 

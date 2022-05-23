@@ -5,6 +5,8 @@ using UnityEngine;
 public class BossState : EnemyState
 {
     BossAI m_BossAI;
+    protected GameObject m_player;
+
     public BossAI BossAI
     {
         get { return m_BossAI; }

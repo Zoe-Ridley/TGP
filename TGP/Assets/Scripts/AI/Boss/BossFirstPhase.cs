@@ -5,16 +5,12 @@ using UnityEngine;
 public class BossFirstPhase : BossState
 {
     private float m_spawnTimer;
-    private float m_TimeSinceLastAttack;
-
-    private GameObject m_Player;
+    private float m_timeSinceLastAttack;
 
     public BossFirstPhase(BossAI bossAI)
     {
         BossAI = bossAI;
-        m_spawnTimer = 0.0f;
-        m_TimeSinceLastAttack = 0.0f;
-        m_Player = GameObject.Find("Player");
+        m_player = GameObject.Find("Player");
     }
 
     public override void Update()
@@ -23,10 +19,12 @@ public class BossFirstPhase : BossState
         if (BossAI.Health <= BossAI.SecondPhaseHealth)
         {
             BossAI.DestroyMinnions();
-            BossAI.m_state = new BossSecondPhase(BossAI);
+            BossAI.m_state = new BossSecondPhase(BossAI, m_player);
         }
 
-        m_TimeSinceLastAttack += Time.deltaTime;
+
+        // Update timers
+        m_timeSinceLastAttack += Time.deltaTime;
         m_spawnTimer += Time.deltaTime;
 
         // Spawn a minnion once the respawn rate time has passed
@@ -36,13 +34,12 @@ public class BossFirstPhase : BossState
             m_spawnTimer = 0.0f;
         }
 
-        Debug.Log("FirstPhase");
         // Ranged attack 
-        if (m_TimeSinceLastAttack >= BossAI.AttackRate)
+        if (m_timeSinceLastAttack >= BossAI.AttackRate)
         {
-            Vector3 dir = (m_Player.transform.position - BossAI.transform.position).normalized;
+            Vector3 dir = (m_player.transform.position - BossAI.transform.position).normalized;
             BossAI.BoulderThrow(dir);
-            m_TimeSinceLastAttack = 0.0f;
+            m_timeSinceLastAttack = 0.0f;
         }
     }
 }

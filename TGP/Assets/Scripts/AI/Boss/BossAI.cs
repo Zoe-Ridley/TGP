@@ -6,8 +6,13 @@ public class BossAI : EnemyAI
 {
     [SerializeField] protected GameObject m_minnion;
     [SerializeField] protected GameObject m_boulder;
+    [SerializeField] protected GameObject m_stomp;
+    [SerializeField] protected GameObject m_Barrier;
     [SerializeField] protected float m_throwSpeed;
     [SerializeField] protected float m_respawnRate;
+    [SerializeField] protected float m_chargeSpeed;
+    [SerializeField] protected float m_chargeRange;
+
     public float RespawnRate
     {
         get { return m_respawnRate; }
@@ -26,6 +31,13 @@ public class BossAI : EnemyAI
     {
         get { return m_ThirdPhaseHealth; }
         set { m_ThirdPhaseHealth = value; }
+    }
+
+    [SerializeField] protected int m_stompRate;
+    public int StompRate
+    {
+        get { return m_stompRate; }
+        set { m_stompRate = value; }
     }
 
     private List<GameObject> m_spawnedEnemies;
@@ -48,7 +60,6 @@ public class BossAI : EnemyAI
     {
         GameObject tempRef = Instantiate(m_minnion, transform.position + new Vector3(1.0f, 0.0f, 0.0f), Quaternion.identity, transform.parent);
         m_spawnedEnemies.Add(tempRef);
-        Debug.Log("enemySpawned");
     }
 
     public void BoulderThrow(Vector3 dir)
@@ -58,11 +69,29 @@ public class BossAI : EnemyAI
         tempRef.GetComponent<Rigidbody2D>().AddForce(dir * m_throwSpeed, ForceMode2D.Impulse);
     }
 
+    public void Stomp(Vector3 scale)
+    {
+       GameObject tempRef = Instantiate(m_stomp, transform.position, Quaternion.identity);
+       tempRef.transform.localScale = scale;
+    }
+
+    public void ChargePlayer(Vector3 dir)
+    {
+        GetComponent<Rigidbody2D>().AddForce(dir * m_chargeSpeed, ForceMode2D.Impulse);
+    }
+
+    public void PutUpBarrier(Vector3 scale)
+    {
+        GameObject tempRef = Instantiate(m_Barrier, transform.position, Quaternion.identity);
+        tempRef.transform.localScale = scale;
+    }
+
     public void DestroyMinnions()
     {
         foreach(GameObject minnion in m_spawnedEnemies)
         {
-            GameObject.Destroy(minnion);
+            if (minnion)
+                Destroy(minnion);
         }
     }
 }
