@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4234764589961371901}
   - component: {fileID: 1056841153747627580}
   - component: {fileID: 883436302213221087}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1953,13 +1953,13 @@ GameObject:
   m_Component:
   - component: {fileID: 3204835418625204953}
   - component: {fileID: 8185480986176951271}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Top right light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3204835418625204953
 Transform:
   m_ObjectHideFlags: 0
@@ -1968,7 +1968,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2213438259704106487}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.59, y: 8.33, z: 0}
+  m_LocalPosition: {x: 12.5, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4819587631041559783}
@@ -1991,7 +1991,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.6
   m_Color: {r: 0.8509804, g: 0.69803923, b: 0.3647059, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 4
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 0000000017672b033560f4336ff3a074
@@ -2041,7 +2041,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 8
+  m_PointLightOuterRadius: 18
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -2062,13 +2062,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2298685773912892678}
   - component: {fileID: 4666355891482055711}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bottom left light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2298685773912892678
 Transform:
   m_ObjectHideFlags: 0
@@ -2077,7 +2077,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2474104781413047016}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.4, y: -8.11, z: 0}
+  m_LocalPosition: {x: -12.5, y: -8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4819587631041559783}
@@ -2100,7 +2100,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.6
   m_Color: {r: 0.8509804, g: 0.69803923, b: 0.3647059, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 4
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 0000000017672b033560f4336ff3a074
@@ -2150,7 +2150,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 8
+  m_PointLightOuterRadius: 18
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -2170,7 +2170,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4819587631041559783}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2185,7 +2185,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2965337741833628985}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8391946114132191596}
@@ -2208,7 +2208,7 @@ GameObject:
   - component: {fileID: 1778163294523179986}
   - component: {fileID: 3675905131457333433}
   - component: {fileID: 2750490653178867213}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wall
   m_TagString: World
   m_Icon: {fileID: 0}
@@ -3246,13 +3246,13 @@ GameObject:
   m_Component:
   - component: {fileID: 5773273082080197920}
   - component: {fileID: 9015085816956377017}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Center Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5773273082080197920
 Transform:
   m_ObjectHideFlags: 0
@@ -3283,8 +3283,8 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 5
+  m_Color: {r: 0.8509804, g: 0.69803923, b: 0.3647059, a: 1}
+  m_Intensity: 1.5
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 0000000017672b033560f4336ff3a074
@@ -3355,13 +3355,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8391946114132191596}
   - component: {fileID: 5279422078689278471}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Top left light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8391946114132191596
 Transform:
   m_ObjectHideFlags: 0
@@ -3370,7 +3370,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7250171282602711932}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.4, y: 8.62, z: 0}
+  m_LocalPosition: {x: -12.5, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4819587631041559783}
@@ -3393,7 +3393,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.6
   m_Color: {r: 0.8509804, g: 0.69803923, b: 0.3647059, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 4
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 0000000017672b033560f4336ff3a074
@@ -3443,7 +3443,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 8
+  m_PointLightOuterRadius: 18
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -3464,7 +3464,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3648085940665981262}
   - component: {fileID: 1526714790036530694}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3479,7 +3479,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7794122071311093470}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4234764589961371901}
@@ -3508,7 +3508,7 @@ GameObject:
   m_Component:
   - component: {fileID: 426454452020424133}
   - component: {fileID: 7069105396024100417}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3523,7 +3523,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7836376962507629183}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8269863343088322226}
@@ -3552,13 +3552,13 @@ GameObject:
   m_Component:
   - component: {fileID: 6352921720938921461}
   - component: {fileID: 7957266365527402378}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bottom right light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6352921720938921461
 Transform:
   m_ObjectHideFlags: 0
@@ -3567,7 +3567,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8365582564196391524}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.49, y: -8.39, z: 0}
+  m_LocalPosition: {x: 12.5, y: -8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4819587631041559783}
@@ -3590,7 +3590,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.6
   m_Color: {r: 0.8509804, g: 0.69803923, b: 0.3647059, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 4
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 0000000017672b033560f4336ff3a074
@@ -3640,7 +3640,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 8
+  m_PointLightOuterRadius: 18
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -3662,7 +3662,7 @@ GameObject:
   - component: {fileID: 8365982969159079582}
   - component: {fileID: 8365982969159078241}
   - component: {fileID: 8365982969159078240}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: UpperDoor
   m_TagString: World
   m_Icon: {fileID: 0}
@@ -3677,7 +3677,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8365982969159078243}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0018, y: 10.18, z: 0}
+  m_LocalPosition: {x: 0.0018, y: 10.18, z: 1}
   m_LocalScale: {x: 6.6031423, y: 0.54999995, z: 0}
   m_Children: []
   m_Father: {fileID: 8365982969312733439}
@@ -3770,7 +3770,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8365982969231014471}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LowerWall
   m_TagString: World
   m_Icon: {fileID: 0}
@@ -3785,7 +3785,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8365982969231014470}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8365982970456941949}
@@ -3804,7 +3804,7 @@ GameObject:
   - component: {fileID: 8365982969284753329}
   - component: {fileID: 8365982969284753327}
   - component: {fileID: 8365982969284753326}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RightWall
   m_TagString: World
   m_Icon: {fileID: 0}
@@ -3912,7 +3912,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8365982969312733439}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Doors
   m_TagString: World
   m_Icon: {fileID: 0}
@@ -3927,7 +3927,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8365982969312733438}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8365982969159079582}
@@ -3948,7 +3948,7 @@ GameObject:
   - component: {fileID: 8365982969313398680}
   - component: {fileID: 8365982969313398678}
   - component: {fileID: 8365982969313398681}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LeftDoor
   m_TagString: World
   m_Icon: {fileID: 0}
@@ -3963,7 +3963,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8365982969313398683}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.092, y: -0.0142, z: 0}
+  m_LocalPosition: {x: -20.092, y: -0.0142, z: 1}
   m_LocalScale: {x: 0.54999995, y: 6.656559, z: 0}
   m_Children: []
   m_Father: {fileID: 8365982969312733439}
@@ -4058,7 +4058,7 @@ GameObject:
   - component: {fileID: 8365982969353300089}
   - component: {fileID: 8365982969353300088}
   - component: {fileID: 8365982969353300091}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: UpperWall
   m_TagString: World
   m_Icon: {fileID: 0}
@@ -4168,7 +4168,7 @@ GameObject:
   - component: {fileID: 8365982969528174002}
   - component: {fileID: 8365982969528174000}
   - component: {fileID: 8365982969528174003}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LeftWall
   m_TagString: World
   m_Icon: {fileID: 0}
@@ -4278,7 +4278,7 @@ GameObject:
   - component: {fileID: 8365982969697992016}
   - component: {fileID: 8365982969697992014}
   - component: {fileID: 8365982969697992017}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RightDoor
   m_TagString: World
   m_Icon: {fileID: 0}
@@ -4293,7 +4293,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8365982969697992019}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20.07, y: 0.0135, z: 0}
+  m_LocalPosition: {x: 20.07, y: 0.0135, z: 1}
   m_LocalScale: {x: 0.54999995, y: 6.615092, z: 0}
   m_Children: []
   m_Father: {fileID: 8365982969312733439}
@@ -4388,7 +4388,7 @@ GameObject:
   - component: {fileID: 8365982969900989858}
   - component: {fileID: 8365982969900989856}
   - component: {fileID: 8365982969900989859}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LowerWall
   m_TagString: World
   m_Icon: {fileID: 0}
@@ -4497,7 +4497,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8365982970074351916}
   - component: {fileID: 8365982970074351919}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4512,7 +4512,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8365982970074351918}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 5}
   m_LocalScale: {x: 40, y: 20, z: 20}
   m_Children: []
   m_Father: {fileID: 8365982970090205776}
@@ -4580,7 +4580,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8365982970090205776}
   - component: {fileID: 8365982970090205777}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RoomRectangular
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4595,7 +4595,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8365982970090205779}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8365982970074351916}
@@ -4627,7 +4627,12 @@ MonoBehaviour:
   - {fileID: 8365982970234142578}
   - {fileID: 8365982969697992019}
   - {fileID: 8365982969313398683}
-  m_LightManager: {fileID: 2965337741833628985}
+  m_CentreLight: {fileID: 5215362943546672893}
+  m_CornerLights:
+  - {fileID: 7250171282602711932}
+  - {fileID: 8365582564196391524}
+  - {fileID: 2474104781413047016}
+  - {fileID: 2213438259704106487}
   RoomSize: {x: 40, y: 20}
 --- !u!1 &8365982970118063188
 GameObject:
@@ -4640,7 +4645,7 @@ GameObject:
   - component: {fileID: 8365982970118063189}
   - component: {fileID: 8365982970118063187}
   - component: {fileID: 8365982970118063186}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LeftWall
   m_TagString: World
   m_Icon: {fileID: 0}
@@ -4750,7 +4755,7 @@ GameObject:
   - component: {fileID: 8365982970234142579}
   - component: {fileID: 8365982970234142577}
   - component: {fileID: 8365982970234142576}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LowerDoor
   m_TagString: World
   m_Icon: {fileID: 0}
@@ -4765,7 +4770,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8365982970234142578}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0055, y: -10.17, z: 0}
+  m_LocalPosition: {x: 0.0055, y: -10.17, z: 1}
   m_LocalScale: {x: 6.617508, y: 0.54999995, z: 0}
   m_Children: []
   m_Father: {fileID: 8365982969312733439}
@@ -4860,7 +4865,7 @@ GameObject:
   - component: {fileID: 8365982970456941949}
   - component: {fileID: 8365982970456941947}
   - component: {fileID: 8365982970456941946}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LowerWall
   m_TagString: World
   m_Icon: {fileID: 0}
@@ -4968,7 +4973,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8365982970618903813}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LeftWall
   m_TagString: World
   m_Icon: {fileID: 0}
@@ -4983,7 +4988,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8365982970618903812}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8365982970118063189}
@@ -5002,7 +5007,7 @@ GameObject:
   - component: {fileID: 8365982970643576888}
   - component: {fileID: 8365982970643576891}
   - component: {fileID: 8365982970643576890}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: UpperWall
   m_TagString: World
   m_Icon: {fileID: 0}
@@ -5110,7 +5115,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8365982970822769675}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: UpperWall
   m_TagString: World
   m_Icon: {fileID: 0}
@@ -5125,7 +5130,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8365982970822769674}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8365982970643576888}
@@ -5142,7 +5147,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8365982970943128269}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RightWall
   m_TagString: World
   m_Icon: {fileID: 0}
@@ -5157,7 +5162,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8365982970943128268}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8365982969284753329}
@@ -5176,7 +5181,7 @@ GameObject:
   - component: {fileID: 8365982970974431298}
   - component: {fileID: 8365982970974431296}
   - component: {fileID: 8365982970974431299}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RightWall
   m_TagString: World
   m_Icon: {fileID: 0}
@@ -5284,7 +5289,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8365982971072722878}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Walls
   m_TagString: World
   m_Icon: {fileID: 0}
@@ -5299,7 +5304,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8365982971072722817}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8365982970822769675}

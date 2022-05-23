@@ -19,8 +19,6 @@ public class Cell
     public bool m_opened;
     public GameObject RoomObject;
     public int NumberOfEnemies;
-    public List<GameObject> RangedEnemyList;
-    public List<GameObject> MeleeEnemyList;
 };
 
 [Serializable]
@@ -52,6 +50,7 @@ public class DungeonGenerator : MonoBehaviour
     void Start()
     {
         MazeGenerator();
+
     }
 
     public Cell FindRoom(Vector2 objectPosition)
@@ -109,6 +108,7 @@ public class DungeonGenerator : MonoBehaviour
                     }
 
                     nextRoom.RoomObject.GetComponent<RoomBehaviour>().UpdateRoom(status);
+                    nextRoom.RoomObject.GetComponent<RoomBehaviour>().EnableLighting();
                 }
             }
         }
@@ -156,6 +156,7 @@ public class DungeonGenerator : MonoBehaviour
                 }
             }
         }
+        GeneratedRooms[0].RoomObject.GetComponent<RoomBehaviour>().EnableLighting();
     }
 
     public void MazeGenerator()
