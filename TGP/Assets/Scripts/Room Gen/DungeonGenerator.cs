@@ -45,6 +45,7 @@ public class DungeonGenerator : MonoBehaviour
     [SerializeField] private int m_maxObstaclesPerRoom;
 
     [Header("Generated Rooms", order = 5)]
+    public Vector2 CentreOfDungeon;
     public Cell FinalRoom;
     public List<Cell> AllPositionsOnBoard;
     public List<Cell> GeneratedRooms;
@@ -74,6 +75,7 @@ public class DungeonGenerator : MonoBehaviour
     public void OpenRoom(Vector2 tempPlayerPosition)
     {
         Cell cellToFind = FindRoom(tempPlayerPosition);
+
 
         for (int i = 0; i < (GeneratedRooms.Count - 1); i++)
         {
@@ -125,7 +127,7 @@ public class DungeonGenerator : MonoBehaviour
             for (int j = 0; j < SizeOfDungeon.y; j++)
             {
                 Cell currentCell = AllPositionsOnBoard[Mathf.FloorToInt(i + j * SizeOfDungeon.x)];
-
+                   
                 if (currentCell.Visited)
                 {
                     //Checking if currentCell is the last room of the dungeon
@@ -133,6 +135,7 @@ public class DungeonGenerator : MonoBehaviour
                     {
                         newRoom = Instantiate(m_finalRoomPrefab, new Vector3(i * RoomSize.x, -j * RoomSize.y, 0f), Quaternion.identity,
                         transform).GetComponent<RoomBehaviour>();
+
                         FinalRoom = currentCell;
                     }
                     else
@@ -162,6 +165,10 @@ public class DungeonGenerator : MonoBehaviour
         }
         //Turn on the lighting for the first room
         GeneratedRooms[0].RoomObject.GetComponent<RoomBehaviour>().EnableLighting();
+
+        //Find the middle of the dungeon
+        Vector2 calculatedDungeonSize = new Vector2(RoomSize.x * SizeOfDungeon.x, RoomSize.y * SizeOfDungeon.y);
+        CentreOfDungeon = new Vector2(calculatedDungeonSize.x / 2, calculatedDungeonSize.y / 2);
     }
 
     public void MazeGenerator()
