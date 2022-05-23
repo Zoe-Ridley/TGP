@@ -66,7 +66,7 @@ public class EnemyAI : MonoBehaviour
                 Destroy(gameObject, fade);
 
                 Item item = lootTable.GetLoot();
-                Debug.Log(item.name);
+                //Debug.Log(item.name);
                 for (int i = 0; i < PowerUp.Length; i++)
                 {
                     if (PowerUp[i].name == item.name)
