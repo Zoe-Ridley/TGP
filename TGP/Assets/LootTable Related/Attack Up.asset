@@ -12,7 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 181da07f6b30ed14c9666edc72a54abf, type: 3}
   m_Name: Attack Up
   m_EditorClassIdentifier: 
-  m_Type: 2
   Name: Attack Speed Up
-  m_Sprite: {fileID: 0}
-  m_ChangeNum: 1.1
+  m_ChangeNum: 0.8
