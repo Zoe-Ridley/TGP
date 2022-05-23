@@ -218,6 +218,14 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1598110244057231478, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1598110244057231478, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -907515645
+      objectReference: {fileID: 0}
     - target: {fileID: 2069871473769534632, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
       propertyPath: m_RenderPostProcessing
       value: 1
@@ -369,6 +377,14 @@ PrefabInstance:
     - target: {fileID: 2412378842747293678, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
       propertyPath: m_SortingLayerID
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2826065231477231788, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2826065231477231788, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -907515645
       objectReference: {fileID: 0}
     - target: {fileID: 3530420113158020138, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
       propertyPath: m_RootOrder
@@ -601,7 +617,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 0369e8c9
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -945,7 +961,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 11.4
+  orthographic size: 50
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -991,7 +1007,6 @@ MonoBehaviour:
   angle: 0
   minimapOverlay: {fileID: 895699569}
   dungeonGenerator: {fileID: 800891050}
-  minimapCamera: {fileID: 711078523}
 --- !u!1 &771552342
 GameObject:
   m_ObjectHideFlags: 0
@@ -1156,7 +1171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RoomSize: {x: 40, y: 20}
-  SizeOfDungeon: {x: 3, y: 3}
+  SizeOfDungeon: {x: 3, y: 5}
   m_finalRoomPrefab: {fileID: 8365982970090205779, guid: 9507e16abd116eb45874801379bb845f, type: 3}
   m_room: {fileID: 8365982970090205779, guid: 2c42082af0371074eb487604656042d6, type: 3}
   m_meleeEnemy: {fileID: 3366049877109418349, guid: d102a3c8b54f10048ba1a500033224bd, type: 3}
@@ -1175,8 +1190,10 @@ MonoBehaviour:
     Position: {x: 0, y: 0}
     RoomObject: {fileID: 0}
     RoomObstacles: []
+    RoomEnemies: []
   AllPositionsOnBoard: []
   GeneratedRooms: []
+  MinimapCamera: {fileID: 711078523}
 --- !u!4 &800891051
 Transform:
   m_ObjectHideFlags: 0
@@ -2222,7 +2239,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294967167
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0

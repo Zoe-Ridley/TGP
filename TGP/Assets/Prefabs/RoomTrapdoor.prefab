@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 883436302213221087}
   m_Layer: 6
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: World
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1955,7 +1955,7 @@ GameObject:
   - component: {fileID: 8185480986176951271}
   m_Layer: 6
   m_Name: Top right light
-  m_TagString: Untagged
+  m_TagString: World
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2064,7 +2064,7 @@ GameObject:
   - component: {fileID: 4666355891482055711}
   m_Layer: 6
   m_Name: bottom left light
-  m_TagString: Untagged
+  m_TagString: World
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2172,7 +2172,7 @@ GameObject:
   - component: {fileID: 4819587631041559783}
   m_Layer: 6
   m_Name: Lights
-  m_TagString: Untagged
+  m_TagString: World
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3248,7 +3248,7 @@ GameObject:
   - component: {fileID: 9015085816956377017}
   m_Layer: 6
   m_Name: Center Light
-  m_TagString: Untagged
+  m_TagString: World
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3357,7 +3357,7 @@ GameObject:
   - component: {fileID: 5279422078689278471}
   m_Layer: 6
   m_Name: Top left light
-  m_TagString: Untagged
+  m_TagString: World
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3466,7 +3466,7 @@ GameObject:
   - component: {fileID: 1526714790036530694}
   m_Layer: 6
   m_Name: Grid
-  m_TagString: Untagged
+  m_TagString: World
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3510,7 +3510,7 @@ GameObject:
   - component: {fileID: 7069105396024100417}
   m_Layer: 6
   m_Name: Grid
-  m_TagString: Untagged
+  m_TagString: World
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3554,7 +3554,7 @@ GameObject:
   - component: {fileID: 7957266365527402378}
   m_Layer: 6
   m_Name: bottom right light
-  m_TagString: Untagged
+  m_TagString: World
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5331,6 +5331,10 @@ PrefabInstance:
     - target: {fileID: 1667756868389669368, guid: 9de9148f803f53f47b3dc6b1a76225ae, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1667756868389669368, guid: 9de9148f803f53f47b3dc6b1a76225ae, type: 3}
+      propertyPath: m_TagString
+      value: World
       objectReference: {fileID: 0}
     - target: {fileID: 8134358110586192920, guid: 9de9148f803f53f47b3dc6b1a76225ae, type: 3}
       propertyPath: m_RootOrder
