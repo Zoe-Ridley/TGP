@@ -986,6 +986,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angle: 0
   minimapOverlay: {fileID: 895699569}
+  dungeonGenerator: {fileID: 800891050}
+  minimapCamera: {fileID: 711078523}
 --- !u!1 &771552342
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,8 +1159,9 @@ MonoBehaviour:
   m_maxMeleeEnemiesPerRoom: 1
   m_rangedEnemy: {fileID: 1731618953485584378, guid: 8fa98c187fae6954dadd90c4144869ec, type: 3}
   m_maxRangedEnemiesPerRoom: 1
-  ObstaclePrefab: {fileID: 0}
-  m_maxObstaclesPerRoom: 1
+  ObstaclePrefab: {fileID: 9094876545318604598, guid: d694931c5e701d34fa7f1b882a3a5c44, type: 3}
+  m_maxObstaclesPerRoom: 0
+  CentreOfDungeon: {x: 0, y: 0}
   FinalRoom:
     NumberOfEnemies: 0
     Visited: 0

@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer m_spriteRenderer;
 
     private Rigidbody2D m_rigidBody;
-    public Animator PlayerAnimator;
+    public Animator m_playerAnimator;
 
     private bool facingRight;
 
@@ -50,9 +50,9 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        PlayerAnimator.SetFloat("Horizontal", movement.x);
-        PlayerAnimator.SetFloat("Vertical", movement.y);
-        PlayerAnimator.SetFloat("Magnitude", movement.magnitude);
+        m_playerAnimator.SetFloat("Horizontal", movement.x);
+        m_playerAnimator.SetFloat("Vertical", movement.y);
+        m_playerAnimator.SetFloat("Magnitude", movement.magnitude);
 
         transform.position = transform.position + movement * Time.deltaTime;
 

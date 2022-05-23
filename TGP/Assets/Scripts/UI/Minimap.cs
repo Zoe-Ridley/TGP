@@ -9,12 +9,16 @@ public class Minimap : MonoBehaviour
     public Transform minimapOverlay;
     private Transform player;
     private GameObject[] enemies;
+
     [SerializeField] private DungeonGenerator dungeonGenerator;
+    //[SerializeField] private GameObject minimapCamera;
 
     void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        //minimapCamera.transform.position = new Vector3(dungeonGenerator.CentreOfDungeon.x, dungeonGenerator.CentreOfDungeon.y);
     }
 
     void Update()
@@ -30,4 +34,6 @@ public class Minimap : MonoBehaviour
             enemies[i].SetActive(Vector3.Angle(player.forward, enemies[i].transform.position - player.position) <= angle);
         }
     }
+
+
 }

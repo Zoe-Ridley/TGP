@@ -20,6 +20,7 @@ public class Cell
     public Vector2 Position;
     public GameObject RoomObject;
     public List<GameObject> RoomObstacles;
+    public List<GameObject> RoomEnemies;
 };
 
 [Serializable]
@@ -50,6 +51,9 @@ public class DungeonGenerator : MonoBehaviour
     public List<Cell> AllPositionsOnBoard;
     public List<Cell> GeneratedRooms;
 
+    [Header("Generated Rooms", order = 6)] 
+    public GameObject MinimapCamera;
+
 
     //Start is called before the first frame update
     void Start()
@@ -72,6 +76,7 @@ public class DungeonGenerator : MonoBehaviour
         }
         return null;
     }    
+
     public void OpenRoom(Vector2 tempPlayerPosition)
     {
         Cell cellToFind = FindRoom(tempPlayerPosition);
@@ -87,6 +92,11 @@ public class DungeonGenerator : MonoBehaviour
                 playerStoodRoom.GetComponent<RoomBehaviour>().UpdateRoom(GeneratedRooms[i].GeneratedRoomStatus);
 
                 GeneratedRooms[i].Opened = true;
+
+                foreach (var enemy in GeneratedRooms[i+1].RoomEnemies)
+                {
+                    enemy.SetActive(true);
+                }
 
                 for (int j = 0; j < 4; j++)
                 {
@@ -163,12 +173,18 @@ public class DungeonGenerator : MonoBehaviour
                 }
             }
         }
-        //Turn on the lighting for the first room
+        //Turn on the lighting for the first room and enable enemies
         GeneratedRooms[0].RoomObject.GetComponent<RoomBehaviour>().EnableLighting();
+        foreach (var enemy in GeneratedRooms[0].RoomEnemies)
+        {
+            enemy.SetActive(true);
+        }
 
         //Find the middle of the dungeon
-        Vector2 calculatedDungeonSize = new Vector2(RoomSize.x * SizeOfDungeon.x, RoomSize.y * SizeOfDungeon.y);
-        CentreOfDungeon = new Vector2(calculatedDungeonSize.x / 2, calculatedDungeonSize.y / 2);
+        Vector2 calculatedDungeonSize = new Vector2(((RoomSize.x * SizeOfDungeon.x) / 2) - (RoomSize.x/2) , ((RoomSize.y * -SizeOfDungeon.y) /2) + (RoomSize.y / 2));
+        
+        CentreOfDungeon = calculatedDungeonSize;
+        MinimapCamera.transform.position = calculatedDungeonSize;
     }
 
     public void MazeGenerator()
@@ -304,6 +320,8 @@ public class DungeonGenerator : MonoBehaviour
         Vector2 minPosition = new Vector2((roomPosition.x - roomSize.x / 2), roomPosition.y - roomSize.y / 2);
         Vector2 maxPosition = new Vector2((roomPosition.x + roomSize.x / 2), roomPosition.y + roomSize.y / 2);
 
+        currentCell.RoomEnemies = new List<GameObject>();
+
         //Generate enemy and obstacle count
         int rangedEnemyCount = Random.Range(1, m_maxRangedEnemiesPerRoom);
         int meleeEnemyCount = Random.Range(1, m_maxMeleeEnemiesPerRoom);
@@ -315,6 +333,8 @@ public class DungeonGenerator : MonoBehaviour
             GameObject newRangedEnemy = Instantiate(m_rangedEnemy, currentCell.RoomObject.transform);
             newRangedEnemy.transform.position = GenerateRandomPosition(minPosition, maxPosition);
             currentCell.NumberOfEnemies++;
+            currentCell.RoomEnemies.Add(newRangedEnemy);
+            newRangedEnemy.SetActive(false);
         }
 
         for (int i = 0; i < meleeEnemyCount; i++)
@@ -322,7 +342,12 @@ public class DungeonGenerator : MonoBehaviour
             //Melee enemies rely on having the Room object as their parent in order to configure pathfinding.
             GameObject newMeleeEnemy = Instantiate(m_meleeEnemy, currentCell.RoomObject.transform);
             newMeleeEnemy.transform.position = GenerateRandomPosition(minPosition, maxPosition);
+
+            
+
             currentCell.NumberOfEnemies++;
+            currentCell.RoomEnemies.Add(newMeleeEnemy);
+            newMeleeEnemy.SetActive(false);
         }
 
         //Create obstacles
