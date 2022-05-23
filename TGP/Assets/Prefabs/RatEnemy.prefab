@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1610273689729036533}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1983890441076593957}
@@ -109,7 +109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5307626857921228280}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6965256253102653607}
@@ -197,7 +197,7 @@ Transform:
   m_GameObject: {fileID: 8129611735401264269}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 21.913834, y: 8.179267, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children:
   - {fileID: 6965256253102653607}
   m_Father: {fileID: 0}
@@ -312,6 +312,9 @@ MonoBehaviour:
   m_attackRange: 1
   m_attackRate: 0.4
   m_speed: 4
+  lootTable: {fileID: 0}
+  PowerUp: []
+  m_SpawnPoint: {fileID: 0}
   m_health: 2
 --- !u!61 &1594470109214813900
 BoxCollider2D:
