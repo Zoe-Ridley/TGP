@@ -120,6 +120,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_bulletLiftime: 2
+  speedOverLife:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.2749939
+      value: 0.5731125
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   m_wallCollision: {fileID: 914979213838655605, guid: ba1795b5a9370764fbb7e08608f5456b, type: 3}
   m_EnenyCollision: {fileID: 1066110910344328858, guid: 37010cb515f7a8e46a62ae237eeda656, type: 3}
 --- !u!61 &1663420684286269745

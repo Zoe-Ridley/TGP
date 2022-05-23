@@ -5,7 +5,6 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private float m_bulletLiftime;
-    [SerializeField] private ParticleSystem m_wallCollision;
     [SerializeField] private AnimationCurve speedOverLife;
     [SerializeField] private GameObject m_wallCollision;
     [SerializeField] private GameObject m_EnenyCollision;
