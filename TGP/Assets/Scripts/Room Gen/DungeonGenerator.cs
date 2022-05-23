@@ -12,13 +12,14 @@ using Random = UnityEngine.Random;
 [Serializable]
 public class Cell
 {
-    public bool m_visited;
-    public bool[] m_generatedRoomStatus = new bool[4];
-    public bool[] m_closedRoomStatus = { false, false, false, false };
-    public Vector2 m_Position;
-    public bool m_opened;
-    public GameObject RoomObject;
     public int NumberOfEnemies;
+    public bool Visited;
+    public bool Opened;
+    public bool[] GeneratedRoomStatus = new bool[4];
+    public bool[] ClosedRoomStatus = { false, false, false, false };
+    public Vector2 Position;
+    public GameObject RoomObject;
+    public List<GameObject> RoomObstacles;
 };
 
 [Serializable]
@@ -29,28 +30,30 @@ public class DungeonGenerator : MonoBehaviour
     public Vector2 SizeOfDungeon;
     private int m_startPosition = 0;
 
-
     [Header("Room Prefabs", order = 2)]
-    [SerializeField] private GameObject FinalRoomPrefab;
+    [SerializeField] private GameObject m_finalRoomPrefab;
     [SerializeField] private GameObject m_room;
 
     [Header("Enemy Prefabs & Settings", order = 3)]
-    [SerializeField] private GameObject MeleeEnemy;
-    [SerializeField] private int MaxMeleeEnemiesPerRoom;
-    [SerializeField] private GameObject RangedEnemy;
-    [SerializeField] private int MaxRangedEnemiesPerRoom;
+    [SerializeField] private GameObject m_meleeEnemy;
+    [SerializeField] private int m_maxMeleeEnemiesPerRoom;
+    [SerializeField] private GameObject m_rangedEnemy;
+    [SerializeField] private int m_maxRangedEnemiesPerRoom;
 
-    [Header("Generated Rooms", order = 4)]
+    [Header("Obstacles", order = 4)] 
+    public GameObject ObstaclePrefab;
+    [SerializeField] private int m_maxObstaclesPerRoom;
+
+    [Header("Generated Rooms", order = 5)]
     public Cell FinalRoom;
     public List<Cell> AllPositionsOnBoard;
     public List<Cell> GeneratedRooms;
 
 
-    // Start is called before the first frame update
+    //Start is called before the first frame update
     void Start()
     {
         MazeGenerator();
-
     }
 
     public Cell FindRoom(Vector2 objectPosition)
@@ -60,8 +63,8 @@ public class DungeonGenerator : MonoBehaviour
 
         for (int i = 0; i < (GeneratedRooms.Count); i++)
         {
-            //checking which room the player is inside by comparing positions
-            if (objectPosition == GeneratedRooms[i].m_Position)
+            //Checking which room the player is inside by comparing positions
+            if (objectPosition == GeneratedRooms[i].Position)
             {
                 return GeneratedRooms[i];
             }
@@ -70,39 +73,38 @@ public class DungeonGenerator : MonoBehaviour
     }    
     public void OpenRoom(Vector2 tempPlayerPosition)
     {
-        tempPlayerPosition.x = Mathf.RoundToInt(tempPlayerPosition.x / RoomSize.x);
-        tempPlayerPosition.y = Mathf.RoundToInt(tempPlayerPosition.y / RoomSize.y);
+        Cell cellToFind = FindRoom(tempPlayerPosition);
 
         for (int i = 0; i < (GeneratedRooms.Count - 1); i++)
         {
-            //checking which room the player is inside by comparing positions
-            if (tempPlayerPosition == GeneratedRooms[i].m_Position)
+            //Checking which room the player is inside by comparing positions
+            if (cellToFind == GeneratedRooms[i])
             {
-                //open the door for the room currently stood inside
+                //Open the door for the room currently stood inside
                 GameObject playerStoodRoom = GeneratedRooms[i].RoomObject;
-                playerStoodRoom.GetComponent<RoomBehaviour>().UpdateRoom(GeneratedRooms[i].m_generatedRoomStatus);
+                playerStoodRoom.GetComponent<RoomBehaviour>().UpdateRoom(GeneratedRooms[i].GeneratedRoomStatus);
 
-                GeneratedRooms[i].m_opened = true;
+                GeneratedRooms[i].Opened = true;
 
                 for (int j = 0; j < 4; j++)
                 {
                     var nextRoom = GeneratedRooms[i + 1];
 
-                    //if the next room has two exits, open up the room completely.
+                    //If the next room has two exits, open up the room completely.
                     var status = new[] { false, false, false, false };
-                    if (GeneratedRooms[i].m_Position.y + 1 == GeneratedRooms[i + 1].m_Position.y) // ABOVE
+                    if (GeneratedRooms[i].Position.y + 1 == GeneratedRooms[i + 1].Position.y) //Above
                     {
                         status[1] = true;
                     }
-                    if (GeneratedRooms[i].m_Position.y - 1 == GeneratedRooms[i + 1].m_Position.y) //BELOW
+                    if (GeneratedRooms[i].Position.y - 1 == GeneratedRooms[i + 1].Position.y) //Below
                     {
                         status[0] = true;
                     }
-                    if (GeneratedRooms[i].m_Position.x - 1 == GeneratedRooms[i + 1].m_Position.x) //LEFT
+                    if (GeneratedRooms[i].Position.x - 1 == GeneratedRooms[i + 1].Position.x) //Left
                     {
                         status[2] = true;
                     }
-                    if (GeneratedRooms[i].m_Position.x + 1 == GeneratedRooms[i + 1].m_Position.x) //RIGHT
+                    if (GeneratedRooms[i].Position.x + 1 == GeneratedRooms[i + 1].Position.x) //Right
                     {
                         status[3] = true;
                     }
@@ -117,17 +119,19 @@ public class DungeonGenerator : MonoBehaviour
     void GenerateDungeon()
     {
         RoomBehaviour newRoom;
+
         for (int i = 0; i < SizeOfDungeon.x; i++)
         {
             for (int j = 0; j < SizeOfDungeon.y; j++)
             {
                 Cell currentCell = AllPositionsOnBoard[Mathf.FloorToInt(i + j * SizeOfDungeon.x)];
-                if (currentCell.m_visited)
+
+                if (currentCell.Visited)
                 {
                     //Checking if currentCell is the last room of the dungeon
                     if (currentCell == AllPositionsOnBoard[AllPositionsOnBoard.Count - 1])
                     {
-                        newRoom = Instantiate(FinalRoomPrefab, new Vector3(i * RoomSize.x, -j * RoomSize.y, 0f), Quaternion.identity,
+                        newRoom = Instantiate(m_finalRoomPrefab, new Vector3(i * RoomSize.x, -j * RoomSize.y, 0f), Quaternion.identity,
                         transform).GetComponent<RoomBehaviour>();
                         FinalRoom = currentCell;
                     }
@@ -143,12 +147,12 @@ public class DungeonGenerator : MonoBehaviour
                     //Generate enemies
                     GenerateRoomFeatures(currentCell);
 
-                    /*Closes all the doors inside of the room. m_closedRoomStatus can be replaced with
+                    /*Closes all the doors inside of the room. ClosedRoomStatus can be replaced with
                     m_GeneratedRoomStatus in order to generate a dungeon with doors open.*/
-                    newRoom.UpdateRoom(currentCell.m_closedRoomStatus);
-                    newRoom.name += " " + currentCell.m_Position.x + "-" + currentCell.m_Position.y;
+                    newRoom.UpdateRoom(currentCell.ClosedRoomStatus);
+                    newRoom.name += " " + currentCell.Position.x + "-" + currentCell.Position.y;
 
-                    // Setup the Pathfinding
+                    //Setup the Pathfinding
                     Vector3 pos = new Vector3((i * RoomSize.x) - RoomSize.x / 2, (-j * RoomSize.y) - RoomSize.y / 2, 0f);
                     newRoom.AddComponent<RoomPathfindingSetup>();
                     newRoom.GetComponent<RoomPathfindingSetup>().ChangeGrid(new Grid<PathNode>(Mathf.FloorToInt(RoomSize.x), Mathf.FloorToInt(RoomSize.y), 1, pos,
@@ -156,6 +160,7 @@ public class DungeonGenerator : MonoBehaviour
                 }
             }
         }
+        //Turn on the lighting for the first room
         GeneratedRooms[0].RoomObject.GetComponent<RoomBehaviour>().EnableLighting();
     }
 
@@ -168,7 +173,7 @@ public class DungeonGenerator : MonoBehaviour
             for (int i = 0; i < SizeOfDungeon.x; i++)
             {
                 Cell tempCell = new Cell();
-                tempCell.m_Position = new Vector2(i, -j);
+                tempCell.Position = new Vector2(i, -j);
                 AllPositionsOnBoard.Add(tempCell);
             }
         }
@@ -182,7 +187,7 @@ public class DungeonGenerator : MonoBehaviour
         while (k < 1000)
         {
             k++;
-            AllPositionsOnBoard[m_currentCell].m_visited = true;
+            AllPositionsOnBoard[m_currentCell].Visited = true;
             GeneratedRooms.Add(AllPositionsOnBoard[m_currentCell]);
 
             if (m_currentCell == AllPositionsOnBoard.Count - 1)
@@ -190,7 +195,7 @@ public class DungeonGenerator : MonoBehaviour
                 break;
             }
 
-            //check the cell's neighbours
+            //Check the cells neighbours
             List<int> neighbours = CheckNeighbours(m_currentCell);
 
             if (neighbours.Count == 0)
@@ -210,43 +215,43 @@ public class DungeonGenerator : MonoBehaviour
 
                 int newCell = neighbours[Random.Range(0, neighbours.Count)];
 
-                //if path is going down or right
+                //If path is going down or right
                 if (newCell > m_currentCell)
                 {
-                    //right
+                    //Right
                     if (newCell - 1 == m_currentCell)
                     {
-                        //open right door of current cell and left door of next cell
-                        AllPositionsOnBoard[m_currentCell].m_generatedRoomStatus[2] = true;
+                        //Open right door of current cell and left door of next cell
+                        AllPositionsOnBoard[m_currentCell].GeneratedRoomStatus[2] = true;
                         m_currentCell = newCell;
-                        AllPositionsOnBoard[m_currentCell].m_generatedRoomStatus[3] = true;
+                        AllPositionsOnBoard[m_currentCell].GeneratedRoomStatus[3] = true;
                     }
-                    //down
+                    //Down
                     else
                     {
-                        //open bottom door of current cell and top door of next cell
-                        AllPositionsOnBoard[m_currentCell].m_generatedRoomStatus[1] = true;
+                        //Open bottom door of current cell and top door of next cell
+                        AllPositionsOnBoard[m_currentCell].GeneratedRoomStatus[1] = true;
                         m_currentCell = newCell;
-                        AllPositionsOnBoard[m_currentCell].m_generatedRoomStatus[0] = true;
+                        AllPositionsOnBoard[m_currentCell].GeneratedRoomStatus[0] = true;
                     }
                 }
                 else
                 {
-                    //left
+                    //Left
                     if (newCell + 1 == m_currentCell)
                     {
-                        //open left door of current cell and right door of next cell
-                        AllPositionsOnBoard[m_currentCell].m_generatedRoomStatus[3] = true;
+                        //Open left door of current cell and right door of next cell
+                        AllPositionsOnBoard[m_currentCell].GeneratedRoomStatus[3] = true;
                         m_currentCell = newCell;
-                        AllPositionsOnBoard[m_currentCell].m_generatedRoomStatus[2] = true;
+                        AllPositionsOnBoard[m_currentCell].GeneratedRoomStatus[2] = true;
                     }
-                    //top
+                    //Top
                     else
                     {
-                        //open top door of current cell and bottom door of next cell
-                        AllPositionsOnBoard[m_currentCell].m_generatedRoomStatus[0] = true;
+                        //Open top door of current cell and bottom door of next cell
+                        AllPositionsOnBoard[m_currentCell].GeneratedRoomStatus[0] = true;
                         m_currentCell = newCell;
-                        AllPositionsOnBoard[m_currentCell].m_generatedRoomStatus[1] = true;
+                        AllPositionsOnBoard[m_currentCell].GeneratedRoomStatus[1] = true;
                     }
                 }
             }
@@ -258,26 +263,26 @@ public class DungeonGenerator : MonoBehaviour
     {
         List<int> m_neighbours = new List<int>();
 
-        //up
-        if (cell - SizeOfDungeon.x >= 0 && !AllPositionsOnBoard[Mathf.FloorToInt(cell - SizeOfDungeon.x)].m_visited)
+        //Up
+        if (cell - SizeOfDungeon.x >= 0 && !AllPositionsOnBoard[Mathf.FloorToInt(cell - SizeOfDungeon.x)].Visited)
         {
             m_neighbours.Add(Mathf.FloorToInt(cell - SizeOfDungeon.x));
         }
 
-        //down
-        if (cell + SizeOfDungeon.x < AllPositionsOnBoard.Count && !AllPositionsOnBoard[Mathf.FloorToInt(cell + SizeOfDungeon.x)].m_visited)
+        //Down
+        if (cell + SizeOfDungeon.x < AllPositionsOnBoard.Count && !AllPositionsOnBoard[Mathf.FloorToInt(cell + SizeOfDungeon.x)].Visited)
         {
             m_neighbours.Add(Mathf.FloorToInt(cell + SizeOfDungeon.x));
         }
 
-        //right
-        if ((cell + 1) % SizeOfDungeon.x != 0 && !AllPositionsOnBoard[Mathf.FloorToInt(cell + 1)].m_visited)
+        //Right
+        if ((cell + 1) % SizeOfDungeon.x != 0 && !AllPositionsOnBoard[Mathf.FloorToInt(cell + 1)].Visited)
         {
             m_neighbours.Add(Mathf.FloorToInt(cell + 1));
         }
 
-        //left
-        if (cell % SizeOfDungeon.x != 0 && !AllPositionsOnBoard[Mathf.FloorToInt(cell - 1)].m_visited)
+        //Left
+        if (cell % SizeOfDungeon.x != 0 && !AllPositionsOnBoard[Mathf.FloorToInt(cell - 1)].Visited)
         {
             m_neighbours.Add(Mathf.FloorToInt(cell - 1));
         }
@@ -292,13 +297,15 @@ public class DungeonGenerator : MonoBehaviour
         Vector2 minPosition = new Vector2((roomPosition.x - roomSize.x / 2), roomPosition.y - roomSize.y / 2);
         Vector2 maxPosition = new Vector2((roomPosition.x + roomSize.x / 2), roomPosition.y + roomSize.y / 2);
 
-        //Generate enemy count
-        int rangedEnemyCount = Random.Range(1, MaxRangedEnemiesPerRoom);
-        int meleeEnemyCount = Random.Range(1, MaxMeleeEnemiesPerRoom);
+        //Generate enemy and obstacle count
+        int rangedEnemyCount = Random.Range(1, m_maxRangedEnemiesPerRoom);
+        int meleeEnemyCount = Random.Range(1, m_maxMeleeEnemiesPerRoom);
+        int obstacleCount = Random.Range(1, m_maxObstaclesPerRoom);
 
+        //Instantiate enemies
         for (int i = 0; i < rangedEnemyCount; i++)
         {
-            GameObject newRangedEnemy = Instantiate(RangedEnemy, currentCell.RoomObject.transform);
+            GameObject newRangedEnemy = Instantiate(m_rangedEnemy, currentCell.RoomObject.transform);
             newRangedEnemy.transform.position = GenerateRandomPosition(minPosition, maxPosition);
             currentCell.NumberOfEnemies++;
         }
@@ -306,9 +313,15 @@ public class DungeonGenerator : MonoBehaviour
         for (int i = 0; i < meleeEnemyCount; i++)
         {
             //Melee enemies rely on having the Room object as their parent in order to configure pathfinding.
-            GameObject newMeleeEnemy = Instantiate(MeleeEnemy, currentCell.RoomObject.transform);
+            GameObject newMeleeEnemy = Instantiate(m_meleeEnemy, currentCell.RoomObject.transform);
             newMeleeEnemy.transform.position = GenerateRandomPosition(minPosition, maxPosition);
             currentCell.NumberOfEnemies++;
+        }
+
+        //Create obstacles
+        for (int i = 0; i < obstacleCount; i++)
+        {
+            
         }
     }
 
