@@ -61,7 +61,7 @@ public class RangedEnemyBurst : MonoBehaviour
 
             if (tempCell.NumberOfEnemies == 0)
             {
-                m_generator.OpenRoom(transform.position);
+                m_generator.OpenRoom(GetComponentInParent<Transform>().position);
             }
         }
     }

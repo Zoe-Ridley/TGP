@@ -13,15 +13,12 @@ public class PlayerMovement : MonoBehaviour
     public Animator PlayerAnimator;
 
     private bool facingRight;
-    private bool facingFront;
 
     void Start()
     {
         m_rigidBody = GetComponent<Rigidbody2D>();
-
         m_spriteRenderer = GetComponent<SpriteRenderer>();
-
-        PlayerAnimator = GetComponentInChildren<Animator>();
+        m_playerAnimator = GetComponentInChildren<Animator>();
     }
 
     public void Update()
@@ -45,13 +42,11 @@ public class PlayerMovement : MonoBehaviour
         {
             if (movement.y > 0)
             {
-                facingFront = false;
-                PlayerAnimator.SetTrigger("meleeBack");
+                m_playerAnimator.SetTrigger("meleeBack");
             }
             else if (movement.y < 0)
             {
-                facingFront = true;
-                PlayerAnimator.SetTrigger("melee");
+                m_playerAnimator.SetTrigger("melee");
             }
         }
 

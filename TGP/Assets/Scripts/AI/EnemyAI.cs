@@ -16,6 +16,9 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private GameObject[] PowerUp;
     public Transform m_SpawnPoint;
 
+    // Dungeon Generated
+    private DungeonGenerator m_generator;
+
     public float Speed
     {
         get { return m_speed; }
@@ -48,6 +51,7 @@ public class EnemyAI : MonoBehaviour
         m_startPosition = transform.position;
         m_pathFinder = transform.parent.GetComponent<RoomPathfindingSetup>().GetPathFinder();
         m_rb = GetComponent<Rigidbody2D>();
+        m_generator = FindObjectOfType<DungeonGenerator>();
     }
 
     // Update is called once per frame
@@ -71,6 +75,15 @@ public class EnemyAI : MonoBehaviour
                         Debug.Log(PowerUp[i].name);
                         break;
                     }
+                }
+
+                //Alter number of enemies
+                Cell tempCell = m_generator.FindRoom(transform.position);
+                tempCell.NumberOfEnemies--;
+
+                if (tempCell.NumberOfEnemies == 0)
+                {
+                    m_generator.OpenRoom(GetComponentInParent<Transform>().position);
                 }
 
                 GetComponent<SpriteRenderer>().material = m_deathMaterial;
