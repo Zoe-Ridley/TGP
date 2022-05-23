@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private float m_bulletLiftime;
     [SerializeField] private ParticleSystem m_wallCollision;
+    [SerializeField] private AnimationCurve speedOverLife;
 
     private void Update()
     {
@@ -14,6 +15,10 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+
+        float speed = speedOverLife.Evaluate(m_bulletLiftime);
+        gameObject.GetComponent<Rigidbody2D>().AddForce(transform.right * speed, ForceMode2D.Impulse);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

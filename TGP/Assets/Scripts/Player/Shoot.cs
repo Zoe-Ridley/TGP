@@ -42,7 +42,7 @@ public class Shoot : MonoBehaviour
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z));
             Vector2 toMouse = mousePos - (Vector2)transform.position;
             GameObject tempRef = Instantiate<GameObject>(m_bulletPrefab, gameObject.transform.position, Quaternion.LookRotation(Vector3.forward, Vector3.Cross(Vector3.forward, toMouse.normalized))); //shoot
-            tempRef.GetComponent<Rigidbody2D>().AddForce(tempRef.transform.right * m_firingForce, ForceMode2D.Impulse); //force on knife
+            //tempRef.GetComponent<Rigidbody2D>().AddForce(tempRef.transform.right * m_firingForce, ForceMode2D.Impulse); //force on knife
 
             //reload and cooldown application
             m_currentKnivesThrownLeft--;
