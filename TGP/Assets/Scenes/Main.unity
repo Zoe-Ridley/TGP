@@ -255,6 +255,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2069871475130941810, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
+      propertyPath: m_OpenEffect
+      value: 
+      objectReference: {fileID: 1066110910344328858, guid: a4dfceefc8eb7d64fb080aa2e3841b98, type: 3}
+    - target: {fileID: 2069871475130941810, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
       propertyPath: m_dungeonGenerator
       value: 
       objectReference: {fileID: 800891050}
