@@ -6,6 +6,7 @@ public class Hitbox : MonoBehaviour
 {
     [SerializeField] private GameObject m_CirclePrefab;
     [SerializeField] private int m_Damage;
+    [SerializeField] private float m_fillSpeed;
     private GameObject m_fillCircle;
     private GameObject m_player;
     Vector3 m_CircleSize;
@@ -24,9 +25,8 @@ public class Hitbox : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(m_CircleSize.x);
-        m_CircleSize.x += 5f * Time.deltaTime;
-        m_CircleSize.y += 5f * Time.deltaTime;
+        m_CircleSize.x += m_fillSpeed * Time.deltaTime;
+        m_CircleSize.y += m_fillSpeed * Time.deltaTime;
         m_fillCircle.transform.localScale = m_CircleSize;
 
         m_material.SetVector("_CenterPosition", transform.position);
@@ -45,6 +45,13 @@ public class Hitbox : MonoBehaviour
             Destroy(m_fillCircle);
             Destroy(gameObject);
         }
+    }
+
+    public void Setup(Vector3 scale, float fillSpeed, Vector3 destination)
+    {
+        m_fillSpeed = fillSpeed;
+        transform.localScale = scale;
+        transform.position = destination;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

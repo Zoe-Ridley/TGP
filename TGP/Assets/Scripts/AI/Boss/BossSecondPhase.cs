@@ -13,9 +13,8 @@ enum Attacks
 public class BossSecondPhase : BossState
 {
     private float m_stompTimer;
-    private float m_chargeTimer;
-    private float m_chargeRate = 5.0f;
-    private Vector3 m_chargeDistance, m_InitialPosition;
+    private float m_ThrowTimer;
+    private float m_ThrowRate = 2.0f;
     Attacks m_currentAttack;
 
     public BossSecondPhase(BossAI bossAI, GameObject player)
@@ -33,7 +32,7 @@ public class BossSecondPhase : BossState
 
         // Update timer
         m_stompTimer += Time.deltaTime;
-        m_chargeTimer += Time.deltaTime;
+        m_ThrowTimer += Time.deltaTime;
 
         m_currentAttack = Attacks.PASSIVE;
 
@@ -41,21 +40,13 @@ public class BossSecondPhase : BossState
         {
             m_currentAttack = Attacks.STOMP;
         }
-
-        if (m_chargeTimer >= m_chargeRate)
+        else if (m_ThrowTimer >= m_ThrowRate)
         {
-            m_currentAttack = Attacks.CHARGE;
+            m_currentAttack = Attacks.THROW;
         }
 
         switch (m_currentAttack)
         {
-            case Attacks.CHARGE:
-            {
-                Vector3 dir = (m_player.transform.position - BossAI.transform.position).normalized;
-                BossAI.ChargePlayer(dir);
-                m_chargeTimer = 0.0f;
-                break;
-            }
             case Attacks.STOMP:
             {
                 BossAI.Stomp(new Vector3(12.0f, 12.0f, 1.0f));
@@ -64,6 +55,9 @@ public class BossSecondPhase : BossState
             }
             case Attacks.THROW:
             {
+                Vector3 dir = BossAI.transform.position - m_player.transform.position;
+                dir.Normalize();
+                BossAI.BoulderThrow(dir);
                 break;
             }
             case Attacks.PASSIVE:

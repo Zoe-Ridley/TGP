@@ -88,6 +88,7 @@ public class EnemyAI : MonoBehaviour
         if (other.gameObject.tag == "PlayerBullet")
         {
             m_health--;
+            Destroy(other.gameObject);
         }
     }   
 

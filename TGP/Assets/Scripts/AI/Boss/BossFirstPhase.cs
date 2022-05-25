@@ -19,9 +19,9 @@ public class BossFirstPhase : BossState
         if (BossAI.Health <= BossAI.SecondPhaseHealth)
         {
             BossAI.DestroyMinnions();
+            BossAI.PutUpBarrier(new Vector3(5.0f, 5.0f, 1.0f));
             BossAI.m_state = new BossSecondPhase(BossAI, m_player);
         }
-
 
         // Update timers
         m_timeSinceLastAttack += Time.deltaTime;
@@ -34,11 +34,10 @@ public class BossFirstPhase : BossState
             m_spawnTimer = 0.0f;
         }
 
-        // Ranged attack 
+        // Ranged attack
         if (m_timeSinceLastAttack >= BossAI.AttackRate)
         {
-            Vector3 dir = (m_player.transform.position - BossAI.transform.position).normalized;
-            BossAI.BoulderThrow(dir);
+            BossAI.BoulderThrow(m_player.transform.position);
             m_timeSinceLastAttack = 0.0f;
         }
     }

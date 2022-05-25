@@ -5,13 +5,13 @@ using UnityEngine;
 public class BossAI : EnemyAI
 {
     [SerializeField] protected GameObject m_minnion;
+    [SerializeField] protected GameObject m_bullet;
     [SerializeField] protected GameObject m_boulder;
     [SerializeField] protected GameObject m_stomp;
     [SerializeField] protected GameObject m_Barrier;
     [SerializeField] protected float m_throwSpeed;
+    [SerializeField] protected float m_bulletSpeed;
     [SerializeField] protected float m_respawnRate;
-    [SerializeField] protected float m_chargeSpeed;
-    [SerializeField] protected float m_chargeRange;
 
     public float RespawnRate
     {
@@ -54,6 +54,7 @@ public class BossAI : EnemyAI
     protected override void Update()
     {
         base.Update();
+        Debug.Log(m_health);
     }
 
     public void SpawnMinnion()
@@ -62,7 +63,26 @@ public class BossAI : EnemyAI
         m_spawnedEnemies.Add(tempRef);
     }
 
-    public void BoulderThrow(Vector3 dir)
+    public void BoulderThrow(Vector3 destination)
+    {
+        Vector3 dir = destination - transform.position;
+
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        GameObject tempRef = Instantiate(m_boulder, transform.position, Quaternion.AngleAxis(angle, Vector3.forward));
+
+        tempRef.GetComponent<Rigidbody2D>().AddForce(dir * m_throwSpeed, ForceMode2D.Impulse);
+        tempRef.GetComponent<Boulder>().SetDestination(destination);
+
+        GameObject tempRefHB = Instantiate(m_stomp, transform.position, Quaternion.identity);
+
+        Vector3 scale = new Vector3(5.0f, 5.0f);
+        float fillSpeed = Vector3.Distance(destination, transform.position) / tempRef.GetComponent<Rigidbody2D>().velocity.magnitude;
+        fillSpeed = scale.x / fillSpeed;
+
+        tempRefHB.GetComponent<Hitbox>().Setup(scale, fillSpeed, destination);
+    }
+
+    public void FireBullet(Vector3 dir)
     {
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         GameObject tempRef = Instantiate(m_boulder, transform.position, Quaternion.AngleAxis(angle, Vector3.forward));
@@ -73,11 +93,6 @@ public class BossAI : EnemyAI
     {
        GameObject tempRef = Instantiate(m_stomp, transform.position, Quaternion.identity);
        tempRef.transform.localScale = scale;
-    }
-
-    public void ChargePlayer(Vector3 dir)
-    {
-        GetComponent<Rigidbody2D>().AddForce(dir * m_chargeSpeed, ForceMode2D.Impulse);
     }
 
     public void PutUpBarrier(Vector3 scale)
