@@ -38,7 +38,7 @@ public class Hitbox : MonoBehaviour
             {
                 if (m_player)
                 {
-                    m_player.GetComponent<PlayerLose>().PlayerHitPoints -= m_Damage;
+                    //m_player.GetComponent<PlayerLose>().PlayerHitPoints -= m_Damage;
                 }
             }
 

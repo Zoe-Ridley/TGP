@@ -170,12 +170,17 @@ MonoBehaviour:
   m_attackRange: 10
   m_attackRate: 0.7
   m_speed: 3
+  lootTable: {fileID: 0}
+  PowerUp: []
+  m_SpawnPoint: {fileID: 0}
   m_health: 30
   m_minnion: {fileID: 3366049877109418349, guid: d102a3c8b54f10048ba1a500033224bd, type: 3}
-  m_boulder: {fileID: 2032384438344180425, guid: 8c34e96abb7c4294c87b022f9fb9432e, type: 3}
+  m_bullet: {fileID: 2032384438344180425, guid: 656f2dbde156f05479cd37940c1be722, type: 3}
+  m_boulder: {fileID: 5905809964679592006, guid: 9ce6f011565ce74419857f5e27cd2c49, type: 3}
   m_stomp: {fileID: 9127269787326674786, guid: aea25be1d49f3974e883b901a7487cfc, type: 3}
   m_Barrier: {fileID: 8807032835941344353, guid: ebe2bee123e718d48980b2ba0eabbb7d, type: 3}
   m_throwSpeed: 12
+  m_bulletSpeed: 0
   m_respawnRate: 3
   m_SecondPhaseHealth: 20
   m_ThirdPhaseHealth: 10

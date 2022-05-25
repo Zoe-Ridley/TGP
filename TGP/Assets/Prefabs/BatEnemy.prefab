@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 6015466030009251514}
   - component: {fileID: 3693833580525468760}
   - component: {fileID: 9086434347659126794}
-  - component: {fileID: 497619792004323443}
   - component: {fileID: -2359443006178777421}
+  - component: {fileID: -3217026656381596424}
   m_Layer: 6
   m_Name: BatEnemy
   m_TagString: Enemy
@@ -127,24 +127,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &497619792004323443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 31278492875938516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31455c0c8c06ca049b92faa90c0cb41e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_deathMaterial: {fileID: 0}
-  m_targetRange: 5
-  m_attackRange: 1
-  m_attackRate: 0.4
-  m_speed: 4
-  m_health: 2
 --- !u!61 &-2359443006178777421
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -171,3 +153,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17964417, y: 0.113353066}
   m_EdgeRadius: 0
+--- !u!114 &-3217026656381596424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31278492875938516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2854480a500d274982b6d4b88c8d874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_deathMaterial: {fileID: 2100000, guid: d541ee5822a4c4149a01992d30d2c559, type: 2}
+  m_targetRange: 9
+  m_attackRange: 1
+  m_attackRate: 0.4
+  m_speed: 7
+  lootTable: {fileID: 0}
+  PowerUp: []
+  m_SpawnPoint: {fileID: 0}
+  m_health: 2
+  m_roamRange: {x: 3, y: 3}

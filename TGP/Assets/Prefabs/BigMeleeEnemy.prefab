@@ -146,9 +146,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_deathMaterial: {fileID: 2100000, guid: d541ee5822a4c4149a01992d30d2c559, type: 2}
-  m_targetRange: 8
+  m_targetRange: 9
   m_attackRange: 1
   m_attackRate: 1.5
   m_speed: 2
+  lootTable: {fileID: 0}
+  PowerUp: []
+  m_SpawnPoint: {fileID: 0}
   m_health: 4
   m_roamRange: {x: 4, y: 4}
