@@ -456,7 +456,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 975365505}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.3, y: 4.816841, z: -110.08509}
+  m_LocalPosition: {x: 26.3, y: 2.07, z: -110.08509}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -632,30 +632,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1005415556}
     m_Modifications:
-    - target: {fileID: -3506481573531338920, guid: 396889aa194d4ed4bac4318002a516d4, type: 3}
-      propertyPath: m_bullet
-      value: 
-      objectReference: {fileID: 2032384438344180425, guid: 656f2dbde156f05479cd37940c1be722, type: 3}
-    - target: {fileID: -3506481573531338920, guid: 396889aa194d4ed4bac4318002a516d4, type: 3}
-      propertyPath: m_boulder
-      value: 
-      objectReference: {fileID: 5905809964679592006, guid: 9ce6f011565ce74419857f5e27cd2c49, type: 3}
-    - target: {fileID: -3506481573531338920, guid: 396889aa194d4ed4bac4318002a516d4, type: 3}
-      propertyPath: m_minnion
-      value: 
-      objectReference: {fileID: 31278492875938516, guid: 636e5f1fe286e834fbe4205a49a1e583, type: 3}
-    - target: {fileID: -3506481573531338920, guid: 396889aa194d4ed4bac4318002a516d4, type: 3}
-      propertyPath: m_attackRate
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -3506481573531338920, guid: 396889aa194d4ed4bac4318002a516d4, type: 3}
-      propertyPath: m_throwSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -3506481573531338920, guid: 396889aa194d4ed4bac4318002a516d4, type: 3}
-      propertyPath: m_bulletSpeed
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 1175821564031364709, guid: 396889aa194d4ed4bac4318002a516d4, type: 3}
       propertyPath: m_Name
       value: GolemBoss

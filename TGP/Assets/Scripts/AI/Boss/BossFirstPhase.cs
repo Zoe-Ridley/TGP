@@ -37,7 +37,8 @@ public class BossFirstPhase : BossState
         // Ranged attack
         if (m_timeSinceLastAttack >= BossAI.AttackRate)
         {
-            BossAI.BoulderThrow(m_player.transform.position);
+            Vector3 dir = m_player.transform.position - BossAI.transform.position;
+            BossAI.FireBullet(dir.normalized);
             m_timeSinceLastAttack = 0.0f;
         }
     }

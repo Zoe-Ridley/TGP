@@ -40,6 +40,13 @@ public class BossAI : EnemyAI
         set { m_stompRate = value; }
     }
 
+    [SerializeField] protected float m_throwRate;
+    public float ThrowRate
+    {
+        get { return m_throwRate; }
+        set { m_throwRate = value; }
+    }
+
     private List<GameObject> m_spawnedEnemies;
 
     // Start is called before the first frame update
@@ -85,8 +92,8 @@ public class BossAI : EnemyAI
     public void FireBullet(Vector3 dir)
     {
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        GameObject tempRef = Instantiate(m_boulder, transform.position, Quaternion.AngleAxis(angle, Vector3.forward));
-        tempRef.GetComponent<Rigidbody2D>().AddForce(dir * m_throwSpeed, ForceMode2D.Impulse);
+        GameObject tempRef = Instantiate(m_bullet, transform.position, Quaternion.AngleAxis(angle, Vector3.forward));
+        tempRef.GetComponent<Rigidbody2D>().AddForce(dir * m_bulletSpeed, ForceMode2D.Impulse);
     }
 
     public void Stomp(Vector3 scale)
