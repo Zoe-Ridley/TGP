@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BaseDissolveMaterial
-  m_Shader: {fileID: -6465566751694194690, guid: 0ced6201eeb9d334cb34039fa03e37a6, type: 3}
+  m_Name: HitboxMaterial
+  m_Shader: {fileID: -6465566751694194690, guid: 6ec91820726059e45b87505775a7021a, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -37,8 +37,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Vector1_abff1200c84d4c3db03c30a79d4938c6: 50
-    - _Fade: 1
+    - _Radius: 5
     m_Colors:
-    - _FadeColor: {r: 0, g: 23.968628, b: 20.203922, a: 0}
+    - _CenterPosition: {r: 31, g: 6, b: 0, a: 0}
   m_BuildTextureStacks: []

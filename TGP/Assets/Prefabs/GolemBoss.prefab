@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4922809613881912811}
   - component: {fileID: 8389758431162026991}
   - component: {fileID: 889434968895493973}
-  - component: {fileID: 5194275687949874438}
   - component: {fileID: 4472406814153813543}
+  - component: {fileID: -3506481573531338920}
   m_Layer: 0
   m_Name: GolemBoss
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1175821564031364709}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.08, y: -0.08543223, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 12, y: 12, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1956705135
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 6180148953911850715, guid: 5a72bf6a4f4357a4cb5405aaf6cdf3df, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -132,24 +132,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.27171534, y: 0.24961829}
   m_EdgeRadius: 0
---- !u!114 &5194275687949874438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1175821564031364709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31455c0c8c06ca049b92faa90c0cb41e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_speed: 4
-  m_targetRange: 5
-  m_attackRange: 1
-  m_attackRate: 0.4
-  m_roamRange: {x: 3, y: 5}
-  m_health: 2
 --- !u!50 &4472406814153813543
 Rigidbody2D:
   serializedVersion: 4
@@ -171,3 +153,36 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-3506481573531338920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175821564031364709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2595c5f42ce6f8b47b37401bae727e3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_deathMaterial: {fileID: 2100000, guid: d541ee5822a4c4149a01992d30d2c559, type: 2}
+  m_targetRange: 10
+  m_attackRange: 10
+  m_attackRate: 0.7
+  m_speed: 3
+  lootTable: {fileID: 0}
+  PowerUp: []
+  m_SpawnPoint: {fileID: 0}
+  m_health: 30
+  m_minnion: {fileID: 31278492875938516, guid: 636e5f1fe286e834fbe4205a49a1e583, type: 3}
+  m_bullet: {fileID: 2032384438344180425, guid: 656f2dbde156f05479cd37940c1be722, type: 3}
+  m_boulder: {fileID: 5905809964679592006, guid: 9ce6f011565ce74419857f5e27cd2c49, type: 3}
+  m_stomp: {fileID: 9127269787326674786, guid: aea25be1d49f3974e883b901a7487cfc, type: 3}
+  m_Barrier: {fileID: 8807032835941344353, guid: ebe2bee123e718d48980b2ba0eabbb7d, type: 3}
+  m_throwSpeed: 5
+  m_bulletSpeed: 15
+  m_respawnRate: 3
+  m_SecondPhaseHealth: 20
+  m_ThirdPhaseHealth: 10
+  m_stompRate: 5
+  m_throwRate: 3

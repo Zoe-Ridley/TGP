@@ -9,6 +9,12 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] protected float m_targetRange;
     [SerializeField] protected float m_attackRange;
     [SerializeField] protected float m_attackRate;
+    public float AttackRate
+    {
+        get { return m_attackRate; }
+        set { m_attackRate = value; }
+    }
+
     [SerializeField] protected float m_speed;
 
     // Item Data
@@ -26,7 +32,11 @@ public class EnemyAI : MonoBehaviour
     }
 
     [SerializeField] protected int m_health;
-
+    public int Health
+    {
+        get { return m_health; }
+        set { m_health = value; }
+    }
 
     // The rigid body
     protected Rigidbody2D m_rb;
@@ -109,6 +119,7 @@ public class EnemyAI : MonoBehaviour
         if (other.gameObject.tag == "PlayerBullet")
         {
             m_health--;
+            Destroy(other.gameObject);
         }
     }   
 

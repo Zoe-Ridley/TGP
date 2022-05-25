@@ -17,6 +17,9 @@ GameObject:
   - component: {fileID: 2069871475130941813}
   - component: {fileID: 8303425887882683621}
   - component: {fileID: 2069871475130941833}
+  - component: {fileID: 993017806}
+  - component: {fileID: 993017814}
+  - component: {fileID: 993017815}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -139,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7296d8b2734abc44e823d923b1d2bdd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 10
+  PlayerSpeed: 10
   m_playerAnimator: {fileID: 2069871475130941808}
 --- !u!95 &2069871475130941808
 Animator:
@@ -189,7 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_playerMaxHP: 100
-  m_playerHitpoints: 5
+  m_playerHitpoints: 100
   m_textHitCounter: {fileID: 0}
   m_invulnerableTime: 1
   slider: {fileID: 0}
@@ -207,11 +210,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_bulletPrefab: {fileID: 7273187106207894811, guid: 8e450d8a32bd62543a07920fde1edacc, type: 3}
-  m_firingForce: 100
-  m_coolDownTime: 2
-  m_maxKnivesThrown: 0
-  m_reloadTime: 0
+  m_firingForce: 50
+  m_coolDownTime: 0.5
+  m_maxKnivesThrown: 5
+  m_reloadTime: 2
   m_reloadText: {fileID: 0}
+--- !u!114 &993017806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069871475130941809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca0c71109bfd533468bfc306c14f37fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_pausePanel: {fileID: 0}
+--- !u!114 &993017814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069871475130941809}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 805c628e11ca08844ac3bf2dafa49887, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_weaponPrefab: {fileID: 0}
+  m_player: {fileID: 2069871475130941809}
+  m_enemy: {fileID: 0}
+  m_followPlayer: {fileID: 2069871475130941814}
+  m_offset: {x: 0, y: 0, z: 0}
+--- !u!114 &993017815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069871475130941809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca0c71109bfd533468bfc306c14f37fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_pausePanel: {fileID: 0}
 --- !u!1 &3415543332876132455
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,7 +268,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4313709204159574502}
   - component: {fileID: 1598110244057231478}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: MinimapIcon (1)
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -237,7 +283,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3415543332876132455}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2069871475130941814}
@@ -281,8 +327,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -907515645
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.12834764, g: 1, b: 0, a: 1}
@@ -305,7 +351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5897015344403137504}
   - component: {fileID: 2826065231477231788}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: MinimapIcon
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -320,7 +366,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6762036587902153467}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2069871475130941814}
@@ -364,8 +410,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -907515645
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.12834764, g: 1, b: 0, a: 1}
