@@ -41,6 +41,9 @@ public class EnemyAI : MonoBehaviour
     // The rigid body
     protected Rigidbody2D m_rb;
 
+    // animator.
+    protected Animator m_animator;
+
     // variables for dissolve
     protected float fade = 1.3f;
     protected bool fading = false;
@@ -61,6 +64,7 @@ public class EnemyAI : MonoBehaviour
         m_startPosition = transform.position;
         m_pathFinder = transform.parent.GetComponent<RoomPathfindingSetup>().GetPathFinder();
         m_rb = GetComponent<Rigidbody2D>();
+        m_animator = GetComponent<Animator>();
         m_generator = FindObjectOfType<DungeonGenerator>();
     }
 
@@ -118,6 +122,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (other.gameObject.tag == "PlayerBullet")
         {
+            m_animator.SetTrigger("isTakingDamage");
             m_health--;
             Destroy(other.gameObject);
         }
