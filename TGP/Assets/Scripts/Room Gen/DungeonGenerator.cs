@@ -37,12 +37,15 @@ public class DungeonGenerator : MonoBehaviour
 
     [Header("Enemy Prefabs & Settings", order = 3)]
     [SerializeField] private GameObject m_meleeEnemy;
+    [SerializeField] private int m_minMeleeEnemiesPerRoom;
     [SerializeField] private int m_maxMeleeEnemiesPerRoom;
     [SerializeField] private GameObject m_rangedEnemy;
+    [SerializeField] private int m_minRangedEnemiesPerRoom;
     [SerializeField] private int m_maxRangedEnemiesPerRoom;
 
-    [Header("Obstacles", order = 4)] 
+    [Header("Obstacles", order = 4)]
     public GameObject ObstaclePrefab;
+    [SerializeField] private int m_minObstaclesPerRoom;
     [SerializeField] private int m_maxObstaclesPerRoom;
 
     [Header("Generated Rooms", order = 5)]
@@ -51,7 +54,7 @@ public class DungeonGenerator : MonoBehaviour
     public List<Cell> AllPositionsOnBoard;
     public List<Cell> GeneratedRooms;
 
-    [Header("Additional Objects", order = 6)] 
+    [Header("Additional Objects", order = 6)]
     public GameObject MinimapCamera;
 
 
@@ -75,7 +78,7 @@ public class DungeonGenerator : MonoBehaviour
             }
         }
         return null;
-    }    
+    }
 
     public void OpenRoom(Vector2 tempPlayerPosition)
     {
@@ -93,7 +96,7 @@ public class DungeonGenerator : MonoBehaviour
 
                 GeneratedRooms[i].Opened = true;
 
-                foreach (var enemy in GeneratedRooms[i+1].RoomEnemies)
+                foreach (var enemy in GeneratedRooms[i + 1].RoomEnemies)
                 {
                     enemy.SetActive(true);
                 }
@@ -137,7 +140,7 @@ public class DungeonGenerator : MonoBehaviour
             for (int j = 0; j < SizeOfDungeon.y; j++)
             {
                 Cell currentCell = AllPositionsOnBoard[Mathf.FloorToInt(i + j * SizeOfDungeon.x)];
-                   
+
                 if (currentCell.Visited)
                 {
                     //Checking if currentCell is the last room of the dungeon
@@ -181,8 +184,8 @@ public class DungeonGenerator : MonoBehaviour
         }
 
         //Find the middle of the dungeon
-        Vector2 calculatedDungeonSize = new Vector2(((RoomSize.x * SizeOfDungeon.x) / 2) - (RoomSize.x/2) , ((RoomSize.y * -SizeOfDungeon.y) /2) + (RoomSize.y / 2));
-        
+        Vector2 calculatedDungeonSize = new Vector2(((RoomSize.x * SizeOfDungeon.x) / 2) - (RoomSize.x / 2), ((RoomSize.y * -SizeOfDungeon.y) / 2) + (RoomSize.y / 2));
+
         CentreOfDungeon = calculatedDungeonSize;
         MinimapCamera.transform.position = calculatedDungeonSize;
     }
@@ -321,11 +324,12 @@ public class DungeonGenerator : MonoBehaviour
         Vector2 maxPosition = new Vector2((roomPosition.x + roomSize.x / 2), roomPosition.y + roomSize.y / 2);
 
         currentCell.RoomEnemies = new List<GameObject>();
+        currentCell.RoomObstacles = new List<GameObject>();
 
         //Generate enemy and obstacle count
-        int rangedEnemyCount = Random.Range(1, m_maxRangedEnemiesPerRoom);
-        int meleeEnemyCount = Random.Range(1, m_maxMeleeEnemiesPerRoom);
-        int obstacleCount = Random.Range(1, m_maxObstaclesPerRoom);
+        int rangedEnemyCount = Random.Range(m_minRangedEnemiesPerRoom, m_maxRangedEnemiesPerRoom);
+        int meleeEnemyCount = Random.Range(m_minMeleeEnemiesPerRoom, m_maxMeleeEnemiesPerRoom);
+        int obstacleCount = Random.Range(m_minObstaclesPerRoom, m_maxObstaclesPerRoom);
 
         //Instantiate enemies
         for (int i = 0; i < rangedEnemyCount; i++)
@@ -343,7 +347,7 @@ public class DungeonGenerator : MonoBehaviour
             GameObject newMeleeEnemy = Instantiate(m_meleeEnemy, currentCell.RoomObject.transform);
             newMeleeEnemy.transform.position = GenerateRandomPosition(minPosition, maxPosition);
 
-            
+
 
             currentCell.NumberOfEnemies++;
             currentCell.RoomEnemies.Add(newMeleeEnemy);
@@ -355,15 +359,32 @@ public class DungeonGenerator : MonoBehaviour
         {
             GameObject newObstacle = Instantiate(ObstaclePrefab, currentCell.RoomObject.transform);
             newObstacle.transform.position = GenerateRandomPosition(minPosition, maxPosition);
-            //if(newObstacle.GetComponent<BoxCollider2D>().IsTouching())
+            Collider2D obstacleCollider = newObstacle.GetComponent<Collider2D>();
+
+            for (int j = 0; j < currentCell.RoomEnemies.Count; j++)
+            {
+                for (int k = 0; k < currentCell.RoomObstacles.Count; k++)
+                {
+                    if (obstacleCollider.IsTouching(currentCell.RoomEnemies[j].GetComponent<Collider2D>()))
+                    {
+                        Destroy(newObstacle);
+                        break;
+                    }
+                    else if (obstacleCollider.IsTouching(currentCell.RoomObstacles[k].GetComponent<Collider2D>()))
+                    {
+                        Destroy(newObstacle);
+                        break;
+                    }
+                }
+            }
             currentCell.RoomObstacles.Add(newObstacle);
         }
     }
 
     private Vector2 GenerateRandomPosition(Vector2 min, Vector2 max)
     {
-        var x = Mathf.FloorToInt(Random.Range(min.x, max.x));
-        var y = Mathf.FloorToInt(Random.Range(min.y, max.y));
+        var x = Mathf.FloorToInt(Random.Range(min.x + 1, max.x - 1));
+        var y = Mathf.FloorToInt(Random.Range(min.y + 1, max.y - 1));
         return new Vector2(x, y);
     }
 }

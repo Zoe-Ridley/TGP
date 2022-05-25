@@ -934,11 +934,14 @@ MonoBehaviour:
   m_finalRoomPrefab: {fileID: 8365982970090205779, guid: 9507e16abd116eb45874801379bb845f, type: 3}
   m_room: {fileID: 8365982970090205779, guid: 2c42082af0371074eb487604656042d6, type: 3}
   m_meleeEnemy: {fileID: 3366049877109418349, guid: d102a3c8b54f10048ba1a500033224bd, type: 3}
-  m_maxMeleeEnemiesPerRoom: 1
+  m_minMeleeEnemiesPerRoom: 2
+  m_maxMeleeEnemiesPerRoom: 5
   m_rangedEnemy: {fileID: 1731618953485584378, guid: 8fa98c187fae6954dadd90c4144869ec, type: 3}
-  m_maxRangedEnemiesPerRoom: 1
-  ObstaclePrefab: {fileID: 9094876545318604598, guid: d694931c5e701d34fa7f1b882a3a5c44, type: 3}
-  m_maxObstaclesPerRoom: 0
+  m_minRangedEnemiesPerRoom: 2
+  m_maxRangedEnemiesPerRoom: 5
+  ObstaclePrefab: {fileID: 9094876545318604598, guid: 0ba9824fff0885547898eaa6d760e02f, type: 3}
+  m_minObstaclesPerRoom: 10
+  m_maxObstaclesPerRoom: 20
   CentreOfDungeon: {x: 0, y: 0}
   FinalRoom:
     NumberOfEnemies: 0
