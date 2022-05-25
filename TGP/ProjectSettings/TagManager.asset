@@ -10,7 +10,6 @@ TagManager:
   - World
   - MeleeEnemy
   - DeadEnemy
-  - Boulder
   layers:
   - Default
   - TransparentFX
@@ -18,9 +17,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Environment
+  - Minimap
+  - Light
   - 
   - 
   - 
@@ -56,4 +55,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1956705135
+    locked: 0
+  - name: MinimapIcons
+    uniqueID: 3387451651
     locked: 0

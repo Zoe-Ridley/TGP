@@ -8,13 +8,7 @@ using TMPro;
 public class PlayerLose : MonoBehaviour
 {
     public int m_playerMaxHP = 100;
-    [SerializeField] private int m_playerHitpoints;
-    public int PlayerHitPoints
-    {
-        get { return m_playerHitpoints; }
-        set { m_playerHitpoints = value; }
-    }
-
+    [SerializeField] public int m_playerHitpoints;
     [SerializeField] private TextMeshProUGUI m_textHitCounter;
     [SerializeField] private float m_invulnerableTime;
 
@@ -33,12 +27,14 @@ public class PlayerLose : MonoBehaviour
         fill = slider.GetComponent<Image>();
         m_playerHitpoints = 100;
         slider.value = m_playerHitpoints;
+        m_animator = GetComponent<Animator>();
     }
 
     void Update()
     {
         slider.value = m_playerHitpoints;
-        m_textHitCounter.SetText(" " + m_playerHitpoints);
+        slider.maxValue = m_playerMaxHP;
+        m_textHitCounter.SetText(" " + m_playerHitpoints + "/" + m_playerMaxHP);
 
         if (m_playerHitpoints <= 0)
         {

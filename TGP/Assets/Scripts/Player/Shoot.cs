@@ -13,7 +13,7 @@ public class Shoot : MonoBehaviour
 
     [Header("Reload Variables")]
     [SerializeField] private int m_maxKnivesThrown;
-    [SerializeField] private float m_reloadTime;
+    [SerializeField] public float m_reloadTime;
     private float m_tempReloadTime;
     private int m_currentKnivesThrownLeft;
 
@@ -32,7 +32,6 @@ public class Shoot : MonoBehaviour
         m_coolDown -= Time.deltaTime;
         //Debug.Log(m_coolDown);
 
-
         // sets reload text from the start.
         m_reloadText.SetText(m_currentKnivesThrownLeft + " / " + m_maxKnivesThrown);
 
@@ -47,7 +46,7 @@ public class Shoot : MonoBehaviour
             //reload and cooldown application
             m_currentKnivesThrownLeft--;
             m_coolDown = m_coolDownTime;
-            Debug.Log(m_currentKnivesThrownLeft);
+            Debug.Log("Knives left:  " +m_currentKnivesThrownLeft);
         }
         else if (m_currentKnivesThrownLeft == 0) ////reloading, UI should say reloading
         {

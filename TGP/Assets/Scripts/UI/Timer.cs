@@ -18,14 +18,22 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        m_currentTime -= 1 * Time.deltaTime;
-        m_timerText.text = m_currentTime.ToString("0");
+        m_currentTime += 1 * Time.deltaTime;
+        DisplayTime(m_currentTime);
 
-        if(m_currentTime <= 0)
+    }
+
+    void DisplayTime(float timeToDisplay)
+    {
+        if (timeToDisplay < 0)
         {
-            m_currentTime = 0;
-            SceneManager.LoadScene("Lose");
-            //end game.
+            timeToDisplay = 0;
         }
+
+        // calculate the minutes & seconds.
+        float minutes = Mathf.FloorToInt(timeToDisplay / 60);
+        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
+
+        m_timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }

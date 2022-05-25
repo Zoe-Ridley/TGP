@@ -40,7 +40,7 @@ public class ItemTable : ScriptableObject
 
     public Item GetLoot()
     {
-        int value = UnityEngine.Random.Range(0, 100);
+        int value = UnityEngine.Random.Range(0, TotalWeight);
 
         for (int i = 0; i < table.Count; i++)
         {

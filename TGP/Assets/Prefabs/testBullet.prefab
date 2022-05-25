@@ -106,7 +106,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &7314715443192539096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,6 +120,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_bulletLiftime: 2
+  m_wallCollision: {fileID: 914979213838655605, guid: ba1795b5a9370764fbb7e08608f5456b, type: 3}
+  m_EnenyCollision: {fileID: 1066110910344328858, guid: 37010cb515f7a8e46a62ae237eeda656, type: 3}
 --- !u!61 &1663420684286269745
 BoxCollider2D:
   m_ObjectHideFlags: 0
