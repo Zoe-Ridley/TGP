@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 993017806, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
+      propertyPath: m_pausePanel
+      value: 
+      objectReference: {fileID: 1666498475}
     - target: {fileID: 1232326038696603620, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -340,6 +344,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6908907554547644070, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
+    - {fileID: 993017815, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
 --- !u!1 &257535888
 GameObject:
@@ -627,7 +632,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 993017806}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseFunction, Assembly-CSharp
         m_MethodName: ResumeButton
         m_Mode: 1
@@ -718,7 +723,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &637530284
 GameObject:
@@ -902,7 +907,7 @@ Transform:
   m_Children:
   - {fileID: 503075416}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &711078528
 MonoBehaviour:
@@ -1301,35 +1306,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2069871475130941809, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
   m_PrefabInstance: {fileID: 248729894}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &993017815 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 993017815, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
-  m_PrefabInstance: {fileID: 248729894}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 993017804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca0c71109bfd533468bfc306c14f37fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_pausePanel: {fileID: 1666498475}
---- !u!114 &993017814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 993017804}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 805c628e11ca08844ac3bf2dafa49887, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_weaponPrefab: {fileID: 0}
-  m_player: {fileID: 993017804}
-  m_enemy: {fileID: 0}
-  m_followPlayer: {fileID: 993017805}
-  m_offset: {x: 0, y: 0, z: 0}
 --- !u!1 &1024941282
 GameObject:
   m_ObjectHideFlags: 0
@@ -2394,7 +2370,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 206761008, guid: 53befe986a6637245afb858ff45e2488, type: 3}
       propertyPath: AudioClip.Array.size
-      value: 11
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 206761008, guid: 53befe986a6637245afb858ff45e2488, type: 3}
+      propertyPath: AudioClip.Array.data[11].loop
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 206761008, guid: 53befe986a6637245afb858ff45e2488, type: 3}
       propertyPath: AudioClip.Array.data[8].Sound
@@ -2408,6 +2388,10 @@ PrefabInstance:
       propertyPath: AudioClip.Array.data[10].Sound
       value: 
       objectReference: {fileID: 8300000, guid: f2b521c1e8088e349820e74ceb1b4dce, type: 3}
+    - target: {fileID: 206761008, guid: 53befe986a6637245afb858ff45e2488, type: 3}
+      propertyPath: AudioClip.Array.data[11].Sound
+      value: 
+      objectReference: {fileID: 8300000, guid: d9bd311b828bf0f4e8e6d9f4c5c087c9, type: 3}
     - target: {fileID: 206761008, guid: 53befe986a6637245afb858ff45e2488, type: 3}
       propertyPath: AudioClip.Array.data[8].m_Name
       value: Reload
@@ -2433,6 +2417,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 206761008, guid: 53befe986a6637245afb858ff45e2488, type: 3}
+      propertyPath: AudioClip.Array.data[11].m_Name
+      value: Boss Theme
+      objectReference: {fileID: 0}
+    - target: {fileID: 206761008, guid: 53befe986a6637245afb858ff45e2488, type: 3}
+      propertyPath: AudioClip.Array.data[11].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 206761008, guid: 53befe986a6637245afb858ff45e2488, type: 3}
       propertyPath: AudioClip.Array.data[8].audioType
       value: 1
       objectReference: {fileID: 0}
@@ -2443,6 +2435,10 @@ PrefabInstance:
     - target: {fileID: 206761008, guid: 53befe986a6637245afb858ff45e2488, type: 3}
       propertyPath: AudioClip.Array.data[10].audioType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 206761008, guid: 53befe986a6637245afb858ff45e2488, type: 3}
+      propertyPath: AudioClip.Array.data[11].audioType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2702342539089462534, guid: 53befe986a6637245afb858ff45e2488, type: 3}
       propertyPath: m_RootOrder
@@ -2731,7 +2727,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2114176711
 MonoBehaviour:
@@ -2762,7 +2758,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2134540984
 GameObject:
