@@ -115,3 +115,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CirclePrefab: {fileID: 7012844668612862063, guid: 753a019adccad2b439d22a24f448545c, type: 3}
   m_Damage: 3
+  m_fillSpeed: 10
