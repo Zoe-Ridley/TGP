@@ -260,7 +260,7 @@ MonoBehaviour:
   - {fileID: 1029141005002993237, guid: 6e9695a3ef93af946b6035ce2afb59b0, type: 3}
   - {fileID: 7873700024920522900, guid: bd5ce34f2f6823a4c9e595e8c9b8af64, type: 3}
   - {fileID: 1029141005002993237, guid: 5f57f720579aede408f1453953b93794, type: 3}
-  m_SpawnPoint: {fileID: 0}
+  m_SpawnPoint: {fileID: 5170813434079150701}
   m_health: 3
   m_firingForce: 2
   m_bulletPrefab: {fileID: 2032384438344180425, guid: 8c34e96abb7c4294c87b022f9fb9432e, type: 3}
