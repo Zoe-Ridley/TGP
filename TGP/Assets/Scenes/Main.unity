@@ -860,8 +860,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 503075416}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1048,11 +1047,19 @@ MonoBehaviour:
   m_finalRoomPrefab: {fileID: 8365982970090205779, guid: 9507e16abd116eb45874801379bb845f, type: 3}
   m_room: {fileID: 8365982970090205779, guid: 2c42082af0371074eb487604656042d6, type: 3}
   m_meleeEnemy: {fileID: 8916536103795626766, guid: ec8277e7b84b8c04fa9d7c5cc16bed16, type: 3}
+  m_minMeleeEnemiesPerRoom: 1
   m_maxMeleeEnemiesPerRoom: 1
   m_rangedEnemy: {fileID: 8129611735401264269, guid: 323d08424f6eb394693885eb0ec1e563, type: 3}
+  m_minRangedEnemiesPerRoom: 1
   m_maxRangedEnemiesPerRoom: 1
-  ObstaclePrefab: {fileID: 9094876545318604598, guid: d694931c5e701d34fa7f1b882a3a5c44, type: 3}
-  m_maxObstaclesPerRoom: 0
+  ObstaclePrefabs:
+  - {fileID: 4978013756774897604, guid: 0b4272b9c8f1cfe43bd9b08762e6314f, type: 3}
+  - {fileID: 5698327767535262606, guid: e1eebd7a668e7cf429b96217824f0225, type: 3}
+  - {fileID: 939791572879391642, guid: 405542a2080631543b146de191577747, type: 3}
+  - {fileID: 1787925601631623178, guid: 27c3e12398d44a048af6e12bc1c0de19, type: 3}
+  - {fileID: 6075946149761476832, guid: 3076f381bf7a6ac449a180217aee11ff, type: 3}
+  m_minObstaclesPerRoom: 5
+  m_maxObstaclesPerRoom: 10
   CentreOfDungeon: {x: 0, y: 0}
   FinalRoom:
     NumberOfEnemies: 0
@@ -1066,7 +1073,7 @@ MonoBehaviour:
     RoomEnemies: []
   AllPositionsOnBoard: []
   GeneratedRooms: []
-  MinimapCamera: {fileID: 0}
+  MinimapCamera: {fileID: 711078523}
 --- !u!4 &800891051
 Transform:
   m_ObjectHideFlags: 0
@@ -1195,17 +1202,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2069871475130941809, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
   m_PrefabInstance: {fileID: 248729894}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &993017806 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 993017806, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
-  m_PrefabInstance: {fileID: 248729894}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 993017804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca0c71109bfd533468bfc306c14f37fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &993017814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2498,7 +2494,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2134540984
 GameObject:
