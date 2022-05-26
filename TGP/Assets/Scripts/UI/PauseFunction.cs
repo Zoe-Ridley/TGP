@@ -14,13 +14,13 @@ public class PauseFunction : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.P) && m_isPaused == false)
+        if(Input.GetKeyDown(KeyCode.Escape) && m_isPaused == false)
         {
             m_isPaused = true;
             m_pausePanel.SetActive(true);
             Time.timeScale = 0f;
         }
-        else if (Input.GetKeyDown(KeyCode.P) && m_isPaused == true)
+        else if (Input.GetKeyDown(KeyCode.Escape) && m_isPaused == true)
         {
             m_isPaused = false;
             m_pausePanel.SetActive(false);
