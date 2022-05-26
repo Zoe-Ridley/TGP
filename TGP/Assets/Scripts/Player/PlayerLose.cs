@@ -36,6 +36,7 @@ public class PlayerLose : MonoBehaviour
         slider.maxValue = m_playerMaxHP;
         m_textHitCounter.SetText(" " + m_playerHitpoints + "/" + m_playerMaxHP);
 
+
         if (m_playerHitpoints <= 0)
         {
             SceneManager.LoadScene("Lose");
