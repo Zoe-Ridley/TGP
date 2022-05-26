@@ -10,6 +10,9 @@ public class TrapDoor : MonoBehaviour
         if(collision.CompareTag("Player"))
         {
             SceneManager.LoadScene("BossLevel");
+            FindObjectOfType<AudioManager>().playAudio("Boss Theme");
+            FindObjectOfType<AudioManager>().StopAudio("MainMusic");
+            FindObjectOfType<AudioManager>().StopAudio("Title");
         }
     }
 }
