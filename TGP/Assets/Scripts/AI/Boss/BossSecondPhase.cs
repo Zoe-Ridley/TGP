@@ -34,6 +34,8 @@ public class BossSecondPhase : BossState
         m_stompTimer += Time.deltaTime;
         m_ThrowTimer += Time.deltaTime;
 
+        Debug.Log(m_ThrowTimer);
+
         m_currentAttack = Attacks.PASSIVE;
 
         if (m_stompTimer >= BossAI.StompRate)
@@ -55,9 +57,10 @@ public class BossSecondPhase : BossState
             }
             case Attacks.THROW:
             {
-                Vector3 dir = BossAI.transform.position - m_player.transform.position;
+                Vector3 dir = m_player.transform.position - BossAI.transform.position;
                 dir.Normalize();
                 BossAI.BoulderThrow(dir);
+                m_ThrowRate = 0.0f;
                 break;
             }
             case Attacks.PASSIVE:
