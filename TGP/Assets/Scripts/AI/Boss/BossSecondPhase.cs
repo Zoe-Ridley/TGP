@@ -57,10 +57,8 @@ public class BossSecondPhase : BossState
             }
             case Attacks.THROW:
             {
-                Vector3 dir = m_player.transform.position - BossAI.transform.position;
-                dir.Normalize();
-                BossAI.BoulderThrow(dir);
-                m_ThrowRate = 0.0f;
+                BossAI.BoulderThrow(m_player.transform.position);
+                m_ThrowTimer = 0.0f;
                 break;
             }
             case Attacks.PASSIVE:
