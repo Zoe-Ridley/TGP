@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class BossUIController : MonoBehaviour
 {
-    private EnemyAI m_enemyAI;
+    [SerializeField] private GameObject m_boss;
+    private BossAI m_bossAI;
 
     [Header("Slider")]
     public Slider slider;
@@ -13,16 +14,17 @@ public class BossUIController : MonoBehaviour
 
     void Start()
     {
+        m_bossAI = m_boss.GetComponent<BossAI>();
+
         slider = slider.GetComponent<Slider>();
         fill = slider.GetComponent<Image>();
 
-        m_enemyAI.m_health = 100;
-        slider.value = m_enemyAI.m_health;
+        slider.value = m_bossAI.m_health;
     }
 
     void Update()
     {
-        slider.value = m_enemyAI.m_health;
-        slider.maxValue = m_enemyAI.m_health;
+        slider.value = m_bossAI.m_health;
+        slider.maxValue = m_bossAI.m_health;
     }
 }

@@ -33,7 +33,8 @@ public class EnemyAI : MonoBehaviour
         set { m_speed = value; }
     }
 
-    [SerializeField] public int m_health;
+    public int m_health;
+
     public int Health
     {
         get { return m_health; }
