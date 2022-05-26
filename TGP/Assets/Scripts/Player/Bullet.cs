@@ -24,7 +24,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Enemy"))
+        if(collision.CompareTag("Enemy") || collision.CompareTag("MeleeEnemy"))
         {
             Instantiate(m_EnenyCollision, transform.position, Quaternion.identity);
             Destroy(gameObject);
@@ -33,12 +33,6 @@ public class Bullet : MonoBehaviour
         if(collision.CompareTag("World"))
         {
             Instantiate(m_wallCollision, transform.position, this.transform.rotation);
-            Destroy(gameObject);
-        }
-
-        if (collision.CompareTag("MeleeEnemy"))
-        {
-            Instantiate(m_EnenyCollision, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
