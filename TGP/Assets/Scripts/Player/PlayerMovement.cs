@@ -14,6 +14,10 @@ public class PlayerMovement : MonoBehaviour
 
     private bool facingRight;
 
+    /*private float m_dashCountUp;
+    [SerializeField] private float m_dashCooldown;
+    [SerializeField] private float m_dashMultiplier;*/
+
     void Start()
     {
         m_rigidBody = GetComponent<Rigidbody2D>();
@@ -49,6 +53,19 @@ public class PlayerMovement : MonoBehaviour
                 m_playerAnimator.SetTrigger("melee");
             }
         }
+        //dash system
+        /*m_dashCountUp += Time.deltaTime;
+        if (Input.GetKeyDown(KeyCode.LeftShift)&& m_dashCountUp >= m_dashCooldown)
+        {
+            m_rigidBody.AddForce(m_rigidBody.velocity * PlayerSpeed * m_dashMultiplier, ForceMode2D.Impulse);
+            m_dashCountUp = 0.0f;
+        }
+
+        if (m_rigidBody.velocity.x <= -10 || m_rigidBody.velocity.x >= 10 || m_rigidBody.velocity.y <= -10 || m_rigidBody.velocity.y >= 10)
+        {
+            m_rigidBody.drag = m_rigidBody.drag * 1.25f;
+        }
+        else m_rigidBody.drag = 1;*/
 
         m_playerAnimator.SetFloat("Horizontal", movement.x);
         m_playerAnimator.SetFloat("Vertical", movement.y);
@@ -65,6 +82,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         m_rigidBody.velocity = new Vector2(m_playerDir.x * PlayerSpeed, m_playerDir.y * PlayerSpeed);
+        //m_rigidBody.AddForce(new Vector2(m_playerDir.x * PlayerSpeed, m_playerDir.y * PlayerSpeed), ForceMode2D.Force);
     }
 
 }

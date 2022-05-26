@@ -186,6 +186,10 @@ PrefabInstance:
       propertyPath: m_dungeonGenerator
       value: 
       objectReference: {fileID: 800891050}
+    - target: {fileID: 2069871475130941811, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
+      propertyPath: PlayerSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2069871475130941814, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1306,17 +1310,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2069871475130941809, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
   m_PrefabInstance: {fileID: 248729894}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &993017806 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 993017806, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
-  m_PrefabInstance: {fileID: 248729894}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 993017804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca0c71109bfd533468bfc306c14f37fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &993017814
 MonoBehaviour:
   m_ObjectHideFlags: 0
