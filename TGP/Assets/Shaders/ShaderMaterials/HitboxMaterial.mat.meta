@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:TGP/Assets/Shaders/ShaderMaterials/HitboxMaterial.mat.meta
+guid: 9f438f58899e76b4db916c7a4051f607
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+========
+guid: d694931c5e701d34fa7f1b882a3a5c44
+PrefabImporter:
+  externalObjects: {}
+>>>>>>>> safe-main:TGP/Assets/Prefabs/Obstacle.prefab.meta
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

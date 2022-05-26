@@ -18,6 +18,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Main.unity
     guid: 1f376c920537dde44a1f206e99f7f608
   - enabled: 1
+    path: Assets/Scenes/Main/BossLevel.unity
+    guid: c7a21d91a9df9d24d9386a3199fad243
+  - enabled: 1
     path: Assets/Scenes/Lose.unity
     guid: 0505bf82bd21c0743bdb084ecc55d26b
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: ab57f9331155c8944846d894650cfe2e
   m_configObjects: {}

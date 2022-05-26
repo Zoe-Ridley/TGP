@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:TGP/Assets/Shaders/ShaderMaterials/Barrier2DMaterial.mat.meta
+guid: a54e24ddf0539b34aaae9131ec2211be
+========
+guid: d9a8ac0807414934e95afed6a34527de
+>>>>>>>> safe-main:TGP/Assets/Shaders/New Lighting Settings.lighting.meta
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 4890085278179872738
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
