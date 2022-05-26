@@ -864,7 +864,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1051,11 +1051,19 @@ MonoBehaviour:
   m_finalRoomPrefab: {fileID: 8365982970090205779, guid: 9507e16abd116eb45874801379bb845f, type: 3}
   m_room: {fileID: 8365982970090205779, guid: 2c42082af0371074eb487604656042d6, type: 3}
   m_meleeEnemy: {fileID: 8916536103795626766, guid: ec8277e7b84b8c04fa9d7c5cc16bed16, type: 3}
-  m_maxMeleeEnemiesPerRoom: 1
+  m_minMeleeEnemiesPerRoom: 3
+  m_maxMeleeEnemiesPerRoom: 5
   m_rangedEnemy: {fileID: 8129611735401264269, guid: 323d08424f6eb394693885eb0ec1e563, type: 3}
-  m_maxRangedEnemiesPerRoom: 1
-  ObstaclePrefab: {fileID: 9094876545318604598, guid: d694931c5e701d34fa7f1b882a3a5c44, type: 3}
-  m_maxObstaclesPerRoom: 0
+  m_minRangedEnemiesPerRoom: 3
+  m_maxRangedEnemiesPerRoom: 5
+  ObstaclePrefabs:
+  - {fileID: 7438486709476273990, guid: 44df26ec93ca2804da8f187b5525a282, type: 3}
+  - {fileID: 6046452459562208724, guid: 9e7a26aef4759344691b565227ba59ed, type: 3}
+  - {fileID: 4264398931869153038, guid: 6c15f15a30452fe49b55da62bdf9151b, type: 3}
+  - {fileID: 6904515014269265353, guid: 271d491c6d10b8d49ad33ebc077fb274, type: 3}
+  - {fileID: 4268623214697558891, guid: a2d54c986b496404fa5fc55fb013abf8, type: 3}
+  m_minObstaclesPerRoom: 10
+  m_maxObstaclesPerRoom: 15
   CentreOfDungeon: {x: 0, y: 0}
   FinalRoom:
     NumberOfEnemies: 0
@@ -1069,7 +1077,7 @@ MonoBehaviour:
     RoomEnemies: []
   AllPositionsOnBoard: []
   GeneratedRooms: []
-  MinimapCamera: {fileID: 0}
+  MinimapCamera: {fileID: 1314746071}
 --- !u!4 &800891051
 Transform:
   m_ObjectHideFlags: 0
@@ -1349,6 +1357,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1024941282}
   m_CullTransparentMesh: 1
+--- !u!1 &1314746071 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5412245991742993925, guid: 9e75dbeb3a3ea5642a99d7d9db43a52c, type: 3}
+  m_PrefabInstance: {fileID: 583897023}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1435776475
 GameObject:
   m_ObjectHideFlags: 0
@@ -2490,7 +2503,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2134540984
 GameObject:
