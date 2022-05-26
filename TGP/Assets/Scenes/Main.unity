@@ -434,6 +434,49 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!1 &588451085
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 588451087}
+  - component: {fileID: 588451086}
+  m_Layer: 0
+  m_Name: ButtonManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &588451086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588451085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 874e346bccd2def4dae1d08fc1e56f75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &588451087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588451085}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1018.53955, y: 577.80896, z: -342.50763}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &628162384
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,7 +674,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &711078523
 GameObject:
@@ -749,7 +792,7 @@ Transform:
   m_Children:
   - {fileID: 503075416}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &711078528
 MonoBehaviour:
@@ -937,9 +980,14 @@ MonoBehaviour:
   m_minMeleeEnemiesPerRoom: 2
   m_maxMeleeEnemiesPerRoom: 5
   m_rangedEnemy: {fileID: 1731618953485584378, guid: 8fa98c187fae6954dadd90c4144869ec, type: 3}
-  m_minRangedEnemiesPerRoom: 2
+  m_minRangedEnemiesPerRoom: 3
   m_maxRangedEnemiesPerRoom: 5
-  ObstaclePrefab: {fileID: 9094876545318604598, guid: 0ba9824fff0885547898eaa6d760e02f, type: 3}
+  ObstaclePrefabs:
+  - {fileID: 4978013756774897604, guid: 0b4272b9c8f1cfe43bd9b08762e6314f, type: 3}
+  - {fileID: 5698327767535262606, guid: e1eebd7a668e7cf429b96217824f0225, type: 3}
+  - {fileID: 939791572879391642, guid: 405542a2080631543b146de191577747, type: 3}
+  - {fileID: 1787925601631623178, guid: 27c3e12398d44a048af6e12bc1c0de19, type: 3}
+  - {fileID: 6075946149761476832, guid: 3076f381bf7a6ac449a180217aee11ff, type: 3}
   m_minObstaclesPerRoom: 10
   m_maxObstaclesPerRoom: 20
   CentreOfDungeon: {x: 0, y: 0}
@@ -1200,7 +1248,7 @@ RectTransform:
   - {fileID: 1940179441}
   - {fileID: 1705918540}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1284,18 +1332,24 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2069871475130941809, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
   m_PrefabInstance: {fileID: 248729894}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &993017815 stripped
+--- !u!114 &993017814
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 993017815, guid: 2136fc877a5610045b09d7a35d3b4497, type: 3}
-  m_PrefabInstance: {fileID: 248729894}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993017804}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca0c71109bfd533468bfc306c14f37fc, type: 3}
+  m_Script: {fileID: 11500000, guid: 805c628e11ca08844ac3bf2dafa49887, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1039503286
+  m_weaponPrefab: {fileID: 0}
+  m_player: {fileID: 993017804}
+  m_enemy: {fileID: 0}
+  m_followPlayer: {fileID: 0}
+  m_offset: {x: 0, y: 0, z: 0}
+--- !u!1 &1024941282
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1319,7 +1373,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1039503286}
+  m_GameObject: {fileID: 1024941282}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1338,7 +1392,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1039503286}
+  m_GameObject: {fileID: 1024941282}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
@@ -1427,7 +1481,7 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1039503286}
+  m_GameObject: {fileID: 1024941282}
   m_CullTransparentMesh: 1
 --- !u!1 &1158464417
 GameObject:
@@ -1512,7 +1566,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 993017815}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseFunction, Assembly-CSharp
         m_MethodName: ResumeButton
         m_Mode: 1
@@ -2350,7 +2404,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2114176711
 MonoBehaviour:
@@ -2381,7 +2435,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2134540984
 GameObject:

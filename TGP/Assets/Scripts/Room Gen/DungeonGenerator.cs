@@ -43,8 +43,8 @@ public class DungeonGenerator : MonoBehaviour
     [SerializeField] private int m_minRangedEnemiesPerRoom;
     [SerializeField] private int m_maxRangedEnemiesPerRoom;
 
-    [Header("Obstacles", order = 4)]
-    public GameObject ObstaclePrefab;
+    [Header("Obstacles", order = 4)] 
+    public List<GameObject> ObstaclePrefabs;
     [SerializeField] private int m_minObstaclesPerRoom;
     [SerializeField] private int m_maxObstaclesPerRoom;
 
@@ -54,9 +54,8 @@ public class DungeonGenerator : MonoBehaviour
     public List<Cell> AllPositionsOnBoard;
     public List<Cell> GeneratedRooms;
 
-    [Header("Additional Objects", order = 6)]
+    [Header("Generated Rooms", order = 6)] 
     public GameObject MinimapCamera;
-
 
     //Start is called before the first frame update
     void Start()
@@ -78,7 +77,7 @@ public class DungeonGenerator : MonoBehaviour
             }
         }
         return null;
-    }
+    }    
 
     public void OpenRoom(Vector2 tempPlayerPosition)
     {
@@ -96,7 +95,7 @@ public class DungeonGenerator : MonoBehaviour
 
                 GeneratedRooms[i].Opened = true;
 
-                foreach (var enemy in GeneratedRooms[i + 1].RoomEnemies)
+                foreach (var enemy in GeneratedRooms[i+1].RoomEnemies)
                 {
                     enemy.SetActive(true);
                 }
@@ -140,7 +139,7 @@ public class DungeonGenerator : MonoBehaviour
             for (int j = 0; j < SizeOfDungeon.y; j++)
             {
                 Cell currentCell = AllPositionsOnBoard[Mathf.FloorToInt(i + j * SizeOfDungeon.x)];
-
+                   
                 if (currentCell.Visited)
                 {
                     //Checking if currentCell is the last room of the dungeon
@@ -184,8 +183,8 @@ public class DungeonGenerator : MonoBehaviour
         }
 
         //Find the middle of the dungeon
-        Vector2 calculatedDungeonSize = new Vector2(((RoomSize.x * SizeOfDungeon.x) / 2) - (RoomSize.x / 2), ((RoomSize.y * -SizeOfDungeon.y) / 2) + (RoomSize.y / 2));
-
+        Vector2 calculatedDungeonSize = new Vector2(((RoomSize.x * SizeOfDungeon.x) / 2) - (RoomSize.x/2) , ((RoomSize.y * -SizeOfDungeon.y) /2) + (RoomSize.y / 2));
+        
         CentreOfDungeon = calculatedDungeonSize;
         MinimapCamera.transform.position = calculatedDungeonSize;
     }
@@ -346,9 +345,6 @@ public class DungeonGenerator : MonoBehaviour
             //Melee enemies rely on having the Room object as their parent in order to configure pathfinding.
             GameObject newMeleeEnemy = Instantiate(m_meleeEnemy, currentCell.RoomObject.transform);
             newMeleeEnemy.transform.position = GenerateRandomPosition(minPosition, maxPosition);
-
-
-
             currentCell.NumberOfEnemies++;
             currentCell.RoomEnemies.Add(newMeleeEnemy);
             newMeleeEnemy.SetActive(false);
@@ -357,7 +353,8 @@ public class DungeonGenerator : MonoBehaviour
         //Create obstacles
         for (int i = 0; i < obstacleCount; i++)
         {
-            GameObject newObstacle = Instantiate(ObstaclePrefab, currentCell.RoomObject.transform);
+            int RandomObstaclePrefab = Random.Range(0, ObstaclePrefabs.Count - 1);
+            GameObject newObstacle = Instantiate(ObstaclePrefabs[RandomObstaclePrefab], currentCell.RoomObject.transform);
             newObstacle.transform.position = GenerateRandomPosition(minPosition, maxPosition);
             Collider2D obstacleCollider = newObstacle.GetComponent<Collider2D>();
 
@@ -370,7 +367,7 @@ public class DungeonGenerator : MonoBehaviour
                         Destroy(newObstacle);
                         break;
                     }
-                    else if (obstacleCollider.IsTouching(currentCell.RoomObstacles[k].GetComponent<Collider2D>()))
+                    if (obstacleCollider.IsTouching(currentCell.RoomObstacles[k].GetComponent<Collider2D>()))
                     {
                         Destroy(newObstacle);
                         break;
@@ -383,8 +380,8 @@ public class DungeonGenerator : MonoBehaviour
 
     private Vector2 GenerateRandomPosition(Vector2 min, Vector2 max)
     {
-        var x = Mathf.FloorToInt(Random.Range(min.x + 1, max.x - 1));
-        var y = Mathf.FloorToInt(Random.Range(min.y + 1, max.y - 1));
+        var x = Random.Range(min.x + 1, max.x - 1);
+        var y = Random.Range(min.y + 1, max.y - 1);
         return new Vector2(x, y);
     }
 }
