@@ -10,6 +10,9 @@ public class BossFirstPhase : BossState
     public BossFirstPhase(BossAI bossAI)
     {
         BossAI = bossAI;
+
+        bossAI.FirstPhase();
+
         m_player = GameObject.Find("Player");
     }
 

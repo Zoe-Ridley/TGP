@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BossAI : EnemyAI
 {
+    [SerializeField] protected GameObject m_firstPhaseBar;
     [SerializeField] protected GameObject m_minnion;
     [SerializeField] protected GameObject m_bullet;
     [SerializeField] protected GameObject m_boulder;
@@ -13,6 +14,9 @@ public class BossAI : EnemyAI
     [SerializeField] protected float m_bulletSpeed;
     [SerializeField] protected float m_respawnRate;
 
+    public Animator m_animator;
+    public int m_maxHealth;
+
     public float RespawnRate
     {
         get { return m_respawnRate; }
@@ -20,13 +24,18 @@ public class BossAI : EnemyAI
     }
 
     [SerializeField] protected int m_SecondPhaseHealth;
+    [SerializeField] protected GameObject m_SecondPhaseBar;
+
     public int SecondPhaseHealth
     {
         get { return m_SecondPhaseHealth; }
         set { m_SecondPhaseHealth = value; }
+
     }
 
     [SerializeField] protected int m_ThirdPhaseHealth;
+    [SerializeField] protected GameObject m_ThirdPhaseBar;
+
     public int ThirdPhaseHealth
     {
         get { return m_ThirdPhaseHealth; }
@@ -55,6 +64,7 @@ public class BossAI : EnemyAI
         base.Start();
         m_state = new SleepingState(this);
         m_spawnedEnemies = new List<GameObject>();
+        m_animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -115,5 +125,22 @@ public class BossAI : EnemyAI
             if (minnion)
                 Destroy(minnion);
         }
+    }
+
+    public void FirstPhase()
+    {
+        m_firstPhaseBar.SetActive(true);
+    }
+
+    public void SecondPhase()
+    {
+        m_firstPhaseBar.SetActive(false);
+        m_SecondPhaseBar.SetActive(true);
+    }
+
+    public void ThirdPhase()
+    {
+        m_SecondPhaseBar.SetActive(false);
+        m_ThirdPhaseBar.SetActive(true);
     }
 }

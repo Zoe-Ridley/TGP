@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class BossUIController : MonoBehaviour
 {
     [SerializeField] private GameObject m_boss;
+    [SerializeField] private TextMeshProUGUI m_bossHealth;
+
     private BossAI m_bossAI;
 
     [Header("Slider")]
@@ -25,6 +28,8 @@ public class BossUIController : MonoBehaviour
     void Update()
     {
         slider.value = m_bossAI.m_health;
-        slider.maxValue = m_bossAI.m_health;
+       // slider.maxValue = m_bossAI.m_maxHealth;
+
+        m_bossHealth.SetText(m_bossAI.m_health + " ");
     }
 }

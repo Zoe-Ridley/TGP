@@ -125,7 +125,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (other.gameObject.tag == "PlayerBullet")
         {
-            m_animator.SetBool("isTakingDamage", true);
+            m_animator.SetTrigger("isTakingDamage");
             m_health--;
             Destroy(other.gameObject);
         }

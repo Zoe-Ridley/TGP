@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] Text m_timerText;
+    [SerializeField] private TextMeshProUGUI m_timerText;
 
     float m_currentTime;
     public float m_startTime;

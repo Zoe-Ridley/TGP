@@ -7,6 +7,8 @@ public class BossThirdPhase : BossState
     public BossThirdPhase(BossAI bossAI)
     {
         BossAI = bossAI;
+
+        bossAI.ThirdPhase();
     }
 
     public override void Update()
