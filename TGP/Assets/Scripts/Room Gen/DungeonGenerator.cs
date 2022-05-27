@@ -328,9 +328,9 @@ public class DungeonGenerator : MonoBehaviour
         currentCell.RoomObstacles = new List<GameObject>();
 
         //Generate enemy and obstacle count
-        int rangedEnemyCount = Random.Range(1, m_maxRangedEnemiesPerRoom);
-        int meleeEnemyCount = Random.Range(1, m_maxMeleeEnemiesPerRoom);
-        int obstacleCount = Random.Range(1, m_maxObstaclesPerRoom);
+        int rangedEnemyCount = Random.Range(m_minRangedEnemiesPerRoom, m_maxRangedEnemiesPerRoom);
+        int meleeEnemyCount = Random.Range(m_minMeleeEnemiesPerRoom, m_maxMeleeEnemiesPerRoom);
+        int obstacleCount = Random.Range(m_minObstaclesPerRoom, m_maxObstaclesPerRoom);
 
         //Instantiate enemies
         for (int i = 0; i < rangedEnemyCount; i++)

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -3506481573531338920}
   m_Layer: 6
   m_Name: GolemBoss
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,7 +102,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage:
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -163,8 +163,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2595c5f42ce6f8b47b37401bae727e3e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_deathMaterial: {fileID: 2100000, guid: 7c20c9612fefa8649a23def71fc6fce6, type: 2}
   m_targetRange: 10
   m_attackRange: 10
@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Barrier: {fileID: 8807032835941344353, guid: ebe2bee123e718d48980b2ba0eabbb7d, type: 3}
   m_throwSpeed: 8
   m_bulletSpeed: 15
-  m_respawnRate: 3
+  m_respawnRate: 5
   m_animator: {fileID: 8389758431162026991}
   m_maxHealth: 0
   m_SecondPhaseHealth: 35

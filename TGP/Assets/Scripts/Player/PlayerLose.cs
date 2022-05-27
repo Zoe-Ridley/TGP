@@ -7,10 +7,12 @@ using TMPro;
 
 public class PlayerLose : MonoBehaviour
 {
-    public int m_playerMaxHP = 100;
+    public int m_playerMaxHP;
     [SerializeField] public int m_playerHitpoints;
     [SerializeField] private TextMeshProUGUI m_textHitCounter;
     [SerializeField] private float m_invulnerableTime;
+    static int m_playerMaxHPStatic;
+    static int m_playerHitPointsStatic;
 
     [Header("Slider")]
     public Slider slider;
@@ -23,15 +25,26 @@ public class PlayerLose : MonoBehaviour
 
     void Start()
     {
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Main")) // if the scene is main then set max health back to default
+        {
+            m_playerMaxHPStatic = m_playerMaxHP;
+            m_playerHitPointsStatic = m_playerHitpoints;
+        }
+        else // if not main scene then set it to post powerups
+        {
+            m_playerMaxHP = m_playerMaxHPStatic;
+            m_playerHitpoints = m_playerHitPointsStatic;
+        }
         slider = slider.GetComponent<Slider>();
         fill = slider.GetComponent<Image>();
-        m_playerHitpoints = 100;
         slider.value = m_playerHitpoints;
         m_animator = GetComponent<Animator>();
     }
 
     void Update()
     {
+        m_playerMaxHPStatic = m_playerMaxHP;
+        m_playerHitPointsStatic = m_playerHitpoints;
         slider.value = m_playerHitpoints;
         slider.maxValue = m_playerMaxHP;
         m_textHitCounter.SetText(" " + m_playerHitpoints + "/" + m_playerMaxHP);

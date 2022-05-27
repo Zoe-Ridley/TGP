@@ -10,16 +10,25 @@ public class Timer : MonoBehaviour
     [SerializeField] private TextMeshProUGUI m_timerText;
 
     float m_currentTime;
-    public float m_startTime;
+    static float m_staticTime;
 
     void Start()
     {
-        m_currentTime = m_startTime;
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Main")) // if the scene is main then set  time back to 0
+        {
+            m_staticTime = m_currentTime;
+        }
+        else //else the scene is not main, continue it
+        {
+            m_currentTime = m_staticTime;
+        }
+        
     }
 
     void Update()
     {
         m_currentTime += 1 * Time.deltaTime;
+        m_staticTime = m_currentTime;
         DisplayTime(m_currentTime);
 
     }

@@ -26,6 +26,7 @@ public class ItemTable : ScriptableObject
                 GetTotalWeight();
             }
             return m_totalWeight;
+            Debug.Log(m_totalWeight);
         }
     }
 
@@ -35,6 +36,7 @@ public class ItemTable : ScriptableObject
         for(int i = 0; i < table.Count; i++)
         {
             m_totalWeight += table[i].m_Weight;
+            Debug.Log(i);
         }
     }
 

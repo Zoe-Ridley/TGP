@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Shoot : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Shoot : MonoBehaviour
     [Header("Reload Variables")]
     [SerializeField] private int m_maxKnivesThrown;
     [SerializeField] public float m_reloadTime;
+    static float m_reloadTimeStatic;
     private float m_tempReloadTime;
     private int m_currentKnivesThrownLeft;
     private bool m_reloadSoundPlayed;
@@ -23,12 +25,21 @@ public class Shoot : MonoBehaviour
 
     private void Start()
     {
+        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Main")) // if the scene is main then set reload time back to default
+        {
+            m_reloadTimeStatic = m_reloadTime;
+        }
+        else // else use the time adjusted by powerups
+        {
+            m_reloadTime = m_reloadTimeStatic;
+        }
         m_tempReloadTime = m_reloadTime;
         m_currentKnivesThrownLeft = m_maxKnivesThrown;
     }
 
     void Update()
     {
+        m_reloadTimeStatic = m_reloadTime;
         m_coolDown -= Time.deltaTime;
         //Debug.Log(m_coolDown);
 

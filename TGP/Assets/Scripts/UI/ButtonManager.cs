@@ -9,6 +9,10 @@ using UnityEngine.UIElements;
 
 public class ButtonManager : MonoBehaviour
 {
+    private void Start()
+    {
+        Time.timeScale = 1f;
+    }
     public void StartButton()
     {
         SceneManager.LoadScene("Main");
@@ -30,6 +34,7 @@ public class ButtonManager : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
         FindObjectOfType<AudioManager>().playAudio("ButtonPress");
+        Time.timeScale = 1f;
     }
 
     public void ResetButton()

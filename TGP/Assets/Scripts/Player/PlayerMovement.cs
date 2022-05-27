@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
     public float PlayerSpeed;
+    static float m_playerStaticSpeed;
 
     private Vector2 m_playerDir;
     private SpriteRenderer m_spriteRenderer;
@@ -20,6 +22,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Main")) // if the scene is main then set speed back to default
+        {
+            m_playerStaticSpeed = PlayerSpeed;
+        }
+        else // else use the speed adjusted by powerups
+        {
+            PlayerSpeed = m_playerStaticSpeed;
+        }
         m_rigidBody = GetComponent<Rigidbody2D>();
         m_spriteRenderer = GetComponent<SpriteRenderer>();
         m_playerAnimator = GetComponentInChildren<Animator>();
@@ -27,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Update()
     {
+        PlayerSpeed = m_playerStaticSpeed;
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
 
         //Controls which way the player is facing.
