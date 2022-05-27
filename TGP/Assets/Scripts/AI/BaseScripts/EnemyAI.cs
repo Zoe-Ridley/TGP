@@ -78,8 +78,11 @@ public class EnemyAI : MonoBehaviour
         {
             if (!fading)
             {
+                m_health = 0;
                 // Play the death animation and queue the object to be destroyed
                 FindObjectOfType<AudioManager>().playAudio("EnemyDeath");
+                m_animator.ResetTrigger("isTakingDamage");
+                m_animator.ResetTrigger("isMoving");
                 m_animator.SetBool("isDead", true);
                 Destroy(gameObject, fade);
 
