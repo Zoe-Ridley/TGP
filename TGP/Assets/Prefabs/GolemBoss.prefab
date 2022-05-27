@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 889434968895493973}
   - component: {fileID: 4472406814153813543}
   - component: {fileID: -3506481573531338920}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GolemBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,16 +173,16 @@ MonoBehaviour:
   lootTable: {fileID: 0}
   PowerUp: []
   m_SpawnPoint: {fileID: 0}
-  m_health: 30
+  m_health: 50
   m_minnion: {fileID: 31278492875938516, guid: 636e5f1fe286e834fbe4205a49a1e583, type: 3}
   m_bullet: {fileID: 2032384438344180425, guid: 656f2dbde156f05479cd37940c1be722, type: 3}
   m_boulder: {fileID: 5905809964679592006, guid: 9ce6f011565ce74419857f5e27cd2c49, type: 3}
   m_stomp: {fileID: 9127269787326674786, guid: aea25be1d49f3974e883b901a7487cfc, type: 3}
   m_Barrier: {fileID: 8807032835941344353, guid: ebe2bee123e718d48980b2ba0eabbb7d, type: 3}
-  m_throwSpeed: 5
+  m_throwSpeed: 8
   m_bulletSpeed: 15
   m_respawnRate: 3
-  m_SecondPhaseHealth: 20
-  m_ThirdPhaseHealth: 10
+  m_SecondPhaseHealth: 35
+  m_ThirdPhaseHealth: 20
   m_stompRate: 5
   m_throwRate: 3

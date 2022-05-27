@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BaseDissolveMaterial
+  m_Name: DissolveBase
   m_Shader: {fileID: -6465566751694194690, guid: 0ced6201eeb9d334cb34039fa03e37a6, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -40,5 +40,5 @@ Material:
     - Vector1_abff1200c84d4c3db03c30a79d4938c6: 50
     - _Fade: 1
     m_Colors:
-    - _FadeColor: {r: 0, g: 23.968628, b: 20.203922, a: 0}
+    - _FadeColor: {r: 2.1733072, g: 0.37256697, b: 3.9533494, a: 0}
   m_BuildTextureStacks: []

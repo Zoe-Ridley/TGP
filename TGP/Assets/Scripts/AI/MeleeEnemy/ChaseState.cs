@@ -6,13 +6,21 @@ public class ChaseState : MeleeEnemyState
 {
     private List<Vector3> path;
     private int index;
+
+    protected Animator m_animator;
+
     public ChaseState(MeleeEnemyAI enemyAI)
     {
         EnemyAI = enemyAI;
         EnemyAI.m_isMoving = false;
         path = null;
         index = 0;
-    }   
+    }
+
+    public void Start()
+    {
+      //  m_animator = GetComponent<Animator>();
+    }
 
     public override void Update()
     {

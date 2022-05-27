@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 1700574525923724087}
   m_Layer: 0
   m_Name: CrabEnemy
-  m_TagString: Untagged
+  m_TagString: MeleeEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,7 +112,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8916536103795626766}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.16, y: 1.1666083, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 0}
   m_Children:
   - {fileID: 3501960755083749487}
@@ -260,6 +260,6 @@ MonoBehaviour:
   - {fileID: 1029141005002993237, guid: 6e9695a3ef93af946b6035ce2afb59b0, type: 3}
   - {fileID: 7873700024920522900, guid: bd5ce34f2f6823a4c9e595e8c9b8af64, type: 3}
   - {fileID: 1029141005002993237, guid: 5f57f720579aede408f1453953b93794, type: 3}
-  m_SpawnPoint: {fileID: 8529499662827076245, guid: d102a3c8b54f10048ba1a500033224bd, type: 3}
+  m_SpawnPoint: {fileID: 819272850666465062}
   m_health: 2
   m_roamRange: {x: 2, y: 2}

@@ -2,14 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-enum Attacks
-{
-    CHARGE,
-    STOMP,
-    THROW,
-    PASSIVE
-}
-
 public class BossSecondPhase : BossState
 {
     private float m_stompTimer;
@@ -27,7 +19,7 @@ public class BossSecondPhase : BossState
     {
         if (BossAI.Health <= BossAI.ThirdPhaseHealth)
         {
-            BossAI.m_state = new BossThirdPhase(BossAI);
+            BossAI.m_state = new BossThirdPhase(BossAI, m_player);
         }
 
         // Update timer
@@ -55,9 +47,8 @@ public class BossSecondPhase : BossState
             }
             case Attacks.THROW:
             {
-                Vector3 dir = BossAI.transform.position - m_player.transform.position;
-                dir.Normalize();
-                BossAI.BoulderThrow(dir);
+                BossAI.BoulderThrow(m_player.transform.position);
+                m_ThrowTimer = 0.0f;
                 break;
             }
             case Attacks.PASSIVE:

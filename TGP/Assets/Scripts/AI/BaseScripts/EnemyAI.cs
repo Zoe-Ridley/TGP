@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] protected float m_targetRange;
     [SerializeField] protected float m_attackRange;
     [SerializeField] protected float m_attackRate;
+
     public float AttackRate
     {
         get { return m_attackRate; }
@@ -31,7 +33,8 @@ public class EnemyAI : MonoBehaviour
         set { m_speed = value; }
     }
 
-    [SerializeField] protected int m_health;
+    public int m_health;
+
     public int Health
     {
         get { return m_health; }
@@ -77,7 +80,14 @@ public class EnemyAI : MonoBehaviour
             {
                 // Play the death animation and queue the object to be destroyed
                 FindObjectOfType<AudioManager>().playAudio("EnemyDeath");
+                m_animator.SetBool("isDead", true);
                 Destroy(gameObject, fade);
+
+                GetComponent<SpriteRenderer>().material = m_deathMaterial;
+                gameObject.tag = "DeadEnemy";
+
+                m_state = null;
+                fading = true;
 
                 Item item = lootTable.GetLoot();
                 //Debug.Log(item.name);
@@ -99,12 +109,6 @@ public class EnemyAI : MonoBehaviour
                 {
                     m_generator.OpenRoom(GetComponentInParent<Transform>().position);
                 }
-
-                GetComponent<SpriteRenderer>().material = m_deathMaterial;
-                gameObject.tag = "DeadEnemy";
-
-                m_state = null;
-                fading = true;
             }
             else
             { 
@@ -117,16 +121,15 @@ public class EnemyAI : MonoBehaviour
         if (m_state != null)
             m_state.Update();
     }
-
     protected void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "PlayerBullet")
         {
-            m_animator.SetTrigger("isTakingDamage");
+            m_animator.SetBool("isTakingDamage", true);
             m_health--;
             Destroy(other.gameObject);
         }
-    }   
+    }
 
     /// <summary>
     /// <para>Using the pathfinder class the AI calculates a vector list to get to the destination </para>
@@ -211,6 +214,8 @@ public class EnemyAI : MonoBehaviour
     /// </summary>
     protected void Walk(Vector3 destination)
     {
+        m_animator.SetBool("isScouting", true);
+        m_animator.SetBool("isAttacking", false);
         Vector3 dir = (destination - transform.position).normalized;
         transform.position += (dir * m_speed * Time.deltaTime);
     }

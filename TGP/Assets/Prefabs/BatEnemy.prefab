@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -3217026656381596424}
   m_Layer: 6
   m_Name: BatEnemy
-  m_TagString: Enemy
+  m_TagString: MeleeEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -166,12 +166,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_deathMaterial: {fileID: 2100000, guid: d541ee5822a4c4149a01992d30d2c559, type: 2}
-  m_targetRange: 9
+  m_targetRange: 20
   m_attackRange: 1
   m_attackRate: 0.4
-  m_speed: 7
-  lootTable: {fileID: 0}
-  PowerUp: []
+  m_speed: 11
+  lootTable: {fileID: 11400000, guid: 8957bfea3df69c24580b87c1f163042a, type: 2}
+  PowerUp:
+  - {fileID: 1029141005002993237, guid: 4d0b4f127893c794395cd3492e74a637, type: 3}
+  - {fileID: 7873700024920522900, guid: bd5ce34f2f6823a4c9e595e8c9b8af64, type: 3}
+  - {fileID: 1029141005002993237, guid: 6e9695a3ef93af946b6035ce2afb59b0, type: 3}
   m_SpawnPoint: {fileID: 0}
   m_health: 2
   m_roamRange: {x: 3, y: 3}

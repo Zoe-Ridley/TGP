@@ -60,19 +60,19 @@ AnimatorController:
   m_Name: CrabEnemyController
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: isAttacking
-    m_Type: 9
+  - m_Name: isDead
+    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: isMoving
-    m_Type: 9
+    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: isDead
+  - m_Name: isAttacking
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -156,10 +156,10 @@ AnimatorStateMachine:
     m_Position: {x: 350, y: 330, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 753020680744508805}
-    m_Position: {x: 80, y: 10, z: 0}
+    m_Position: {x: 200, y: 90, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -25742384317322603}
-    m_Position: {x: 570, y: 10, z: 0}
+    m_Position: {x: 470, y: 100, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 7579528875386762495}
