@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossAI : EnemyAI
 {
@@ -75,6 +76,9 @@ public class BossAI : EnemyAI
         if(m_health <= 0)
         {
             m_animator.SetTrigger("isDead");
+            SceneManager.LoadScene("Win");
+            FindObjectOfType<AudioManager>().playAudio("Win");
+            FindObjectOfType<AudioManager>().StopAudio("Boss Theme");
         }
     }
 

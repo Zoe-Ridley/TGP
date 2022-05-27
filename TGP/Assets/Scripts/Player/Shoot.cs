@@ -68,7 +68,7 @@ public class Shoot : MonoBehaviour
             if (m_reloadSoundPlayed == false)
             {
                 Debug.Log("play sound once");
-                FindObjectOfType<AudioManager>().playAudio("Reload Sound");
+                FindObjectOfType<AudioManager>().playAudio("Reload");
                 m_reloadSoundPlayed = true;
             }
             if(m_tempReloadTime <= 0f) //Reloaded, UI should update to state knives left

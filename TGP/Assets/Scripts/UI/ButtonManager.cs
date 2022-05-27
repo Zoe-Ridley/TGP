@@ -34,6 +34,9 @@ public class ButtonManager : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
         FindObjectOfType<AudioManager>().playAudio("ButtonPress");
+        FindObjectOfType<AudioManager>().playAudio("Title");
+        FindObjectOfType<AudioManager>().StopAudio("MainMusic");
+        FindObjectOfType<AudioManager>().StopAudio("Boss Theme");
         Time.timeScale = 1f;
     }
 

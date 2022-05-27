@@ -9,7 +9,7 @@ public class BossThirdPhase : BossState
     private float m_BlinkTimer;
 
     private float m_ThrowRate = 2.0f;
-    private float m_BlinkRate = 5.0f;
+    private float m_BlinkRate = 3.5f;
 
     Attacks m_currentAttack;
     private List<GameObject> m_BlinkPoints;
