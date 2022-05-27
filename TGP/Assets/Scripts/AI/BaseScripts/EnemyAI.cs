@@ -83,6 +83,12 @@ public class EnemyAI : MonoBehaviour
                 m_animator.SetBool("isDead", true);
                 Destroy(gameObject, fade);
 
+                GetComponent<SpriteRenderer>().material = m_deathMaterial;
+                gameObject.tag = "DeadEnemy";
+
+                m_state = null;
+                fading = true;
+
                 Item item = lootTable.GetLoot();
                 //Debug.Log(item.name);
                 for (int i = 0; i < PowerUp.Length; i++)
@@ -103,12 +109,6 @@ public class EnemyAI : MonoBehaviour
                 {
                     m_generator.OpenRoom(GetComponentInParent<Transform>().position);
                 }
-
-                GetComponent<SpriteRenderer>().material = m_deathMaterial;
-                gameObject.tag = "DeadEnemy";
-
-                m_state = null;
-                fading = true;
             }
             else
             { 

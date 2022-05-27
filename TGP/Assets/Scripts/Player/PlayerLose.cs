@@ -65,7 +65,7 @@ public class PlayerLose : MonoBehaviour
             switch (enemyType)
             {
                 case "Bullet":
-                    m_playerHitpoints--;
+                    m_playerHitpoints -= 10;
                     FindObjectOfType<AudioManager>().playAudio("PlayerHit");
                     m_invulnerable = true;
                     break;
@@ -83,7 +83,7 @@ public class PlayerLose : MonoBehaviour
             switch (enemyType)
             {
                 case "MeleeEnemy":
-                    m_playerHitpoints--;
+                    m_playerHitpoints -= 10;
                     m_animator.SetTrigger("isAttacking");
                     FindObjectOfType<AudioManager>().playAudio("PlayerHit");
                     m_invulnerable = true;
