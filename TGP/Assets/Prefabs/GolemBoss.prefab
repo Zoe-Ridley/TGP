@@ -102,7 +102,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage: 
+  m_WarningMessage:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -163,9 +163,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2595c5f42ce6f8b47b37401bae727e3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_deathMaterial: {fileID: 2100000, guid: d541ee5822a4c4149a01992d30d2c559, type: 2}
+  m_Name:
+  m_EditorClassIdentifier:
+  m_deathMaterial: {fileID: 2100000, guid: 7c20c9612fefa8649a23def71fc6fce6, type: 2}
   m_targetRange: 10
   m_attackRange: 10
   m_attackRate: 0.7
@@ -173,7 +173,8 @@ MonoBehaviour:
   lootTable: {fileID: 0}
   PowerUp: []
   m_SpawnPoint: {fileID: 0}
-  m_health: 50
+  m_health: 4
+  fade: 1.8
   m_firstPhaseBar: {fileID: 0}
   m_minnion: {fileID: 31278492875938516, guid: 636e5f1fe286e834fbe4205a49a1e583, type: 3}
   m_bullet: {fileID: 2032384438344180425, guid: 656f2dbde156f05479cd37940c1be722, type: 3}
