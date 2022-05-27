@@ -88,13 +88,14 @@ public class BossAI : EnemyAI
         GameObject tempRef = Instantiate(m_boulder, transform.position, Quaternion.AngleAxis(angle, Vector3.forward));
 
         tempRef.GetComponent<Rigidbody2D>().AddForce(dir * m_throwSpeed, ForceMode2D.Impulse);
-        tempRef.GetComponent<Boulder>().SetDestination(destination);
 
         GameObject tempRefHB = Instantiate(m_stomp, transform.position, Quaternion.identity);
 
         Vector3 scale = new Vector3(5.0f, 5.0f);
         float fillSpeed = Vector3.Distance(destination, transform.position) / tempRef.GetComponent<Rigidbody2D>().velocity.magnitude;
         fillSpeed = scale.x / fillSpeed;
+
+        tempRef.GetComponent<Boulder>().SetTimer(Vector3.Distance(destination, transform.position) / tempRef.GetComponent<Rigidbody2D>().velocity.magnitude);
 
         tempRefHB.GetComponent<Hitbox>().Setup(scale, fillSpeed, destination);
     }

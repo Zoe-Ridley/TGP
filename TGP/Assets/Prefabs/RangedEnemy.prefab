@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abc43533b3276944584107ddf1668d4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_deathMaterial: {fileID: 2100000, guid: d541ee5822a4c4149a01992d30d2c559, type: 2}
+  m_deathMaterial: {fileID: 2100000, guid: f97db01e37b1498419f2f71fa87e31fb, type: 2}
   m_targetRange: 10
   m_attackRange: 10
   m_attackRate: 1
