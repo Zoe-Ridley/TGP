@@ -55,6 +55,7 @@ public class PlayerLose : MonoBehaviour
             SceneManager.LoadScene("Lose");
             FindObjectOfType<AudioManager>().playAudio("Loss");
             FindObjectOfType<AudioManager>().StopAudio("MainMusic");
+            FindObjectOfType<AudioManager>().StopAudio("Boss Theme");
         }
 
         if (m_invTimer <= m_invulnerableTime)
