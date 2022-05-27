@@ -2,14 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-enum Attacks
-{
-    CHARGE,
-    STOMP,
-    THROW,
-    PASSIVE
-}
-
 public class BossSecondPhase : BossState
 {
     private float m_stompTimer;
@@ -27,14 +19,12 @@ public class BossSecondPhase : BossState
     {
         if (BossAI.Health <= BossAI.ThirdPhaseHealth)
         {
-            BossAI.m_state = new BossThirdPhase(BossAI);
+            BossAI.m_state = new BossThirdPhase(BossAI, m_player);
         }
 
         // Update timer
         m_stompTimer += Time.deltaTime;
         m_ThrowTimer += Time.deltaTime;
-
-        Debug.Log(m_ThrowTimer);
 
         m_currentAttack = Attacks.PASSIVE;
 
