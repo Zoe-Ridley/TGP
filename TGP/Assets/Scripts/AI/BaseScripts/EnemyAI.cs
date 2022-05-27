@@ -48,7 +48,7 @@ public class EnemyAI : MonoBehaviour
     protected Animator m_animator;
 
     // variables for dissolve
-    protected float fade = 1.3f;
+    [SerializeField]protected float fade = 1.3f;
     protected bool fading = false;
     
     public bool m_isMoving { get; set; } = false;
