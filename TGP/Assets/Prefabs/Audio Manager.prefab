@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2702342539089462534}
-  - component: {fileID: 4258463790149613763}
   - component: {fileID: 206761008}
   m_Layer: 0
   m_Name: Audio Manager
@@ -32,20 +31,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4258463790149613763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2702342539089462552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1087c5c69b6deba4baafe8b07db35f86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MusicText: {fileID: 0}
-  SFXText: {fileID: 0}
 --- !u!114 &206761008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,7 +71,7 @@ MonoBehaviour:
   - m_Name: MainMusic
     Sound: {fileID: 8300000, guid: f1d2dd0499362534fad1094bfa6764de, type: 3}
     audioType: 0
-    volume: 1
+    volume: 0.8
     loop: 1
     source: {fileID: 0}
   - m_Name: PlayerHit

@@ -74,8 +74,8 @@ public class AudioManager : MonoBehaviour
 
     public void UpdateMixerVolume()
     {
-        m_MusicMixerGroup.audioMixer.SetFloat("Music Volume", Mathf.Log10(VolumeSlider.musicVolume) * 20);
-        m_SFXMixerGroup.audioMixer.SetFloat("SFX Volume", Mathf.Log10(VolumeSlider.SFXVolume) * 20);
+        m_MusicMixerGroup.audioMixer.SetFloat("Music Volume", Mathf.Log10(Sliders.musicVolume) * 20);
+        m_SFXMixerGroup.audioMixer.SetFloat("SFX Volume", Mathf.Log10(Sliders.SFXVolume) * 20);
     }
 }
 

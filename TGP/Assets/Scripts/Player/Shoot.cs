@@ -16,6 +16,7 @@ public class Shoot : MonoBehaviour
     [SerializeField] public float m_reloadTime;
     private float m_tempReloadTime;
     private int m_currentKnivesThrownLeft;
+    private bool m_reloadSoundPlayed;
 
     [Header("GUI")] 
     [SerializeField] private TextMeshProUGUI m_reloadText;
@@ -28,7 +29,6 @@ public class Shoot : MonoBehaviour
 
     void Update()
     {
-
         m_coolDown -= Time.deltaTime;
         //Debug.Log(m_coolDown);
 
@@ -37,6 +37,7 @@ public class Shoot : MonoBehaviour
 
         if ((Input.GetMouseButtonDown(0)) && (m_coolDown < 0f) && (m_currentKnivesThrownLeft != 0)) //Shooting, UI should update with knives left
         {
+            m_reloadSoundPlayed = false;
             //Mouse variables to shoot
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z));
             Vector2 toMouse = mousePos - (Vector2)transform.position;
@@ -53,6 +54,12 @@ public class Shoot : MonoBehaviour
             //Debug.Log("reloading");
             m_tempReloadTime -= Time.deltaTime;
 
+            if (m_reloadSoundPlayed == false)
+            {
+                Debug.Log("play sound once");
+                FindObjectOfType<AudioManager>().playAudio("Reload Sound");
+                m_reloadSoundPlayed = true;
+            }
             if(m_tempReloadTime <= 0f) //Reloaded, UI should update to state knives left
             {
                 //Debug.Log("reloaded");
