@@ -50,12 +50,14 @@ public class BossThirdPhase : BossState
         {
             case Attacks.THROW:
                 {
+                    BossAI.m_animator.SetTrigger("isThrowing");
                     BossAI.BoulderThrow(m_player.transform.position);
                     m_ThrowTimer = 0.0f;
                     break;
                 }
             case Attacks.BLINK:
                 {
+                    BossAI.m_animator.SetTrigger("isMoving");
                     int index = 0;
                     float lowestDistance = float.MaxValue;
 

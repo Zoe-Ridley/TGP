@@ -71,7 +71,11 @@ public class BossAI : EnemyAI
     protected override void Update()
     {
         base.Update();
-        Debug.Log(m_health);
+
+        if(m_health <= 0)
+        {
+            m_animator.SetTrigger("isDead");
+        }
     }
 
     public void SpawnMinnion()

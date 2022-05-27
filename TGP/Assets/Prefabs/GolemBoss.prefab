@@ -174,6 +174,7 @@ MonoBehaviour:
   PowerUp: []
   m_SpawnPoint: {fileID: 0}
   m_health: 50
+  m_firstPhaseBar: {fileID: 0}
   m_minnion: {fileID: 31278492875938516, guid: 636e5f1fe286e834fbe4205a49a1e583, type: 3}
   m_bullet: {fileID: 2032384438344180425, guid: 656f2dbde156f05479cd37940c1be722, type: 3}
   m_boulder: {fileID: 5905809964679592006, guid: 9ce6f011565ce74419857f5e27cd2c49, type: 3}
@@ -182,7 +183,11 @@ MonoBehaviour:
   m_throwSpeed: 8
   m_bulletSpeed: 15
   m_respawnRate: 3
+  m_animator: {fileID: 8389758431162026991}
+  m_maxHealth: 0
   m_SecondPhaseHealth: 35
+  m_SecondPhaseBar: {fileID: 0}
   m_ThirdPhaseHealth: 20
+  m_ThirdPhaseBar: {fileID: 0}
   m_stompRate: 5
   m_throwRate: 3

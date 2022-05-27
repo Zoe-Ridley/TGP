@@ -89,6 +89,8 @@ public class EnemyAI : MonoBehaviour
                 m_state = null;
                 fading = true;
 
+                m_animator.SetTrigger("isDead");
+
                 Item item = lootTable.GetLoot();
                 //Debug.Log(item.name);
                 for (int i = 0; i < PowerUp.Length; i++)
